@@ -1,7 +1,6 @@
 {
   "home": "Home",
   "about-us": "About Us",
-  "projects-nav": "Projects",
   "routes": "Routes",
   "partners": "Partners",
   "products": "Products",
@@ -61,6 +60,9 @@
   "consolidation-card2-text2": "Quality inspection and photo reports before shipment",
   "consolidation-card2-text3": "Customs clearance and certification support",
   "consolidation-card2-text4": "International transportation by road, air, and sea",
+  "map-title": "Global Logistics Network",
+  "map-subtitle": "Connecting major trade hubs across continents to Uzbekistan",
+  "map-legend-title": "Our Trade Routes",
   "mission-title": "Our Vision, Values, and Mission",
   "mission-card1-title": "Our Mission",
   "mission-card1-text": "Our mission is to contribute to the development of our clients' businesses by providing them with fast, reliable, and efficient logistics solutions.",

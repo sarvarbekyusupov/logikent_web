@@ -1,7 +1,6 @@
 {
   "home": "Bosh sahifa",
   "about-us": "Biz haqimizda",
-  "projects-nav": "Loyihalar",
   "routes": "Yo'nalishlar",
   "partners": "Hamkorlar",
   "products": "Mahsulotlar",
@@ -61,6 +60,9 @@
   "consolidation-card2-text2": "Jo'natishdan oldin sifat nazorati va foto hisobotlar",
   "consolidation-card2-text3": "Bojxona rasmiylashtiruvi va sertifikatlashni qo'llab-quvvatlash",
   "consolidation-card2-text4": "Avtomobil, havo va dengiz orqali xalqaro tashish",
+  "map-title": "Global logistika tarmog'i",
+  "map-subtitle": "O'zbekiston bilan qit'alar bo'ylab asosiy savdo markazlarini bog'lash",
+  "map-legend-title": "Bizning savdo yo'nalishlarimiz",
   "mission-title": "Bizning missiyamiz, qadriyatlarimiz va maqsadimiz",
   "mission-card1-title": "Bizning missiyamiz",
   "mission-card1-text": "Bizning missiyamiz — mijozlarimiz biznesini rivojlantirishga hissa qo'shish, ularga tez, ishonchli va samarali logistika yechimlarini taqdim etish.",

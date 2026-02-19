@@ -1,9 +1,10 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import Link from "next/link";
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
@@ -12,6 +13,7 @@ export default function Services() {
       title: "service-card1-title",
       text: "service-card1-text",
       list: ["service-card1-list1", "service-card1-list2", "service-card1-list3"],
+      link: "air-freight",
     },
     {
       icon: "fa-solid fa-truck-fast",
@@ -24,6 +26,7 @@ export default function Services() {
         "service-card2-list3",
         "service-card2-list4",
       ],
+      link: "road-transport",
     },
     {
       icon: "fa-solid fa-train",
@@ -31,6 +34,7 @@ export default function Services() {
       title: "service-card6-title",
       text: "service-card6-text",
       list: ["service-card6-list1", "service-card6-list2", "service-card6-list3"],
+      link: "multimodal",
     },
     {
       icon: "fa-solid fa-door-open",
@@ -38,6 +42,7 @@ export default function Services() {
       title: "service-card4-title",
       text: "service-card4-text",
       list: ["service-card4-list1", "service-card4-list2", "service-card4-list3"],
+      link: "door-to-door",
     },
     {
       icon: "fa-solid fa-location-crosshairs",
@@ -45,6 +50,7 @@ export default function Services() {
       title: "service-card5-title",
       text: "service-card5-text",
       list: ["service-card5-list1", "service-card5-list2", "service-card5-list3"],
+      link: "4pl-logistics",
     },
     {
       icon: "fa-solid fa-users",
@@ -52,6 +58,7 @@ export default function Services() {
       title: "service-card3-title",
       text: "service-card3-text",
       list: ["service-card3-list1", "service-card3-list2", "service-card3-list4"],
+      link: "customs-clearance",
     },
   ];
 
@@ -66,24 +73,29 @@ export default function Services() {
 
         <div className="row g-4">
           {services.map((service, index) => (
-            <div key={index} className="col-md-4">
-              <div className="service-card card text-center border-0 h-100">
-                <div className="card-body p-4">
-                  <div className="icon-wrapper mb-4">
-                    <i className={`${service.icon} fa-3x service-icon ${service.color}`}></i>
+            <div key={index} className="col-md-6 col-lg-4">
+              <Link href={`/${language}/services/${service.link}`} className="text-decoration-none">
+                <div className="service-card card text-center border-0 h-100 hover-card" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease" }}>
+                  <div className="card-body p-4">
+                    <div className="icon-wrapper mb-4">
+                      <i className={`${service.icon} fa-3x service-icon ${service.color}`}></i>
+                    </div>
+                    <h3 className="h4 mb-3 fw-semibold">{t(service.title)}</h3>
+                    <p className="text-muted mb-4">{t(service.text)}</p>
+                    <ul className="list-unstyled text-start ps-3">
+                      {service.list.map((item, i) => (
+                        <li key={i} className="mb-2">
+                          <i className="fas fa-check-circle text-success me-2"></i>
+                          {t(item)}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-3">
+                      <span className="btn btn-outline-primary btn-sm">Learn More →</span>
+                    </div>
                   </div>
-                  <h3 className="h4 mb-3 fw-semibold">{t(service.title)}</h3>
-                  <p className="text-muted mb-4">{t(service.text)}</p>
-                  <ul className="list-unstyled text-start ps-3">
-                    {service.list.map((item, i) => (
-                      <li key={i} className="mb-2">
-                        <i className="fas fa-check-circle text-success me-2"></i>
-                        {t(item)}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

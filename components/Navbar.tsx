@@ -55,10 +55,10 @@ export default function Navbar() {
         >
           <a
             className="nav-link fw-medium"
-            href="#home"
+            href="#services"
             style={{ fontSize: "15px", color: "var(--dark-color)" }}
           >
-            {t("home")}
+            <span style={{ fontSize: "1.2em" }}>S</span>ervices
           </a>
           <a
             className="nav-link fw-medium"
@@ -69,14 +69,7 @@ export default function Navbar() {
           </a>
           <a
             className="nav-link fw-medium"
-            href="#projects"
-            style={{ fontSize: "15px", color: "var(--dark-color)" }}
-          >
-            {t("projects-nav") || "Projects"}
-          </a>
-          <a
-            className="nav-link fw-medium"
-            href="#routes"
+            href="#route-map"
             style={{ fontSize: "15px", color: "var(--dark-color)" }}
           >
             {t("routes") || "Routes"}
