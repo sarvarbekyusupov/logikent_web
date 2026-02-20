@@ -64,7 +64,7 @@ export default function DoorToDoorPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
                             <i className="fas fa-shipping-fast fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("door2door-include1-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-include1-title")}</h5>
                           <p className="text-muted small mb-0">{t("door2door-include1-desc")}</p>
                         </div>
                       </div>
@@ -73,7 +73,7 @@ export default function DoorToDoorPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
                             <i className="fas fa-passport fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("door2door-include2-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-include2-title")}</h5>
                           <p className="text-muted small mb-0">{t("door2door-include2-desc")}</p>
                         </div>
                       </div>
@@ -82,7 +82,7 @@ export default function DoorToDoorPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
                             <i className="fas fa-home fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("door2door-include3-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-include3-title")}</h5>
                           <p className="text-muted small mb-0">{t("door2door-include3-desc")}</p>
                         </div>
                       </div>
@@ -104,7 +104,7 @@ export default function DoorToDoorPage() {
                             <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
                               <i className="fas fa-handshake fa-2x text-white"></i>
                             </div>
-                            <h5 className="fw-bold mb-2">{t("door2door-benefit1-title")}</h5>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-benefit1-title")}</h5>
                             <p className="text-muted small mb-0">{t("door2door-benefit1-desc")}</p>
                           </div>
                         </div>
@@ -115,7 +115,7 @@ export default function DoorToDoorPage() {
                             <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #3b82f6, #8b5cf6)" }}>
                               <i className="fas fa-eye fa-2x text-white"></i>
                             </div>
-                            <h5 className="fw-bold mb-2">{t("door2door-benefit2-title")}</h5>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-benefit2-title")}</h5>
                             <p className="text-muted small mb-0">{t("door2door-benefit2-desc")}</p>
                           </div>
                         </div>
@@ -126,7 +126,7 @@ export default function DoorToDoorPage() {
                             <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
                               <i className="fas fa-dollar-sign fa-2x text-white"></i>
                             </div>
-                            <h5 className="fw-bold mb-2">{t("door2door-benefit3-title")}</h5>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-benefit3-title")}</h5>
                             <p className="text-muted small mb-0">{t("door2door-benefit3-desc")}</p>
                           </div>
                         </div>
@@ -137,7 +137,7 @@ export default function DoorToDoorPage() {
                             <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #8b5cf6, #a78bfa)" }}>
                               <i className="fas fa-globe fa-2x text-white"></i>
                             </div>
-                            <h5 className="fw-bold mb-2">{t("door2door-benefit4-title")}</h5>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-benefit4-title")}</h5>
                             <p className="text-muted small mb-0">{t("door2door-benefit4-desc")}</p>
                           </div>
                         </div>

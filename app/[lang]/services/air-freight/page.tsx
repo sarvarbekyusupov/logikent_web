@@ -71,7 +71,7 @@ export default function AirFreightPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
                             <i className="fas fa-plane fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("airfreight-offer1-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("airfreight-offer1-title")}</h5>
                           <p className="text-muted small mb-0">{t("airfreight-offer1-desc")}</p>
                         </div>
                       </div>
@@ -80,7 +80,7 @@ export default function AirFreightPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
                             <i className="fas fa-boxes fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("airfreight-offer2-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("airfreight-offer2-title")}</h5>
                           <p className="text-muted small mb-0">{t("airfreight-offer2-desc")}</p>
                         </div>
                       </div>
@@ -89,7 +89,7 @@ export default function AirFreightPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
                             <i className="fas fa-bolt fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("airfreight-offer3-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("airfreight-offer3-title")}</h5>
                           <p className="text-muted small mb-0">{t("airfreight-offer3-desc")}</p>
                         </div>
                       </div>
@@ -160,64 +160,64 @@ export default function AirFreightPage() {
                       <i className="fas fa-box-open me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("airfreight-cargo-types")}
                     </h4>
-                    <div className="row g-4">
-                      <div className="col-md-6 col-lg-4">
+                    <div className="row g-3" style={{ rowGap: "1rem" }}>
+                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
                         <div className="card h-100 border-0 shadow-sm">
-                          <div className="card-body text-center p-3">
+                          <div className="card-body text-center p-4">
                             <div className="mb-2">
-                              <i className="fas fa-box fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
+                              <i className="fas fa-box fa-lg mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo1")}</h6>
+                            <h6 className="fw-bold mb-0" style={{ fontSize: "1.05rem", overflowWrap: "break-word", hyphens: "auto" }}>{t("airfreight-cargo1")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6 col-lg-4">
+                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
                         <div className="card h-100 border-0 shadow-sm">
-                          <div className="card-body text-center p-3">
+                          <div className="card-body text-center p-4">
                             <div className="mb-2">
-                              <i className="fas fa-boxes fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
+                              <i className="fas fa-boxes fa-lg mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo2")}</h6>
+                            <h6 className="fw-bold mb-0" style={{ fontSize: "1.05rem", overflowWrap: "break-word", hyphens: "auto" }}>{t("airfreight-cargo2")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6 col-lg-4">
+                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
                         <div className="card h-100 border-0 shadow-sm">
-                          <div className="card-body text-center p-3">
+                          <div className="card-body text-center p-4">
                             <div className="mb-2">
-                              <i className="fas fa-weight-hanging fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
+                              <i className="fas fa-weight-hanging fa-lg mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo3")}</h6>
+                            <h6 className="fw-bold mb-0" style={{ fontSize: "1.05rem", overflowWrap: "break-word", hyphens: "auto" }}>{t("airfreight-cargo3")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6 col-lg-4">
+                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
                         <div className="card h-100 border-0 shadow-sm">
-                          <div className="card-body text-center p-3">
+                          <div className="card-body text-center p-4">
                             <div className="mb-2">
-                              <i className="fas fa-snowflake fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
+                              <i className="fas fa-snowflake fa-lg mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo4")}</h6>
+                            <h6 className="fw-bold mb-0" style={{ fontSize: "1.05rem", overflowWrap: "break-word", hyphens: "auto" }}>{t("airfreight-cargo4")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6 col-lg-4">
+                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
                         <div className="card h-100 border-0 shadow-sm">
-                          <div className="card-body text-center p-3">
+                          <div className="card-body text-center p-4">
                             <div className="mb-2">
-                              <i className="fas fa-gem fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
+                              <i className="fas fa-gem fa-lg mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo5")}</h6>
+                            <h6 className="fw-bold mb-0" style={{ fontSize: "1.05rem", overflowWrap: "break-word", hyphens: "auto" }}>{t("airfreight-cargo5")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6 col-lg-4">
+                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
                         <div className="card h-100 border-0 shadow-sm">
-                          <div className="card-body text-center p-3">
+                          <div className="card-body text-center p-4">
                             <div className="mb-2">
-                              <i className="fas fa-file-alt fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
+                              <i className="fas fa-file-alt fa-lg mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo6")}</h6>
+                            <h6 className="fw-bold mb-0" style={{ fontSize: "1.05rem", overflowWrap: "break-word", hyphens: "auto" }}>{t("airfreight-cargo6")}</h6>
                           </div>
                         </div>
                       </div>

@@ -15,7 +15,7 @@ export default function AboutPage() {
         <section
           className="py-5 position-relative"
           style={{
-            backgroundImage: "url('/img/logistics-container.jpg')",
+            backgroundImage: "url('/img/logistics-warehouse.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             minHeight: "350px"
@@ -92,7 +92,7 @@ export default function AboutPage() {
                       <div className="col-md-10">
                         <p
                           className="lead mb-4"
-                          style={{ fontSize: "18px", lineHeight: "1.8", color: "#334155" }}
+                          style={{ fontSize: "1.25rem", lineHeight: "1.8", color: "#1e293b", fontWeight: "400" }}
                           dangerouslySetInnerHTML={{ __html: t("about-page-company-description") }}
                         />
                       </div>
@@ -110,8 +110,8 @@ export default function AboutPage() {
                             <i className="fas fa-lightbulb" style={{ color: "var(--primary-color)", fontSize: "18px" }}></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2" style={{ color: "#1e293b" }}>{t("about-page-philosophy-title")}</h5>
-                            <p className="mb-0" style={{ fontSize: "15px", color: "#64748b", lineHeight: "1.6" }}>
+                            <h5 className="fw-bold mb-3" style={{ color: "#0f172f", fontSize: "1.15rem" }}>{t("about-page-philosophy-title")}</h5>
+                            <p className="mb-0" style={{ fontSize: "1.05rem", color: "#334155", lineHeight: "1.7" }}>
                               {t("about-page-philosophy-text")}
                             </p>
                           </div>
@@ -127,8 +127,8 @@ export default function AboutPage() {
                             <i className="fas fa-heart" style={{ color: "var(--primary-color)", fontSize: "18px" }}></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2" style={{ color: "#1e293b" }}>{t("about-page-approach-title")}</h5>
-                            <p className="mb-0" style={{ fontSize: "15px", color: "#64748b", lineHeight: "1.6" }}>
+                            <h5 className="fw-bold mb-3" style={{ color: "#0f172f", fontSize: "1.15rem" }}>{t("about-page-approach-title")}</h5>
+                            <p className="mb-0" style={{ fontSize: "1.05rem", color: "#334155", lineHeight: "1.7" }}>
                               {t("about-page-approach-text")}
                             </p>
                           </div>
@@ -146,8 +146,8 @@ export default function AboutPage() {
                             <i className="fas fa-rocket text-white" style={{ fontSize: "18px" }}></i>
                           </div>
                           <div className="grow">
-                            <h5 className="fw-bold mb-2" style={{ color: "#1e293b" }}>{t("about-page-commitment-title")}</h5>
-                            <p className="mb-0" style={{ fontSize: "15px", color: "#64748b", lineHeight: "1.6" }}>
+                            <h5 className="fw-bold mb-3" style={{ color: "#0f172f", fontSize: "1.15rem" }}>{t("about-page-commitment-title")}</h5>
+                            <p className="mb-0" style={{ fontSize: "1.05rem", color: "#334155", lineHeight: "1.7" }}>
                               {t("about-page-commitment-text")}
                             </p>
                           </div>
@@ -172,8 +172,8 @@ export default function AboutPage() {
                     <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "80px", height: "80px", backgroundColor: "#28a74520" }}>
                       <i className="fas fa-check-circle fa-2x" style={{ color: "#28a745" }}></i>
                     </div>
-                    <h5 className="fw-bold mb-3">{t("about-page-value1-name")}</h5>
-                    <p className="text-muted small">{t("about-page-value1-text")}</p>
+                    <h5 className="fw-bold mb-3" style={{ fontSize: "1.1rem", color: "#0f172f" }}>{t("about-page-value1-name")}</h5>
+                    <p className="mb-0" style={{ fontSize: "1rem", color: "#334155", lineHeight: "1.6" }}>{t("about-page-value1-text")}</p>
                   </div>
                 </div>
               </div>
@@ -183,8 +183,8 @@ export default function AboutPage() {
                     <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "80px", height: "80px", backgroundColor: "#007bff20" }}>
                       <i className="fas fa-users fa-2x" style={{ color: "#007bff" }}></i>
                     </div>
-                    <h5 className="fw-bold mb-3">{t("about-page-value2-name")}</h5>
-                    <p className="text-muted small">{t("about-page-value2-text")}</p>
+                    <h5 className="fw-bold mb-3" style={{ fontSize: "1.1rem", color: "#0f172f" }}>{t("about-page-value2-name")}</h5>
+                    <p className="mb-0" style={{ fontSize: "1rem", color: "#334155", lineHeight: "1.6" }}>{t("about-page-value2-text")}</p>
                   </div>
                 </div>
               </div>
@@ -194,8 +194,8 @@ export default function AboutPage() {
                     <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "80px", height: "80px", backgroundColor: "#fd7e1420" }}>
                       <i className="fas fa-route fa-2x" style={{ color: "#fd7e14" }}></i>
                     </div>
-                    <h5 className="fw-bold mb-3">{t("about-page-value3-name")}</h5>
-                    <p className="text-muted small">{t("about-page-value3-text")}</p>
+                    <h5 className="fw-bold mb-3" style={{ fontSize: "1.1rem", color: "#0f172f" }}>{t("about-page-value3-name")}</h5>
+                    <p className="mb-0" style={{ fontSize: "1rem", color: "#334155", lineHeight: "1.6" }}>{t("about-page-value3-text")}</p>
                   </div>
                 </div>
               </div>
@@ -205,8 +205,8 @@ export default function AboutPage() {
                     <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "80px", height: "80px", backgroundColor: "#ffc10720" }}>
                       <i className="fas fa-bolt fa-2x" style={{ color: "#ffc107" }}></i>
                     </div>
-                    <h5 className="fw-bold mb-3">{t("about-page-value4-name")}</h5>
-                    <p className="text-muted small">{t("about-page-value4-text")}</p>
+                    <h5 className="fw-bold mb-3" style={{ fontSize: "1.1rem", color: "#0f172f" }}>{t("about-page-value4-name")}</h5>
+                    <p className="mb-0" style={{ fontSize: "1rem", color: "#334155", lineHeight: "1.6" }}>{t("about-page-value4-text")}</p>
                   </div>
                 </div>
               </div>
@@ -225,8 +225,8 @@ export default function AboutPage() {
                     <div className="mb-4">
                       <i className="fas fa-lightbulb fa-3x" style={{ color: "var(--primary-color)" }}></i>
                     </div>
-                    <h4 className="fw-bold mb-3">{t("about-page-mission-card-title")}</h4>
-                    <p className="text-muted mb-0">{t("about-page-mission-card-text")}</p>
+                    <h4 className="fw-bold mb-3" style={{ color: "#0f172f" }}>{t("about-page-mission-card-title")}</h4>
+                    <p className="mb-0" style={{ fontSize: "1.05rem", color: "#334155", lineHeight: "1.7" }}>{t("about-page-mission-card-text")}</p>
                   </div>
                 </div>
               </div>
@@ -236,8 +236,8 @@ export default function AboutPage() {
                     <div className="mb-4">
                       <i className="fas fa-hand-holding-heart fa-3x" style={{ color: "var(--primary-color)" }}></i>
                     </div>
-                    <h4 className="fw-bold mb-3">{t("about-page-vision-card-title")}</h4>
-                    <p className="text-muted mb-0">{t("about-page-vision-card-text")}</p>
+                    <h4 className="fw-bold mb-3" style={{ color: "#0f172f" }}>{t("about-page-vision-card-title")}</h4>
+                    <p className="mb-0" style={{ fontSize: "1.05rem", color: "#334155", lineHeight: "1.7" }}>{t("about-page-vision-card-text")}</p>
                   </div>
                 </div>
               </div>
@@ -247,8 +247,8 @@ export default function AboutPage() {
                     <div className="mb-4">
                       <i className="fas fa-gem fa-3x" style={{ color: "var(--primary-color)" }}></i>
                     </div>
-                    <h4 className="fw-bold mb-3">{t("about-page-corevalues-card-title")}</h4>
-                    <p className="text-muted mb-0">{t("about-page-corevalues-card-text")}</p>
+                    <h4 className="fw-bold mb-3" style={{ color: "#0f172f" }}>{t("about-page-corevalues-card-title")}</h4>
+                    <p className="mb-0" style={{ fontSize: "1.05rem", color: "#334155", lineHeight: "1.7" }}>{t("about-page-corevalues-card-text")}</p>
                   </div>
                 </div>
               </div>
@@ -283,13 +283,13 @@ export default function AboutPage() {
             <div className="card border-0 shadow-sm bg-light">
               <div className="card-body p-5 text-center">
                 <i className="fas fa-quote-left fa-3x mb-3" style={{ color: "var(--primary-color)" }}></i>
-                <p className="fst-italic mb-4" style={{ fontSize: "1.3rem", lineHeight: "1.6" }}>
+                <p className="fst-italic mb-4" style={{ fontSize: "1.4rem", lineHeight: "1.7", color: "#1e293b", fontWeight: "500" }}>
                   "{t("about-page-quote-text")}"
                 </p>
-                <p className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>
+                <p className="fw-bold mb-4" style={{ color: "var(--primary-color)", fontSize: "1.15rem" }}>
                   {t("about-page-quote-subtitle")}
                 </p>
-                <p className="text-muted mb-4">{t("about-page-quote-tagline")}</p>
+                <p className="mb-4" style={{ fontSize: "1.05rem", color: "#334155" }}>{t("about-page-quote-tagline")}</p>
                 <Link href="#contact" className="btn btn-primary btn-lg px-5" style={{ borderRadius: "50px" }}>
                   {t("about-page-cta-button")}
                 </Link>

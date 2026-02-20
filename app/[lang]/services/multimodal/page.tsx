@@ -64,7 +64,7 @@ export default function MultimodalPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
                             <i className="fas fa-tasks fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("multimodal-service1-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-service1-title")}</h5>
                           <p className="text-muted small mb-0">{t("multimodal-service1-desc")}</p>
                         </div>
                       </div>
@@ -73,7 +73,7 @@ export default function MultimodalPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
                             <i className="fas fa-boxes fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("multimodal-service2-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-service2-title")}</h5>
                           <p className="text-muted small mb-0">{t("multimodal-service2-desc")}</p>
                         </div>
                       </div>
@@ -82,7 +82,7 @@ export default function MultimodalPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
                             <i className="fas fa-satellite-dish fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("multimodal-service3-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-service3-title")}</h5>
                           <p className="text-muted small mb-0">{t("multimodal-service3-desc")}</p>
                         </div>
                       </div>
@@ -104,7 +104,7 @@ export default function MultimodalPage() {
                             <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
                               <i className="fas fa-train fa-2x text-white"></i>
                             </div>
-                            <h5 className="fw-bold mb-2">{t("multimodal-mode1-title")}</h5>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-mode1-title")}</h5>
                             <p className="text-muted small mb-0">{t("multimodal-mode1-desc")}</p>
                           </div>
                         </div>
@@ -115,7 +115,7 @@ export default function MultimodalPage() {
                             <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #3b82f6, #8b5cf6)" }}>
                               <i className="fas fa-truck fa-2x text-white"></i>
                             </div>
-                            <h5 className="fw-bold mb-2">{t("multimodal-mode2-title")}</h5>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-mode2-title")}</h5>
                             <p className="text-muted small mb-0">{t("multimodal-mode2-desc")}</p>
                           </div>
                         </div>
@@ -126,7 +126,7 @@ export default function MultimodalPage() {
                             <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
                               <i className="fas fa-ship fa-2x text-white"></i>
                             </div>
-                            <h5 className="fw-bold mb-2">{t("multimodal-mode3-title")}</h5>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-mode3-title")}</h5>
                             <p className="text-muted small mb-0">{t("multimodal-mode3-desc")}</p>
                           </div>
                         </div>
@@ -146,10 +146,8 @@ export default function MultimodalPage() {
                       <div className="col-md-6">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
-                              <i className="fas fa-piggy-bank fa-2x text-white"></i>
-                            </div>
-                            <h5 className="fw-bold mb-2">{t("multimodal-adv1-title")}</h5>
+                            <div className="mb-3" style={{ fontSize: "3rem" }}>💰</div>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-adv1-title")}</h5>
                             <p className="text-muted small mb-0">{t("multimodal-adv1-desc")}</p>
                           </div>
                         </div>
@@ -157,10 +155,8 @@ export default function MultimodalPage() {
                       <div className="col-md-6">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #3b82f6, #8b5cf6)" }}>
-                              <i className="fas fa-route fa-2x text-white"></i>
-                            </div>
-                            <h5 className="fw-bold mb-2">{t("multimodal-adv2-title")}</h5>
+                            <div className="mb-3" style={{ fontSize: "3rem" }}>🔀</div>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-adv2-title")}</h5>
                             <p className="text-muted small mb-0">{t("multimodal-adv2-desc")}</p>
                           </div>
                         </div>
@@ -168,10 +164,8 @@ export default function MultimodalPage() {
                       <div className="col-md-6">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
-                              <i className="fas fa-compress-arrows-alt fa-2x text-white"></i>
-                            </div>
-                            <h5 className="fw-bold mb-2">{t("multimodal-adv3-title")}</h5>
+                            <div className="mb-3" style={{ fontSize: "3rem" }}>📦</div>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-adv3-title")}</h5>
                             <p className="text-muted small mb-0">{t("multimodal-adv3-desc")}</p>
                           </div>
                         </div>
@@ -179,10 +173,8 @@ export default function MultimodalPage() {
                       <div className="col-md-6">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #8b5cf6, #a78bfa)" }}>
-                              <i className="fas fa-globe-asia fa-2x text-white"></i>
-                            </div>
-                            <h5 className="fw-bold mb-2">{t("multimodal-adv4-title")}</h5>
+                            <div className="mb-3" style={{ fontSize: "3rem" }}>🌍</div>
+                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("multimodal-adv4-title")}</h5>
                             <p className="text-muted small mb-0">{t("multimodal-adv4-desc")}</p>
                           </div>
                         </div>

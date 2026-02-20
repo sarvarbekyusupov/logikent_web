@@ -19,9 +19,24 @@ export function LanguageProvider({
   const [translations, setTranslations] = useState<any>({});
 
   useEffect(() => {
+    // Check localStorage first for saved language preference
+    const savedLanguage = localStorage.getItem("language");
+    const languageToUse = savedLanguage || locale;
+
+    // If saved language differs from URL locale, redirect
+    if (savedLanguage && savedLanguage !== locale) {
+      const pathname = window.location.pathname;
+      const localeMatch = pathname.match(/^\/(en|ru|uz)(?:\/|$)/);
+      if (localeMatch) {
+        const newPath = pathname.replace(/^\/(en|ru|uz)/, `/${savedLanguage}`);
+        window.location.href = newPath;
+        return;
+      }
+    }
+
     // Load translations for the detected locale
-    loadTranslations(locale);
-    setLanguageState(locale);
+    loadTranslations(languageToUse);
+    setLanguageState(languageToUse);
   }, [locale]);
 
   const loadTranslations = async (lang: string) => {

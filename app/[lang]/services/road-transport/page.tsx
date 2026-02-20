@@ -64,7 +64,7 @@ export default function RoadTransportPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
                             <i className="fas fa-truck fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("road-transport-offer1-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("road-transport-offer1-title")}</h5>
                           <p className="text-muted small mb-0">{t("road-transport-offer1-desc")}</p>
                         </div>
                       </div>
@@ -73,7 +73,7 @@ export default function RoadTransportPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
                             <i className="fas fa-warehouse fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("road-transport-offer2-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("road-transport-offer2-title")}</h5>
                           <p className="text-muted small mb-0">{t("road-transport-offer2-desc")}</p>
                         </div>
                       </div>
@@ -82,7 +82,7 @@ export default function RoadTransportPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
                             <i className="fas fa-exclamation-triangle fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("road-transport-offer4-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("road-transport-offer4-title")}</h5>
                           <p className="text-muted small mb-0">{t("road-transport-offer4-desc")}</p>
                         </div>
                       </div>

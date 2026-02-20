@@ -64,7 +64,7 @@ export default function FourPLPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
                             <i className="fas fa-user-tie fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("4pl-offer1-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("4pl-offer1-title")}</h5>
                           <p className="text-muted small mb-0">{t("4pl-offer1-desc")}</p>
                         </div>
                       </div>
@@ -73,7 +73,7 @@ export default function FourPLPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
                             <i className="fas fa-route fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("4pl-offer2-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("4pl-offer2-title")}</h5>
                           <p className="text-muted small mb-0">{t("4pl-offer2-desc")}</p>
                         </div>
                       </div>
@@ -82,7 +82,7 @@ export default function FourPLPage() {
                           <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
                             <i className="fas fa-handshake fa-2x text-white"></i>
                           </div>
-                          <h5 className="fw-bold mb-2">{t("4pl-offer3-title")}</h5>
+                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("4pl-offer3-title")}</h5>
                           <p className="text-muted small mb-0">{t("4pl-offer3-desc")}</p>
                         </div>
                       </div>
