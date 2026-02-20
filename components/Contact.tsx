@@ -40,7 +40,6 @@ export default function Contact() {
                         <i className="fas fa-phone-alt me-2 text-muted"></i>
                         <div className="small">
                           <div>+998 97 733 79 58</div>
-                          <div>+998 90 777 99 88</div>
                         </div>
                       </div>
                       <div className="d-flex align-items-center mb-2">

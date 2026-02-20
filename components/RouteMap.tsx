@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Polyline } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import dynamic from "next/dynamic";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Fix for default marker icons in Next.js
@@ -69,7 +68,7 @@ function calculateCurvedPath(
 }
 
 // Custom origin marker icon with flag image using crossOrigin
-const createOriginIcon = (countryCode: string, color: string) => {
+const createOriginIcon = (countryCode: string) => {
   // Use different flag source for EU
   const flagUrl = countryCode === "eu"
     ? "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
@@ -90,6 +89,7 @@ const createOriginIcon = (countryCode: string, color: string) => {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         position: relative;
         overflow: hidden;
+        cursor: pointer;
       ">
         <img
           src="${flagUrl}"
@@ -100,12 +100,14 @@ const createOriginIcon = (countryCode: string, color: string) => {
             height: 100%;
             object-fit: cover;
             display: block;
+            pointer-events: none;
           "
         />
       </div>
     `,
     iconSize: [50, 38],
     iconAnchor: [25, 19],
+    popupAnchor: [0, -38],
   });
 };
 
@@ -126,6 +128,7 @@ const destinationIcon = L.divIcon({
       position: relative;
       overflow: hidden;
       animation: destination-pulse 2s ease-in-out infinite;
+      cursor: pointer;
     ">
       <img
         src="https://flagcdn.com/w80/uz.png"
@@ -136,12 +139,14 @@ const destinationIcon = L.divIcon({
           height: 100%;
           object-fit: cover;
           display: block;
+          pointer-events: none;
         "
       />
     </div>
   `,
   iconSize: [65, 49],
   iconAnchor: [32, 24],
+  popupAnchor: [0, -49],
 });
 
 export default function RouteMap() {
@@ -180,10 +185,12 @@ export default function RouteMap() {
         border-radius: 12px;
         padding: 0;
         box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        z-index: 10000 !important;
       }
 
       .custom-popup .leaflet-popup-tip {
         box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        z-index: 10000 !important;
       }
 
       .custom-popup .leaflet-popup-content {
@@ -192,16 +199,30 @@ export default function RouteMap() {
       }
 
       .custom-popup h3 {
-        margin: 0 0 8px 0;
-        font-size: 18px;
-        font-weight: 700;
-        color: #1a202c;
+        margin: 0 !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #1a202c !important;
+        line-height: 1.2 !important;
       }
 
       .custom-popup p {
         margin: 0;
         font-size: 14px;
         color: #718096;
+      }
+
+      .leaflet-marker-icon {
+        cursor: pointer !important;
+        z-index: 1000 !important;
+      }
+
+      .leaflet-marker-pane {
+        z-index: 1000 !important;
+      }
+
+      .leaflet-popup-pane {
+        z-index: 9999 !important;
       }
 
       .curved-route {
@@ -298,7 +319,8 @@ export default function RouteMap() {
               overflow: "hidden",
               boxShadow: "0 25px 80px rgba(0,0,0,0.12)",
               border: "6px solid white",
-              position: "relative"
+              position: "relative",
+              cursor: "grab"
             }}>
               <MapContainer
                 center={[42, 58]}
@@ -321,36 +343,13 @@ export default function RouteMap() {
                 {/* Origin markers */}
                 {originLocations.map((location) => {
                   const countryCode = (location as any).code || "cn";
-                  const flagUrl = countryCode === "eu"
-                    ? "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
-                    : `https://flagcdn.com/w80/${countryCode}.png`;
 
                   return (
                     <Marker
                       key={location.name}
                       position={[location.lat, location.lng]}
-                      icon={createOriginIcon(countryCode, (location as any).color || "#3b82f6")}
-                    >
-                      <Popup className="custom-popup">
-                        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                          <img
-                            src={flagUrl}
-                            alt={`${location.name} Flag`}
-                            crossOrigin="anonymous"
-                            style={{
-                              width: "50px",
-                              height: "38px",
-                              objectFit: "cover",
-                              borderRadius: "4px",
-                              boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
-                            }}
-                          />
-                          <div>
-                            <h3 style={{ margin: 0 }}>{location.name}</h3>
-                          </div>
-                        </div>
-                      </Popup>
-                    </Marker>
+                      icon={createOriginIcon(countryCode)}
+                    />
                   );
                 })}
 
@@ -358,28 +357,7 @@ export default function RouteMap() {
                 <Marker
                   position={[LOCATIONS.tashkent.lat, LOCATIONS.tashkent.lng]}
                   icon={destinationIcon}
-                >
-                  <Popup className="custom-popup">
-                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                      <img
-                        src="https://flagcdn.com/w80/uz.png"
-                        alt="Uzbekistan Flag"
-                        crossOrigin="anonymous"
-                        style={{
-                          width: "50px",
-                          height: "38px",
-                          objectFit: "cover",
-                          borderRadius: "4px",
-                          boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
-                        }}
-                      />
-                      <div>
-                        <h3 style={{ margin: 0 }}>Uzbekistan</h3>
-                        <p style={{ margin: "4px 0 0 0", fontSize: "13px", color: "#718096" }}>{t("routes-hub")}</p>
-                      </div>
-                    </div>
-                  </Popup>
-                </Marker>
+                />
 
                 {/* Curved route lines */}
                 {routes.map((route, index) => {
