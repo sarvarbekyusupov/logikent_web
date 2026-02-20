@@ -13,9 +13,9 @@ export default function Hero() {
 
         {/* Three italic taglines with emojis */}
         <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mb-5" style={{ fontSize: "clamp(14px, 2vw, 18px)" }}>
-          <span style={{ fontStyle: "italic", fontWeight: "500" }}>{t("hero-tagline1")}</span>
-          <span style={{ fontStyle: "italic", fontWeight: "500" }}>{t("hero-tagline2")}</span>
-          <span style={{ fontStyle: "italic", fontWeight: "500" }}>{t("hero-tagline3")}</span>
+          <span style={{ fontStyle: "italic !important", fontWeight: "400" }}>{t("hero-tagline1")}</span>
+          <span style={{ fontStyle: "italic !important", fontWeight: "400" }}>{t("hero-tagline2")}</span>
+          <span style={{ fontStyle: "italic !important", fontWeight: "400" }}>{t("hero-tagline3")}</span>
         </div>
 
         <div className="d-flex justify-content-center">
