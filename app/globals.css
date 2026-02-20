@@ -656,3 +656,24 @@ body {
   }
 }
 
+/* Responsive Logo Display */
+@media (min-width: 992px) {
+  .desktop-logo {
+    display: block !important;
+  }
+
+  .mobile-logo {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .desktop-logo {
+    display: none !important;
+  }
+
+  .mobile-logo {
+    display: block !important;
+  }
+}
+

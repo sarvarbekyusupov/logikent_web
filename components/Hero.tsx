@@ -6,7 +6,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section id="home" className="hero-section text-white text-center" style={{ paddingTop: "70px", minHeight: "60vh", display: "flex", alignItems: "center" }}>
+    <section id="home" className="hero-section text-white text-center" style={{ paddingTop: "80px", minHeight: "60vh", display: "flex", alignItems: "center" }}>
       <div className="container position-relative" style={{ zIndex: 2, maxWidth: "1200px", padding: "20px" }}>
         <h1 className="display-4 mb-4 fw-bold" style={{ fontSize: "clamp(24px, 5vw, 48px)" }}>{t("hero-title")}</h1>
         <p className="lead mb-4" style={{ fontSize: "clamp(16px, 3vw, 24px)" }}>{t("hero_subtitle")}</p>

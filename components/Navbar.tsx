@@ -44,7 +44,7 @@ export default function Navbar() {
         className="navbar navbar-light fixed-top bg-white"
         style={{
           zIndex: 9999,
-          height: "70px",
+          height: "80px",
           paddingTop: "0",
           paddingBottom: "0",
           boxShadow: scrolled ? "0 2px 15px rgba(0, 0, 0, 0.1)" : "none",
@@ -70,6 +70,13 @@ export default function Navbar() {
             <img
               src="/img/logikent/logo text.png"
               alt="Logikent"
+              className="desktop-logo"
+              style={{ height: "70px", width: "auto" }}
+            />
+            <img
+              src="/img/logikent/logo text.png"
+              alt="Logikent"
+              className="mobile-logo d-none"
               style={{ height: "50px", width: "auto" }}
             />
           </Link>
@@ -179,7 +186,7 @@ export default function Navbar() {
         className="d-lg-none"
         style={{
           position: "fixed",
-          top: "70px",
+          top: "80px",
           left: "0",
           right: "0",
           bottom: "0",
@@ -260,7 +267,7 @@ export default function Navbar() {
         <div
           style={{
             position: "fixed",
-            top: "70px",
+            top: "80px",
             left: "0",
             right: "0",
             bottom: "0",
