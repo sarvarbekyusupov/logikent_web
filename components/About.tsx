@@ -10,7 +10,7 @@ export default function About() {
     <section id="about" className="about-section">
       <div className="container" style={{ maxWidth: "1200px" }}>
         <div className="row align-items-center g-5">
-          <div className="col-lg-6">
+          <div className="col-12 col-lg-6">
             <Image
               src="/pexels-kelly-6572534.jpg"
               alt="About Us"
@@ -19,10 +19,10 @@ export default function About() {
               className="about-image img-fluid"
             />
           </div>
-          <div className="col-lg-6">
+          <div className="col-12 col-lg-6">
             <h2 className="section-title">{t("main-title")}</h2>
             <div className="about-text">
-              <p className="mb-4 fs-5">{t("main-description")}</p>
+              <p className="mb-4" style={{ fontSize: "clamp(14px, 2.5vw, 18px)" }}>{t("main-description")}</p>
               <ul className="list-unstyled">
                 <li className="mb-3 d-flex align-items-start">
                   <i className="fas fa-check-circle text-success me-2 mt-1"></i>

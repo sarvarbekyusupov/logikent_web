@@ -51,7 +51,7 @@ export default function Partners() {
                           src={partner.logo}
                           alt={partner.name}
                           style={{
-                            maxHeight: "150px",
+                            maxHeight: "clamp(60px, 12vw, 150px)",
                             maxWidth: "100%",
                             width: "auto",
                             objectFit: "contain"

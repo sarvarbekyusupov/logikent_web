@@ -23,7 +23,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
-                style={{ fontSize: "1.3rem" }}
+                style={{ fontSize: "clamp(1.2rem, 4vw, 1.5rem)" }}
               >
                 <i className="fa-brands fa-telegram"></i>
               </a>
@@ -32,21 +32,21 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
-                style={{ fontSize: "1.3rem" }}
+                style={{ fontSize: "clamp(1.2rem, 4vw, 1.5rem)" }}
               >
                 <i className="fab fa-instagram"></i>
               </a>
               <a
                 href="#"
                 className="text-white"
-                style={{ fontSize: "1.3rem" }}
+                style={{ fontSize: "clamp(1.2rem, 4vw, 1.5rem)" }}
               >
                 <i className="fab fa-facebook"></i>
               </a>
               <a
                 href="#"
                 className="text-white"
-                style={{ fontSize: "1.3rem" }}
+                style={{ fontSize: "clamp(1.2rem, 4vw, 1.5rem)" }}
               >
                 <i className="fab fa-linkedin"></i>
               </a>
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center mt-3 pt-3 border-top border-secondary">
-          <p className="mb-0 opacity-75" style={{ fontSize: "0.7rem" }}>{t("footer-copyright")}</p>
+          <p className="mb-0 opacity-75" style={{ fontSize: "clamp(12px, 2.5vw, 14px)" }}>{t("footer-copyright")}</p>
         </div>
       </div>
     </footer>

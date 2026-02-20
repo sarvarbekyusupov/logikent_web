@@ -631,7 +631,8 @@ body {
 
 /* Improve touch targets on mobile */
 @media (max-width: 991px) {
-  a, button, .btn {
+  a:not(.navbar-toggler):not(.nav-link),
+  .btn:not(.navbar-toggler) {
     min-height: 44px;
     min-width: 44px;
     display: inline-flex;
@@ -677,3 +678,15 @@ body {
   }
 }
 
+/* Navbar toggler specific styles to override mobile button rules */
+.navbar-toggler {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.navbar-toggler span {
+  display: block !important;
+  transform-origin: center !important;
+}

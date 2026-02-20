@@ -19,12 +19,12 @@ export default function Contact() {
         {/* Order Form and Map Side by Side */}
         <div className="row g-4 justify-content-center">
           {/* Order Form Section */}
-          <div className="col-lg-6">
+          <div className="col-12 col-lg-6">
             <OrderForm />
           </div>
 
           {/* Map Card Section */}
-          <div className="col-lg-6">
+          <div className="col-12 col-lg-6">
             <div className="card shadow-lg border-0 h-100">
               <div className="card-body p-4 d-flex flex-column">
                 <h3 className="card-title fw-bold mb-3" style={{ color: "var(--primary-color)" }}>
@@ -63,7 +63,7 @@ export default function Contact() {
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.5!2d69.231038!3d41.361146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIxJzQwLjEiTiA2OcKwMTMnNTkuOCJF!5e0!3m2!1sen!2suz!4v1234567890"
                     width="100%"
                     height="100%"
-                    style={{ border: 0, minHeight: "250px", borderRadius: "0.375rem" }}
+                    style={{ border: 0, minHeight: "clamp(250px, 40vw, 400px)", borderRadius: "0.375rem" }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

@@ -29,7 +29,7 @@ export default function AboutUs() {
         {/* Value Cards */}
         <div className="row g-4 mb-5">
           {values.map((value, index) => (
-            <div key={index} className="col-md-6 col-lg-3">
+            <div key={index} className="col-12 col-md-6 col-lg-3">
               <div className="card border-0 shadow-sm h-100 hover-card" style={{
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
               }}>
@@ -57,7 +57,7 @@ export default function AboutUs() {
         {/* CTA Button */}
         <div className="row mb-5">
           <div className="col-12 text-center">
-            <Link href={`/about`} className="btn btn-primary btn-lg px-5" style={{ borderRadius: "50px" }}>
+            <Link href={`/about`} className="btn btn-primary btn-lg w-100 w-md-auto px-5" style={{ borderRadius: "50px" }}>
               {t("aboutus-learn-more")} →
             </Link>
           </div>

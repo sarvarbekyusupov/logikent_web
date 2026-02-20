@@ -136,6 +136,7 @@ export default function OrderForm() {
                 onChange={handleChange}
                 required
                 placeholder={t("order-name-placeholder") || "Enter your full name"}
+                style={{ fontSize: "16px" }}
               />
             </div>
 
@@ -151,6 +152,7 @@ export default function OrderForm() {
                 value={formData.company}
                 onChange={handleChange}
                 placeholder={t("order-company-placeholder") || "Enter your company name (optional)"}
+                style={{ fontSize: "16px" }}
               />
             </div>
 
@@ -173,7 +175,7 @@ export default function OrderForm() {
                     required
                     placeholder=""
                     maxLength={12}
-                    style={{ fontFamily: "monospace" }}
+                    style={{ fontFamily: "monospace", fontSize: "16px" }}
                   />
                 </div>
               </div>
@@ -189,6 +191,7 @@ export default function OrderForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  style={{ fontSize: "16px" }}
                 />
               </div>
             </div>
@@ -206,13 +209,14 @@ export default function OrderForm() {
                 required
                 rows={5}
                 placeholder={t("order-message-placeholder") || "Describe your order or inquiry..."}
+                style={{ fontSize: "16px" }}
               ></textarea>
             </div>
 
             <div className="text-center">
               <button
                 type="submit"
-                className="btn btn-lg px-5"
+                className="btn btn-lg w-100 w-md-auto px-5"
                 disabled={isSubmitting}
                 style={{
                   background: isSubmitting ? "var(--secondary-color)" : "var(--primary-color)",

@@ -13,7 +13,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -70,14 +70,7 @@ export default function Navbar() {
             <img
               src="/img/logikent/logo text.png"
               alt="Logikent"
-              className="desktop-logo"
-              style={{ height: "70px", width: "auto" }}
-            />
-            <img
-              src="/img/logikent/logo text.png"
-              alt="Logikent"
-              className="mobile-logo d-none"
-              style={{ height: "50px", width: "auto" }}
+              style={{ height: "clamp(40px, 10vw, 130px)", width: "auto" }}
             />
           </Link>
 
@@ -141,8 +134,17 @@ export default function Navbar() {
             aria-label="Toggle navigation"
             style={{
               border: "none",
-              padding: "10px",
-              background: "transparent"
+              padding: "12px",
+              background: "transparent",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "5px",
+              minWidth: "44px",
+              minHeight: "44px",
+              position: "relative",
+              zIndex: 10001
             }}
           >
             <span
@@ -151,20 +153,9 @@ export default function Navbar() {
                 width: "25px",
                 height: "2px",
                 background: "var(--dark-color)",
-                marginBottom: "5px",
                 transition: "all 0.3s",
-                transform: mobileMenuOpen ? "rotate(45deg) translate(5px, 5px)" : "none"
-              }}
-            ></span>
-            <span
-              style={{
-                display: "block",
-                width: "25px",
-                height: "2px",
-                background: "var(--dark-color)",
-                marginBottom: "5px",
-                opacity: mobileMenuOpen ? "0" : "1",
-                transition: "all 0.3s"
+                transform: mobileMenuOpen ? "rotate(45deg) translate(5px, 5px)" : "none",
+                transformOrigin: "center"
               }}
             ></span>
             <span
@@ -174,7 +165,18 @@ export default function Navbar() {
                 height: "2px",
                 background: "var(--dark-color)",
                 transition: "all 0.3s",
-                transform: mobileMenuOpen ? "rotate(-45deg) translate(7px, -7px)" : "none"
+                opacity: mobileMenuOpen ? "0" : "1"
+              }}
+            ></span>
+            <span
+              style={{
+                display: "block",
+                width: "25px",
+                height: "2px",
+                background: "var(--dark-color)",
+                transition: "all 0.3s",
+                transform: mobileMenuOpen ? "rotate(-45deg) translate(7px, -7px)" : "none",
+                transformOrigin: "center"
               }}
             ></span>
           </button>

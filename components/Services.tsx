@@ -73,17 +73,17 @@ export default function Services() {
 
         <div className="row g-4">
           {services.map((service, index) => (
-            <div key={index} className="col-md-6 col-lg-4">
-              <Link href={`/${language}/services/${service.link}`} className="text-decoration-none">
-                <div className="service-card card text-center border-0 h-100 hover-card" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease" }}>
-                  <div className="card-body p-4">
+            <div key={index} className="col-12 col-md-6 col-lg-4 d-flex">
+              <Link href={`/${language}/services/${service.link}`} className="text-decoration-none w-100">
+                <div className="service-card card text-center border-0 h-100 hover-card w-100" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", display: "flex", flexDirection: "column" }}>
+                  <div className="card-body p-4 d-flex flex-column align-items-center">
                     <div className="icon-wrapper mb-4">
                       <i className={`${service.icon} fa-3x service-icon ${service.color}`}></i>
                     </div>
-                    <h3 className="h4 mb-3 fw-semibold">{t(service.title)}</h3>
-                    <p className="text-muted mb-4">{t(service.text)}</p>
-                    <div className="mt-auto">
-                      <span className="btn btn-outline-primary btn-sm">Learn More →</span>
+                    <h3 className="h4 mb-3 fw-semibold text-center">{t(service.title)}</h3>
+                    <p className="text-muted mb-4 grow text-center">{t(service.text)}</p>
+                    <div className="mt-auto w-100">
+                      <span className="btn btn-outline-primary btn-sm w-100">Learn More →</span>
                     </div>
                   </div>
                 </div>

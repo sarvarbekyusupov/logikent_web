@@ -10,7 +10,7 @@ export default function Consolidation() {
     <section className="py-5 bg-white">
       <div className="container" style={{ maxWidth: "1200px" }}>
         <div className="row align-items-center g-5">
-          <div className="col-lg-6">
+          <div className="col-12 col-lg-6">
             <h2
               className="section-title mb-3"
               style={{ textAlign: "left" }}
@@ -69,7 +69,7 @@ export default function Consolidation() {
             </div>
           </div>
 
-          <div className="col-lg-6 text-center">
+          <div className="col-12 col-lg-6 text-center">
             <div className="mb-4">
               <Image
                 src="/img/logikent/2.jpg"
@@ -77,7 +77,7 @@ export default function Consolidation() {
                 width={500}
                 height={300}
                 className="img-fluid rounded shadow"
-                style={{ maxWidth: "70%" }}
+                style={{ maxWidth: "clamp(80%, 90vw, 70%)" }}
               />
             </div>
             <Image
@@ -86,7 +86,7 @@ export default function Consolidation() {
               width={500}
               height={300}
               className="img-fluid rounded shadow"
-              style={{ maxWidth: "70%" }}
+              style={{ maxWidth: "clamp(80%, 90vw, 70%)" }}
             />
           </div>
         </div>

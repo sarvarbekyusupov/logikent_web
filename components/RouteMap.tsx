@@ -276,7 +276,7 @@ export default function RouteMap() {
   ];
 
   return (
-    <section id="route-map" className="py-5 position-relative overflow-hidden" style={{ background: "linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <section id="route-map" className="position-relative overflow-hidden" style={{ background: "linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)", padding: "clamp(30px, 8vw, 60px) 0" }}>
       {/* Background decoration */}
       <div style={{
         position: "absolute",
@@ -288,37 +288,37 @@ export default function RouteMap() {
         pointerEvents: "none"
       }}></div>
 
-      <div className="container position-relative" style={{ maxWidth: "1200px" }}>
+      <div className="container position-relative px-3 px-md-4" style={{ maxWidth: "1200px" }}>
         {/* Header */}
-        <div className="row mb-5">
+        <div className="row mb-4 mb-md-5">
           <div className="col-12 text-center">
-            <div className="d-inline-flex align-items-center gap-2 mb-3 px-4 py-2 rounded-pill" style={{
+            <div className="d-inline-flex align-items-center gap-2 mb-3 px-3 px-md-4 py-2 rounded-pill" style={{
               background: "linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05))",
               border: "1px solid rgba(37, 99, 235, 0.2)"
             }}>
-              <i className="fas fa-globe-americas" style={{ color: "var(--primary-color)", fontSize: "16px" }}></i>
-              <span style={{ fontSize: "13px", fontWeight: 700, color: "var(--primary-color)", letterSpacing: "1px" }}>
+              <i className="fas fa-globe-americas" style={{ color: "var(--primary-color)", fontSize: "clamp(14px, 3vw, 16px)" }}></i>
+              <span style={{ fontSize: "clamp(11px, 2.5vw, 13px)", fontWeight: 700, color: "var(--primary-color)", letterSpacing: "1px" }}>
                 {t("routes-section-badge")}
               </span>
             </div>
-            <h2 className="section-title mb-3" style={{ fontSize: "48px", fontWeight: 900, color: "#1a202c", letterSpacing: "-1px" }}>
+            <h2 className="section-title mb-3" style={{ fontSize: "clamp(28px, 6vw, 48px)", fontWeight: 900, color: "#1a202c", letterSpacing: "-1px", lineHeight: "1.2" }}>
               {t("routes-title")}
             </h2>
-            <p className="lead" style={{ fontSize: "19px", color: "#64748b", maxWidth: "650px", margin: "0 auto", lineHeight: "1.6" }}>
+            <p className="lead" style={{ fontSize: "clamp(14px, 3vw, 19px)", color: "#64748b", maxWidth: "650px", margin: "0 auto", lineHeight: "1.6", padding: "0 10px" }}>
               {t("routes-subtitle")}
             </p>
           </div>
         </div>
 
         {/* Map */}
-        <div className="row mb-5">
+        <div className="row mb-4 mb-md-5">
           <div className="col-12">
             <div style={{
-              height: "600px",
-              borderRadius: "24px",
+              height: "clamp(350px, 60vw, 600px)",
+              borderRadius: "clamp(12px, 3vw, 24px)",
               overflow: "hidden",
               boxShadow: "0 25px 80px rgba(0,0,0,0.12)",
-              border: "6px solid white",
+              border: "clamp(3px, 1vw, 6px) solid white",
               position: "relative",
               cursor: "grab"
             }}>
@@ -395,24 +395,37 @@ export default function RouteMap() {
                 boxShadow: "0 20px 40px rgba(37, 99, 235, 0.15)"
               }}
             >
-              <div className="card-body p-5">
-                <h3 className="text-white fw-bold mb-3" style={{ fontSize: "28px" }}>
+              <div className="card-body p-4 p-md-5">
+                <h3 className="text-white fw-bold mb-3" style={{ fontSize: "clamp(22px, 4vw, 28px)" }}>
                   {t("routes-cta-title")}
                 </h3>
-                <p className="text-white mb-4" style={{ fontSize: "16px", opacity: 0.95, maxWidth: "600px", margin: "0 auto 24px" }}>
+                <p className="text-white mb-4 mb-md-5" style={{ fontSize: "clamp(14px, 2.5vw, 16px)", opacity: 0.95, maxWidth: "600px", margin: "0 auto 16px", lineHeight: "1.6" }}>
                   {t("routes-cta-description")}
                 </p>
                 <a
                   href="#contact"
-                  className="btn btn-light btn-lg fw-bold px-5"
+                  className="btn btn-light fw-bold text-decoration-none d-inline-flex align-items-center justify-content-center gap-2"
                   style={{
                     borderRadius: "50px",
-                    fontSize: "16px",
-                    color: "var(--primary-color)"
+                    fontSize: "clamp(14px, 2.5vw, 16px)",
+                    color: "var(--primary-color)",
+                    padding: "clamp(12px, 3vw, 16px) clamp(24px, 6vw, 40px)",
+                    fontWeight: 700,
+                    transition: "all 0.3s ease",
+                    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+                    letterSpacing: "0.5px"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)";
                   }}
                 >
-                  <i className="fas fa-paper-plane me-2"></i>
-                  {t("routes-cta-button")}
+                  <i className="fas fa-paper-plane"></i>
+                  <span>{t("routes-cta-button")}</span>
                 </a>
               </div>
             </div>
