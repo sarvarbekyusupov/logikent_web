@@ -9,7 +9,7 @@ export default function Partners() {
     { name: "Samauto", logo: "/img/logikent/partners/samauto.png", isImage: true },
     { name: "Safia Bakery", logo: "/img/logikent/partners/safiabakery.png", isImage: true },
     { name: "Fintec", logo: "/img/logikent/partners/fintec.png", isImage: true },
-    { name: "Eco Control", logo: "/img/logikent/partners/ecocontrol.png", isImage: true },
+    { name: "Electro-Class Control", logo: "/img/partners/electro-class-control.png", isImage: true },
     { name: "Craft Food", logo: "/img/logikent/partners/craftfood.png", isImage: true },
     { name: "Res Hub", logo: "/img/logikent/partners/reshub.png", isImage: true },
     { name: "Basmala Decor", logo: "/img/logikent/partners/basmaladecor.png", isImage: true },
@@ -26,13 +26,7 @@ export default function Partners() {
         </div>
 
         {/* Partners Section */}
-        <div className="row mb-5">
-          <div className="col-12">
-            <h3 className="text-center mb-5 fw-bold" style={{ color: "var(--primary-color)" }}>
-              {t("partners-strategic-title")}
-            </h3>
-          </div>
-          <div className="row justify-content-center g-4">
+        <div className="row justify-content-center g-4">
             {partners.map((partner, index) => (
               <div key={index} className="col-lg-3 col-md-4 col-6 mb-4">
                 <div
@@ -75,7 +69,6 @@ export default function Partners() {
                 </div>
               </div>
             ))}
-          </div>
         </div>
 
         {/* CTA Section */}

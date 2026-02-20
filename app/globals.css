@@ -12,6 +12,7 @@ body {
   font-family: "Poppins", sans-serif;
   color: var(--dark-color);
   scroll-padding-top: 80px;
+  padding-top: 64px;
 }
 
 .container {

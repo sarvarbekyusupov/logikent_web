@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const { t, language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,7 +27,7 @@ export default function Navbar() {
     <nav
       className="navbar navbar-light fixed-top bg-white"
       style={{
-        zIndex: 1000,
+        zIndex: 9999,
         height: "64px",
         paddingTop: "0",
         paddingBottom: "0",
@@ -37,9 +40,9 @@ export default function Navbar() {
         className="container d-flex justify-content-between"
         style={{ maxWidth: "1200px", overflow: "visible", padding: "0", position: "relative" }}
       >
-        <a
+        <Link
           className="navbar-brand"
-          href="#home"
+          href={`/${language}`}
           style={{ paddingTop: "0", paddingBottom: "0", position: "absolute", left: "0", top: "50%", transform: "translateY(-50%)" }}
         >
           <img
@@ -47,7 +50,7 @@ export default function Navbar() {
             alt="Logikent"
             style={{ height: "200px", width: "auto" }}
           />
-        </a>
+        </Link>
 
         <div style={{ marginLeft: "auto", height: "100%" }}>
           {/* Desktop Navigation */}
@@ -55,41 +58,41 @@ export default function Navbar() {
             className="d-none d-md-flex align-items-center"
             style={{ gap: "30px", height: "100%" }}
           >
-            <a
+            <Link
               className="nav-link fw-medium"
-              href="#services"
+              href={`/${language}#services`}
               style={{ fontSize: "15px", color: "var(--dark-color)" }}
             >
-              <span style={{ fontSize: "1.2em" }}>S</span>ervices
-            </a>
-            <a
+              {t("services")}
+            </Link>
+            <Link
               className="nav-link fw-medium"
-              href="#partners"
+              href={`/${language}#partners`}
               style={{ fontSize: "15px", color: "var(--dark-color)" }}
             >
               {t("partners") || "Partners"}
-            </a>
-            <a
+            </Link>
+            <Link
               className="nav-link fw-medium"
-              href="#route-map"
+              href={`/${language}#route-map`}
               style={{ fontSize: "15px", color: "var(--dark-color)" }}
             >
               {t("routes") || "Routes"}
-            </a>
-            <a
+            </Link>
+            <Link
               className="nav-link fw-medium"
-              href="#about-us"
+              href={`/${language}/about`}
               style={{ fontSize: "15px", color: "var(--dark-color)" }}
             >
               {t("about-us") || "About Us"}
-            </a>
-            <a
+            </Link>
+            <Link
               className="nav-link fw-medium"
-              href="#contact"
+              href={`/${language}#contact`}
               style={{ fontSize: "15px", color: "var(--dark-color)" }}
             >
               {t("contact")}
-            </a>
+            </Link>
             <div className="dropdown" style={{ position: "relative" }}>
               <a
                 className="nav-link dropdown-toggle fw-bold"
@@ -134,45 +137,45 @@ export default function Navbar() {
           <div className="d-md-none" style={{ display: "flex", flexDirection: "column" }}>
             {/* Horizontal scrollable navigation items */}
             <div className="nav-scroll-container">
-              <a
+              <Link
                 className="nav-link fw-medium"
-                href="#services"
+                href={`/${language}#services`}
                 style={{ fontSize: "14px", color: "var(--dark-color)" }}
               >
-                <span style={{ fontSize: "1.2em" }}>S</span>ervices
-              </a>
-              <a
+                {t("services")}
+              </Link>
+              <Link
                 className="nav-link fw-medium"
-                href="#partners"
+                href={`/${language}#partners`}
                 style={{ fontSize: "14px", color: "var(--dark-color)" }}
               >
                 {t("partners") || "Partners"}
-              </a>
-              <a
+              </Link>
+              <Link
                 className="nav-link fw-medium"
-                href="#route-map"
+                href={`/${language}#route-map`}
                 style={{ fontSize: "14px", color: "var(--dark-color)" }}
               >
                 {t("routes") || "Routes"}
-              </a>
-              <a
+              </Link>
+              <Link
                 className="nav-link fw-medium"
-                href="#about-us"
+                href={`/${language}/about`}
                 style={{ fontSize: "14px", color: "var(--dark-color)" }}
               >
                 {t("about-us") || "About Us"}
-              </a>
+              </Link>
             </div>
 
             {/* Fixed bottom section with Contact and Language */}
             <div className="nav-fixed-bottom">
-              <a
+              <Link
                 className="nav-link fw-medium"
-                href="#contact"
+                href={`/${language}#contact`}
                 style={{ fontSize: "14px", color: "var(--dark-color)", padding: "5px 0" }}
               >
                 {t("contact")}
-              </a>
+              </Link>
               <div className="dropdown" style={{ position: "relative" }}>
                 <a
                   className="nav-link dropdown-toggle fw-bold"

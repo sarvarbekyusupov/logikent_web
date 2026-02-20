@@ -53,73 +53,63 @@ export default function AirFreightPage() {
             <div className="row">
               <div className="col-lg-8">
                 {/* Main Title */}
-                <div className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>{t("airfreight-title")}</h2>
-                    <p className="text-muted mb-0">{t("airfreight-subtitle")}</p>
-                  </div>
+                <div className="text-center mb-5">
+                  <h2 className="fw-bold mb-3" style={{ color: "var(--primary-color)", fontSize: "2rem" }}>{t("airfreight-title")}</h2>
+                  <p className="text-muted lead" style={{ maxWidth: "700px", margin: "0 auto" }}>{t("airfreight-subtitle")}</p>
                 </div>
 
-                {/* What We Offer */}
-                <div className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
+                {/* What We Offer - Improved centered layout */}
+                <div className="card border-0 shadow-sm mb-5">
+                  <div className="card-body p-5">
+                    <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-star me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("airfreight-what-offer")}
                     </h4>
                     <div className="row g-4">
-                      <div className="col-md-12">
-                        <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
-                            <i className="fas fa-plane text-success"></i>
+                      <div className="col-md-4">
+                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02))" }}>
+                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
+                            <i className="fas fa-plane fa-2x text-white"></i>
                           </div>
-                          <div>
-                            <h5 className="fw-bold mb-2">{t("airfreight-offer1-title")}</h5>
-                            <p className="text-muted mb-0">{t("airfreight-offer1-desc")}</p>
-                          </div>
+                          <h5 className="fw-bold mb-2">{t("airfreight-offer1-title")}</h5>
+                          <p className="text-muted small mb-0">{t("airfreight-offer1-desc")}</p>
                         </div>
                       </div>
-                      <div className="col-md-12">
-                        <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
-                            <i className="fas fa-boxes text-success"></i>
+                      <div className="col-md-4">
+                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.02))" }}>
+                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
+                            <i className="fas fa-boxes fa-2x text-white"></i>
                           </div>
-                          <div>
-                            <h5 className="fw-bold mb-2">{t("airfreight-offer2-title")}</h5>
-                            <p className="text-muted mb-0">{t("airfreight-offer2-desc")}</p>
-                          </div>
+                          <h5 className="fw-bold mb-2">{t("airfreight-offer2-title")}</h5>
+                          <p className="text-muted small mb-0">{t("airfreight-offer2-desc")}</p>
                         </div>
                       </div>
-                      <div className="col-md-12">
-                        <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
-                            <i className="fas fa-bolt text-success"></i>
+                      <div className="col-md-4">
+                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.02))" }}>
+                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
+                            <i className="fas fa-bolt fa-2x text-white"></i>
                           </div>
-                          <div>
-                            <h5 className="fw-bold mb-2">{t("airfreight-offer3-title")}</h5>
-                            <p className="text-muted mb-0">{t("airfreight-offer3-desc")}</p>
-                          </div>
+                          <h5 className="fw-bold mb-2">{t("airfreight-offer3-title")}</h5>
+                          <p className="text-muted small mb-0">{t("airfreight-offer3-desc")}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Why Choose Us */}
-                <div className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
+                {/* Why Choose Us - Improved 2x2 layout */}
+                <div className="card border-0 shadow-sm mb-5">
+                  <div className="card-body p-5">
+                    <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-trophy me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("airfreight-why-choose")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body">
-                            <div className="mb-3">
-                              <div className="rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", background: "rgba(26, 77, 143, 0.1)" }}>
-                                <i className="fas fa-clock fa-2x" style={{ color: "var(--primary-color)" }}></i>
-                              </div>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                          <div className="card-body text-center">
+                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
+                              <i className="fas fa-clock fa-2x text-white"></i>
                             </div>
                             <h5 className="fw-bold mb-2">{t("airfreight-benefit1-title")}</h5>
                             <p className="text-muted small mb-0">{t("airfreight-benefit1-desc")}</p>
@@ -127,12 +117,10 @@ export default function AirFreightPage() {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body">
-                            <div className="mb-3">
-                              <div className="rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", background: "rgba(26, 77, 143, 0.1)" }}>
-                                <i className="fas fa-globe fa-2x" style={{ color: "var(--primary-color)" }}></i>
-                              </div>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                          <div className="card-body text-center">
+                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #3b82f6, #8b5cf6)" }}>
+                              <i className="fas fa-globe fa-2x text-white"></i>
                             </div>
                             <h5 className="fw-bold mb-2">{t("airfreight-benefit2-title")}</h5>
                             <p className="text-muted small mb-0">{t("airfreight-benefit2-desc")}</p>
@@ -140,12 +128,10 @@ export default function AirFreightPage() {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body">
-                            <div className="mb-3">
-                              <div className="rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", background: "rgba(26, 77, 143, 0.1)" }}>
-                                <i className="fas fa-shield-alt fa-2x" style={{ color: "var(--primary-color)" }}></i>
-                              </div>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                          <div className="card-body text-center">
+                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
+                              <i className="fas fa-shield-alt fa-2x text-white"></i>
                             </div>
                             <h5 className="fw-bold mb-2">{t("airfreight-benefit3-title")}</h5>
                             <p className="text-muted small mb-0">{t("airfreight-benefit3-desc")}</p>
@@ -153,12 +139,10 @@ export default function AirFreightPage() {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body">
-                            <div className="mb-3">
-                              <div className="rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", background: "rgba(26, 77, 143, 0.1)" }}>
-                                <i className="fas fa-truck fa-2x" style={{ color: "var(--primary-color)" }}></i>
-                              </div>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                          <div className="card-body text-center">
+                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #8b5cf6, #a78bfa)" }}>
+                              <i className="fas fa-truck fa-2x text-white"></i>
                             </div>
                             <h5 className="fw-bold mb-2">{t("airfreight-benefit4-title")}</h5>
                             <p className="text-muted small mb-0">{t("airfreight-benefit4-desc")}</p>
@@ -169,71 +153,71 @@ export default function AirFreightPage() {
                   </div>
                 </div>
 
-                {/* Types of Cargo */}
-                <div className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
+                {/* Types of Cargo - Improved 3x2 layout */}
+                <div className="card border-0 shadow-sm">
+                  <div className="card-body p-5">
+                    <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-box-open me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("airfreight-cargo-types")}
                     </h4>
-                    <div className="row g-3">
+                    <div className="row g-4">
                       <div className="col-md-6 col-lg-4">
-                        <div className="card border h-100">
-                          <div className="card-body">
-                            <div className="d-flex align-items-center">
-                              <i className="fas fa-box me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">{t("airfreight-cargo1")}</span>
+                        <div className="card h-100 border-0 shadow-sm">
+                          <div className="card-body text-center p-3">
+                            <div className="mb-2">
+                              <i className="fas fa-box fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
+                            <h6 className="fw-bold mb-0">{t("airfreight-cargo1")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card border h-100">
-                          <div className="card-body">
-                            <div className="d-flex align-items-center">
-                              <i className="fas fa-boxes me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">{t("airfreight-cargo2")}</span>
+                        <div className="card h-100 border-0 shadow-sm">
+                          <div className="card-body text-center p-3">
+                            <div className="mb-2">
+                              <i className="fas fa-boxes fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
+                            <h6 className="fw-bold mb-0">{t("airfreight-cargo2")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card border h-100">
-                          <div className="card-body">
-                            <div className="d-flex align-items-center">
-                              <i className="fas fa-weight-hanging me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">{t("airfreight-cargo3")}</span>
+                        <div className="card h-100 border-0 shadow-sm">
+                          <div className="card-body text-center p-3">
+                            <div className="mb-2">
+                              <i className="fas fa-weight-hanging fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
+                            <h6 className="fw-bold mb-0">{t("airfreight-cargo3")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card border h-100">
-                          <div className="card-body">
-                            <div className="d-flex align-items-center">
-                              <i className="fas fa-snowflake me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">{t("airfreight-cargo4")}</span>
+                        <div className="card h-100 border-0 shadow-sm">
+                          <div className="card-body text-center p-3">
+                            <div className="mb-2">
+                              <i className="fas fa-snowflake fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
+                            <h6 className="fw-bold mb-0">{t("airfreight-cargo4")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card border h-100">
-                          <div className="card-body">
-                            <div className="d-flex align-items-center">
-                              <i className="fas fa-gem me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">{t("airfreight-cargo5")}</span>
+                        <div className="card h-100 border-0 shadow-sm">
+                          <div className="card-body text-center p-3">
+                            <div className="mb-2">
+                              <i className="fas fa-gem fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
+                            <h6 className="fw-bold mb-0">{t("airfreight-cargo5")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card border h-100">
-                          <div className="card-body">
-                            <div className="d-flex align-items-center">
-                              <i className="fas fa-file-alt me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">{t("airfreight-cargo6")}</span>
+                        <div className="card h-100 border-0 shadow-sm">
+                          <div className="card-body text-center p-3">
+                            <div className="mb-2">
+                              <i className="fas fa-file-alt fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
                             </div>
+                            <h6 className="fw-bold mb-0">{t("airfreight-cargo6")}</h6>
                           </div>
                         </div>
                       </div>

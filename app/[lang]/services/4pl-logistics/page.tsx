@@ -46,73 +46,63 @@ export default function FourPLPage() {
             <div className="row">
               <div className="col-lg-8">
                 {/* Main Title */}
-                <div className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>{t("4pl-title")}</h2>
-                    <p className="text-muted mb-0">{t("4pl-subtitle")}</p>
-                  </div>
+                <div className="text-center mb-5">
+                  <h2 className="fw-bold mb-3" style={{ color: "var(--primary-color)", fontSize: "2rem" }}>{t("4pl-title")}</h2>
+                  <p className="text-muted lead" style={{ maxWidth: "700px", margin: "0 auto" }}>{t("4pl-subtitle")}</p>
                 </div>
 
-                {/* What We Offer */}
-                <div className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
+                {/* What We Offer - Improved centered layout */}
+                <div className="card border-0 shadow-sm mb-5">
+                  <div className="card-body p-5">
+                    <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-star me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("4pl-what-offer")}
                     </h4>
                     <div className="row g-4">
-                      <div className="col-md-12">
-                        <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
-                            <i className="fas fa-user-tie text-success"></i>
+                      <div className="col-md-4">
+                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02))" }}>
+                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
+                            <i className="fas fa-user-tie fa-2x text-white"></i>
                           </div>
-                          <div>
-                            <h5 className="fw-bold mb-2">{t("4pl-offer1-title")}</h5>
-                            <p className="text-muted mb-0">{t("4pl-offer1-desc")}</p>
-                          </div>
+                          <h5 className="fw-bold mb-2">{t("4pl-offer1-title")}</h5>
+                          <p className="text-muted small mb-0">{t("4pl-offer1-desc")}</p>
                         </div>
                       </div>
-                      <div className="col-md-12">
-                        <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
-                            <i className="fas fa-route text-success"></i>
+                      <div className="col-md-4">
+                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.02))" }}>
+                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
+                            <i className="fas fa-route fa-2x text-white"></i>
                           </div>
-                          <div>
-                            <h5 className="fw-bold mb-2">{t("4pl-offer2-title")}</h5>
-                            <p className="text-muted mb-0">{t("4pl-offer2-desc")}</p>
-                          </div>
+                          <h5 className="fw-bold mb-2">{t("4pl-offer2-title")}</h5>
+                          <p className="text-muted small mb-0">{t("4pl-offer2-desc")}</p>
                         </div>
                       </div>
-                      <div className="col-md-12">
-                        <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
-                            <i className="fas fa-handshake text-success"></i>
+                      <div className="col-md-4">
+                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.02))" }}>
+                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
+                            <i className="fas fa-handshake fa-2x text-white"></i>
                           </div>
-                          <div>
-                            <h5 className="fw-bold mb-2">{t("4pl-offer3-title")}</h5>
-                            <p className="text-muted mb-0">{t("4pl-offer3-desc")}</p>
-                          </div>
+                          <h5 className="fw-bold mb-2">{t("4pl-offer3-title")}</h5>
+                          <p className="text-muted small mb-0">{t("4pl-offer3-desc")}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Key Capabilities */}
-                <div className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
+                {/* Key Capabilities - Improved 2x2 layout */}
+                <div className="card border-0 shadow-sm mb-5">
+                  <div className="card-body p-5">
+                    <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-trophy me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("4pl-capabilities")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body">
-                            <div className="mb-3">
-                              <div className="rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", background: "rgba(26, 77, 143, 0.1)" }}>
-                                <i className="fas fa-chart-line fa-2x" style={{ color: "var(--primary-color)" }}></i>
-                              </div>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                          <div className="card-body text-center">
+                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
+                              <i className="fas fa-chart-line fa-2x text-white"></i>
                             </div>
                             <h5 className="fw-bold mb-2">{t("4pl-cap1-title")}</h5>
                             <p className="text-muted small mb-0">{t("4pl-cap1-desc")}</p>
@@ -120,12 +110,10 @@ export default function FourPLPage() {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body">
-                            <div className="mb-3">
-                              <div className="rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", background: "rgba(26, 77, 143, 0.1)" }}>
-                                <i className="fas fa-globe-americas fa-2x" style={{ color: "var(--primary-color)" }}></i>
-                              </div>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                          <div className="card-body text-center">
+                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #3b82f6, #8b5cf6)" }}>
+                              <i className="fas fa-globe-americas fa-2x text-white"></i>
                             </div>
                             <h5 className="fw-bold mb-2">{t("4pl-cap2-title")}</h5>
                             <p className="text-muted small mb-0">{t("4pl-cap2-desc")}</p>
@@ -133,12 +121,10 @@ export default function FourPLPage() {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body">
-                            <div className="mb-3">
-                              <div className="rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", background: "rgba(26, 77, 143, 0.1)" }}>
-                                <i className="fas fa-shield-alt fa-2x" style={{ color: "var(--primary-color)" }}></i>
-                              </div>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                          <div className="card-body text-center">
+                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
+                              <i className="fas fa-shield-alt fa-2x text-white"></i>
                             </div>
                             <h5 className="fw-bold mb-2">{t("4pl-cap3-title")}</h5>
                             <p className="text-muted small mb-0">{t("4pl-cap3-desc")}</p>
@@ -146,12 +132,10 @@ export default function FourPLPage() {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body">
-                            <div className="mb-3">
-                              <div className="rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", background: "rgba(26, 77, 143, 0.1)" }}>
-                                <i className="fas fa-file-contract fa-2x" style={{ color: "var(--primary-color)" }}></i>
-                              </div>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                          <div className="card-body text-center">
+                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #8b5cf6, #a78bfa)" }}>
+                              <i className="fas fa-file-contract fa-2x text-white"></i>
                             </div>
                             <h5 className="fw-bold mb-2">{t("4pl-cap4-title")}</h5>
                             <p className="text-muted small mb-0">{t("4pl-cap4-desc")}</p>
@@ -162,18 +146,18 @@ export default function FourPLPage() {
                   </div>
                 </div>
 
-                {/* 4PL vs 3PL */}
-                <div className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
+                {/* 4PL vs 3PL - Improved layout */}
+                <div className="card border-0 shadow-sm">
+                  <div className="card-body p-5">
+                    <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-balance-scale me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("4pl-comparison")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
-                        <div className="card h-100 border">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body">
-                            <h5 className="fw-bold mb-3" style={{ color: "var(--primary-color)" }}>{t("4pl-3pl-title")}</h5>
+                            <h5 className="fw-bold mb-3 text-center" style={{ color: "var(--primary-color)" }}>{t("4pl-3pl-title")}</h5>
                             <ul className="list-unstyled small">
                               <li className="mb-2"><i className="fas fa-arrow-right me-2 text-muted"></i>{t("4pl-3pl1")}</li>
                               <li className="mb-2"><i className="fas fa-arrow-right me-2 text-muted"></i>{t("4pl-3pl2")}</li>
@@ -184,9 +168,9 @@ export default function FourPLPage() {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border" style={{ backgroundColor: "rgba(40, 167, 69, 0.05)" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "rgba(40, 167, 69, 0.1)" }}>
                           <div className="card-body">
-                            <h5 className="fw-bold mb-3" style={{ color: "var(--secondary-color)" }}>{t("4pl-4pl-title")}</h5>
+                            <h5 className="fw-bold mb-3 text-center" style={{ color: "var(--secondary-color)" }}>{t("4pl-4pl-title")}</h5>
                             <ul className="list-unstyled small">
                               <li className="mb-2"><i className="fas fa-check-circle me-2 text-success"></i>{t("4pl-4pl1")}</li>
                               <li className="mb-2"><i className="fas fa-check-circle me-2 text-success"></i>{t("4pl-4pl2")}</li>

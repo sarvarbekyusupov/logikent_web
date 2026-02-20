@@ -24,6 +24,9 @@ const LOCATIONS = {
   russia: { lat: 62.5, lng: 95.0, name: "Russia", city: "Moscow", flag: "🇷🇺" },
   uae: { lat: 24.4539, lng: 54.3773, name: "UAE", city: "Dubai", flag: "🇦🇪" },
   eu: { lat: 50.1109, lng: 8.6821, name: "European Union", city: "Frankfurt", flag: "🇪🇺" },
+  kazakhstan: { lat: 51.1605, lng: 71.4704, name: "Kazakhstan", city: "Almaty", flag: "🇰🇿" },
+  belarus: { lat: 53.7098, lng: 27.9534, name: "Belarus", city: "Minsk", flag: "🇧🇾" },
+  india: { lat: 20.5937, lng: 78.9629, name: "India", city: "New Delhi", flag: "🇮🇳" },
   tashkent: { lat: 41.2995, lng: 69.2401, name: "Uzbekistan", city: "Tashkent", flag: "🇺🇿" },
 };
 
@@ -74,20 +77,20 @@ const createOriginIcon = (flag: string) => {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        width: 60px;
+        height: 60px;
+        background: transparent;
         border-radius: 50%;
         border: 3px solid white;
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        font-size: 22px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        font-size: 32px;
         position: relative;
       ">
         <span style="position: relative; z-index: 1;">${flag}</span>
       </div>
     `,
-    iconSize: [44, 44],
-    iconAnchor: [22, 22],
+    iconSize: [60, 60],
+    iconAnchor: [30, 30],
   });
 };
 
@@ -99,21 +102,21 @@ const destinationIcon = L.divIcon({
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      width: 70px;
+      height: 70px;
+      background: transparent;
       border-radius: 50%;
       border: 4px solid white;
-      box-shadow: 0 6px 20px rgba(245, 87, 108, 0.5);
-      font-size: 26px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      font-size: 38px;
       position: relative;
       animation: destination-pulse 2s ease-in-out infinite;
     ">
       <span style="position: relative; z-index: 1;">🇺🇿</span>
     </div>
   `,
-  iconSize: [56, 56],
-  iconAnchor: [28, 28],
+  iconSize: [70, 70],
+  iconAnchor: [35, 35],
 });
 
 export default function RouteMap() {
@@ -129,11 +132,11 @@ export default function RouteMap() {
       @keyframes destination-pulse {
         0%, 100% {
           transform: scale(1);
-          box-shadow: 0 6px 20px rgba(245, 87, 108, 0.5);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
         50% {
-          transform: scale(1.08);
-          box-shadow: 0 8px 30px rgba(245, 87, 108, 0.7);
+          transform: scale(1.1);
+          box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
         }
       }
 
@@ -210,6 +213,9 @@ export default function RouteMap() {
     { from: LOCATIONS.russia, to: LOCATIONS.tashkent, color: "#3b82f6", label: "Russia Route" },
     { from: LOCATIONS.uae, to: LOCATIONS.tashkent, color: "#10b981", label: "UAE Route" },
     { from: LOCATIONS.eu, to: LOCATIONS.tashkent, color: "#8b5cf6", label: "EU Route" },
+    { from: LOCATIONS.kazakhstan, to: LOCATIONS.tashkent, color: "#ec4899", label: "Kazakhstan Route" },
+    { from: LOCATIONS.belarus, to: LOCATIONS.tashkent, color: "#14b8a6", label: "Belarus Route" },
+    { from: LOCATIONS.india, to: LOCATIONS.tashkent, color: "#f97316", label: "India Route" },
   ];
 
   const originLocations = [
@@ -218,6 +224,9 @@ export default function RouteMap() {
     LOCATIONS.russia,
     LOCATIONS.uae,
     LOCATIONS.eu,
+    LOCATIONS.kazakhstan,
+    LOCATIONS.belarus,
+    LOCATIONS.india,
   ];
 
   return (
@@ -294,7 +303,6 @@ export default function RouteMap() {
                     <Popup className="custom-popup">
                       <div>
                         <h3>{location.flag} {location.name}</h3>
-                        <p>{location.city}</p>
                       </div>
                     </Popup>
                   </Marker>
@@ -337,154 +345,6 @@ export default function RouteMap() {
           </div>
         </div>
 
-        {/* Route Cards */}
-        <div className="row g-4">
-          {routes.map((route, index) => (
-            <div key={index} className="col-12 col-md-6 col-lg-4">
-              <div
-                className="card border-0 h-100"
-                style={{
-                  borderRadius: "24px",
-                  overflow: "hidden",
-                  background: "white",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
-                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                  border: "1px solid rgba(0,0,0,0.04)"
-                }}
-                onMouseEnter={(e) => {
-                  const card = e.currentTarget;
-                  card.style.transform = "translateY(-12px)";
-                  card.style.boxShadow = `0 30px 60px -12px ${route.color}30`;
-                }}
-                onMouseLeave={(e) => {
-                  const card = e.currentTarget;
-                  card.style.transform = "translateY(0)";
-                  card.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)";
-                }}
-              >
-                {/* Header with gradient */}
-                <div
-                  className="p-4 position-relative"
-                  style={{
-                    background: `linear-gradient(135deg, ${route.color}08, transparent)`,
-                    borderBottom: `1px solid ${route.color}15`
-                  }}
-                >
-                  <div className="d-flex align-items-center justify-content-between">
-                    <div className="d-flex align-items-center">
-                      <div
-                        className="rounded-circle me-3 d-flex align-items-center justify-content-center"
-                        style={{
-                          width: "56px",
-                          height: "56px",
-                          background: `linear-gradient(135deg, ${route.color}, ${route.color}cc)`,
-                          fontSize: "26px",
-                          boxShadow: `0 8px 24px ${route.color}40`,
-                          border: "3px solid white"
-                        }}
-                      >
-                        {route.from.flag}
-                      </div>
-                      <div>
-                        <div
-                          style={{
-                            fontWeight: 800,
-                            fontSize: "17px",
-                            color: "#1a202c",
-                            marginBottom: "2px",
-                            letterSpacing: "-0.3px"
-                          }}
-                        >
-                          {route.from.name}
-                        </div>
-                        <div style={{ fontSize: "13px", color: "#64748b", fontWeight: 500 }}>
-                          {route.from.city}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Route visualization */}
-                <div className="p-4">
-                  <div className="d-flex align-items-center justify-content-between mb-4">
-                    <div style={{ textAlign: "center", flex: "1" }}>
-                      <div
-                        style={{
-                          width: "14px",
-                          height: "14px",
-                          borderRadius: "50%",
-                          background: route.color,
-                          margin: "0 auto",
-                          boxShadow: `0 0 0 4px ${route.color}20`
-                        }}
-                      ></div>
-                    </div>
-                    <div className="grow mx-3" style={{ height: "4px", position: "relative" }}>
-                      <div
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          background: `linear-gradient(90deg, ${route.color} 0%, ${route.color}60 50%, #f5576c 100%)`,
-                          borderRadius: "3px"
-                        }}
-                      ></div>
-                    </div>
-                    <div style={{ textAlign: "center", flex: "1" }}>
-                      <div
-                        className="rounded-circle d-flex align-items-center justify-content-center"
-                        style={{
-                          width: "36px",
-                          height: "36px",
-                          background: "linear-gradient(135deg, #f093fb, #f5576c)",
-                          margin: "0 auto",
-                          fontSize: "17px",
-                          boxShadow: "0 4px 12px rgba(245, 87, 108, 0.35)",
-                          border: "2px solid white"
-                        }}
-                      >
-                        🇺🇿
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Destination info */}
-                  <div className="d-flex align-items-center justify-content-between">
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: "11px", color: "#94a3b8", fontWeight: 700, marginBottom: "3px", letterSpacing: "0.5px" }}>
-                        {t("routes-origin")}
-                      </div>
-                      <div style={{ fontSize: "15px", color: "#1e293b", fontWeight: 700 }}>
-                        {route.from.name}
-                      </div>
-                    </div>
-                    <div style={{ flex: "1", textAlign: "center" }}>
-                      <div
-                        className="d-inline-flex align-items-center justify-content-center rounded-circle"
-                        style={{
-                          width: "36px",
-                          height: "36px",
-                          background: `${route.color}10`,
-                          border: `2px dashed ${route.color}30`
-                        }}
-                      >
-                        <i className="fas fa-arrow-right" style={{ fontSize: "13px", color: route.color }}></i>
-                      </div>
-                    </div>
-                    <div style={{ flex: 1, textAlign: "right" }}>
-                      <div style={{ fontSize: "11px", color: "#94a3b8", fontWeight: 700, marginBottom: "3px", letterSpacing: "0.5px" }}>
-                        {t("routes-destination")}
-                      </div>
-                      <div style={{ fontSize: "15px", color: "#1e293b", fontWeight: 700 }}>
-                        Uzbekistan
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* CTA Section */}
         <div className="row mt-5">

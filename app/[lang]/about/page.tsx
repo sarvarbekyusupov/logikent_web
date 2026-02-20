@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen">
+      <main className="min-h-screen" style={{ paddingTop: "64px" }}>
         {/* Hero Section */}
         <section className="py-5" style={{ background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
           <div className="container" style={{ maxWidth: "1200px" }}>
@@ -80,9 +80,11 @@ export default function AboutPage() {
                         </div>
                       </div>
                       <div className="col-md-10">
-                        <p className="lead mb-4" style={{ fontSize: "18px", lineHeight: "1.8", color: "#334155" }}>
-                          <strong style={{ color: "var(--primary-color)" }}>Logikent</strong> is an independent logistics company founded by an expert with years of experience in cargo transportation and supply chain management.
-                        </p>
+                        <p
+                          className="lead mb-4"
+                          style={{ fontSize: "18px", lineHeight: "1.8", color: "#334155" }}
+                          dangerouslySetInnerHTML={{ __html: t("about-page-company-description") }}
+                        />
                       </div>
                     </div>
 
