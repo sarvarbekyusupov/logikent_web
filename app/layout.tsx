@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Logikent" }],
   creator: "Logikent",
   publisher: "Logikent",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   metadataBase: new URL("https://logikent.uz"),
   alternates: {
     canonical: "/",

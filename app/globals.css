@@ -489,54 +489,170 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Mobile Navigation Styles */
-.nav-scroll-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 0 10px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) #f0f0f0;
-}
-
-.nav-scroll-container::-webkit-scrollbar {
-  height: 3px;
-}
-
-.nav-scroll-container::-webkit-scrollbar-track {
-  background: #f0f0f0;
-}
-
-.nav-scroll-container::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 2px;
-}
-
-.nav-scroll-container .nav-link {
-  flex: 0 0 auto;
-  white-space: nowrap;
-}
-
-.nav-fixed-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 5px;
-}
-
-/* Hide scrollbar for mobile but keep functionality */
-@media (max-width: 767px) {
-  .nav-scroll-container {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+/* Responsive Improvements */
+@media (max-width: 991px) {
+  /* Make hero sections responsive */
+  .hero-section {
+    padding: 40px 0 !important;
   }
 
-  .nav-scroll-container::-webkit-scrollbar {
-    display: none;
+  .hero-section h1 {
+    font-size: 28px !important;
+  }
+
+  .hero-section h2 {
+    font-size: 24px !important;
+  }
+
+  .hero-section p {
+    font-size: 16px !important;
+  }
+
+  /* Adjust card layouts */
+  .row {
+    margin: 0 !important;
+  }
+
+  .col-lg-3, .col-md-4, .col-md-6 {
+    padding: 8px !important;
+  }
+
+  /* Make service cards full width on mobile */
+  .service-card {
+    margin-bottom: 15px !important;
+  }
+
+  /* Adjust map section */
+  .map-container {
+    height: 400px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Adjust section padding */
+  section {
+    padding: 40px 0 !important;
+  }
+
+  /* Make buttons full width on mobile */
+  .btn-lg {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile-specific adjustments */
+  body {
+    font-size: 14px;
+  }
+
+  /* Reduce logo size on mobile */
+  .navbar-brand img {
+    height: 40px !important;
+  }
+
+  /* Make all sections more compact */
+  section {
+    padding: 30px 0 !important;
+  }
+
+  /* Stack cards vertically */
+  .col-md-4, .col-md-6, .col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 8px !important;
+  }
+
+  /* Adjust partner cards */
+  .partner-card {
+    padding: 15px !important;
+  }
+
+  /* Adjust route map section */
+  #route-map {
+    padding: 30px 15px !important;
+  }
+
+  /* Make contact form responsive */
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+
+  /* Adjust footer */
+  footer {
+    padding: 40px 0 20px !important;
+  }
+
+  footer .row > div {
+    margin-bottom: 20px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 575px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Reduce heading sizes */
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  h4, h5, h6 {
+    font-size: 16px !important;
+  }
+
+  /* Make lead text smaller */
+  .lead {
+    font-size: 14px !important;
+  }
+
+  /* Adjust service cards */
+  .card-body {
+    padding: 15px !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 991px) {
+  a, button, .btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 12px 16px !important;
+  }
+}
+
+/* Optimize images for mobile */
+@media (max-width: 767px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-image {
+    border-radius: 12px;
   }
 }
 
