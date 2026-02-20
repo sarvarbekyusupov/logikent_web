@@ -10,20 +10,30 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen" style={{ paddingTop: "64px" }}>
+      <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="py-5" style={{ background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
-          <div className="container" style={{ maxWidth: "1200px" }}>
-            <div className="row align-items-center">
+        <section
+          className="py-5 position-relative"
+          style={{
+            backgroundImage: "url('/img/logistics-container.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            minHeight: "350px"
+          }}
+        >
+          <div style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(29, 78, 216, 0.75))"
+          }}></div>
+          <div className="container position-relative" style={{ maxWidth: "1200px" }}>
+            <div className="row align-items-center" style={{ minHeight: "350px" }}>
               <div className="col-lg-8 text-white">
-                <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb mb-3">
-                    <li className="breadcrumb-item"><Link href="/" className="text-white">{t("about-page-breadcrumb-home")}</Link></li>
-                    <li className="breadcrumb-item active text-white" aria-current="page">{t("about-page-breadcrumb-current")}</li>
-                  </ol>
-                </nav>
-                <h1 className="display-4 fw-bold mb-3">{t("about-page-hero-title")}</h1>
-                <p className="lead mb-0">{t("about-page-hero-subtitle")}</p>
+                <h1 className="display-3 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>{t("about-page-hero-title")}</h1>
+                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.3)" }}>{t("about-page-hero-subtitle")}</p>
               </div>
             </div>
           </div>
@@ -33,7 +43,7 @@ export default function AboutPage() {
         <div className="container" style={{ maxWidth: "1200px" }}>
           <div className="row mt-4">
             <div className="col-12">
-              <Link href="/" className="btn btn-outline-secondary">
+              <Link href="/" className="btn btn-outline-light">
                 <i className="fas fa-arrow-left me-2"></i>
                 {t("about-page-back-button")}
               </Link>

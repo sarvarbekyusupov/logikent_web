@@ -19,15 +19,15 @@ if (typeof window !== "undefined") {
 
 // Country coordinates (using representative cities)
 const LOCATIONS = {
-  china: { lat: 35.8617, lng: 104.1954, name: "China", city: "Beijing", flag: "🇨🇳" },
-  turkey: { lat: 39.9334, lng: 32.8597, name: "Turkey", city: "Istanbul", flag: "🇹🇷" },
-  russia: { lat: 62.5, lng: 95.0, name: "Russia", city: "Moscow", flag: "🇷🇺" },
-  uae: { lat: 24.4539, lng: 54.3773, name: "UAE", city: "Dubai", flag: "🇦🇪" },
-  eu: { lat: 50.1109, lng: 8.6821, name: "European Union", city: "Frankfurt", flag: "🇪🇺" },
-  kazakhstan: { lat: 51.1605, lng: 71.4704, name: "Kazakhstan", city: "Almaty", flag: "🇰🇿" },
-  belarus: { lat: 53.7098, lng: 27.9534, name: "Belarus", city: "Minsk", flag: "🇧🇾" },
-  india: { lat: 20.5937, lng: 78.9629, name: "India", city: "New Delhi", flag: "🇮🇳" },
-  tashkent: { lat: 41.2995, lng: 69.2401, name: "Uzbekistan", city: "Tashkent", flag: "🇺🇿" },
+  china: { lat: 35.8617, lng: 104.1954, name: "China", city: "Beijing", code: "cn", flag: "🇨🇳" },
+  turkey: { lat: 39.9334, lng: 32.8597, name: "Turkey", city: "Istanbul", code: "tr", flag: "🇹🇷" },
+  russia: { lat: 62.5, lng: 95.0, name: "Russia", city: "Moscow", code: "ru", flag: "🇷🇺" },
+  uae: { lat: 24.4539, lng: 54.3773, name: "UAE", city: "Dubai", code: "ae", flag: "🇦🇪" },
+  germany: { lat: 50.1109, lng: 8.6821, name: "Germany", city: "Frankfurt", code: "de", flag: "🇩🇪" },
+  kazakhstan: { lat: 51.1605, lng: 71.4704, name: "Kazakhstan", city: "Almaty", code: "kz", flag: "🇰🇿" },
+  belarus: { lat: 53.7098, lng: 27.9534, name: "Belarus", city: "Minsk", code: "by", flag: "🇧🇾" },
+  india: { lat: 20.5937, lng: 78.9629, name: "India", city: "New Delhi", code: "in", flag: "🇮🇳" },
+  tashkent: { lat: 41.2995, lng: 69.2401, name: "Uzbekistan", city: "Tashkent", code: "uz", flag: "🇺🇿" },
 };
 
 // Calculate curved path using quadratic Bezier curve
@@ -68,8 +68,8 @@ function calculateCurvedPath(
   return points;
 }
 
-// Custom origin marker icon
-const createOriginIcon = (flag: string) => {
+// Custom origin marker icon with flag image using crossOrigin
+const createOriginIcon = (countryCode: string, color: string) => {
   return L.divIcon({
     className: "custom-origin-marker",
     html: `
@@ -77,24 +77,34 @@ const createOriginIcon = (flag: string) => {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 60px;
-        height: 60px;
-        background: transparent;
-        border-radius: 50%;
+        width: 50px;
+        height: 38px;
+        background: white;
+        border-radius: 4px;
         border: 3px solid white;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-        font-size: 32px;
         position: relative;
+        overflow: hidden;
       ">
-        <span style="position: relative; z-index: 1;">${flag}</span>
+        <img
+          src="https://flagcdn.com/w40/${countryCode}.png"
+          alt="${countryCode}"
+          crossOrigin="anonymous"
+          style="
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          "
+        />
       </div>
     `,
-    iconSize: [60, 60],
-    iconAnchor: [30, 30],
+    iconSize: [50, 38],
+    iconAnchor: [25, 19],
   });
 };
 
-// Custom destination marker icon (Tashkent)
+// Custom destination marker icon (Tashkent) with flag
 const destinationIcon = L.divIcon({
   className: "custom-destination-marker",
   html: `
@@ -102,21 +112,31 @@ const destinationIcon = L.divIcon({
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 70px;
-      height: 70px;
-      background: transparent;
-      border-radius: 50%;
+      width: 65px;
+      height: 49px;
+      background: white;
+      border-radius: 4px;
       border: 4px solid white;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-      font-size: 38px;
       position: relative;
+      overflow: hidden;
       animation: destination-pulse 2s ease-in-out infinite;
     ">
-      <span style="position: relative; z-index: 1;">🇺🇿</span>
+      <img
+        src="https://flagcdn.com/w80/uz.png"
+        alt="Uzbekistan Flag"
+        crossOrigin="anonymous"
+        style="
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        "
+      />
     </div>
   `,
-  iconSize: [70, 70],
-  iconAnchor: [35, 35],
+  iconSize: [65, 49],
+  iconAnchor: [32, 24],
 });
 
 export default function RouteMap() {
@@ -212,21 +232,21 @@ export default function RouteMap() {
     { from: LOCATIONS.turkey, to: LOCATIONS.tashkent, color: "#f59e0b", label: "Turkey Route" },
     { from: LOCATIONS.russia, to: LOCATIONS.tashkent, color: "#3b82f6", label: "Russia Route" },
     { from: LOCATIONS.uae, to: LOCATIONS.tashkent, color: "#10b981", label: "UAE Route" },
-    { from: LOCATIONS.eu, to: LOCATIONS.tashkent, color: "#8b5cf6", label: "EU Route" },
+    { from: LOCATIONS.germany, to: LOCATIONS.tashkent, color: "#8b5cf6", label: "Germany Route" },
     { from: LOCATIONS.kazakhstan, to: LOCATIONS.tashkent, color: "#ec4899", label: "Kazakhstan Route" },
     { from: LOCATIONS.belarus, to: LOCATIONS.tashkent, color: "#14b8a6", label: "Belarus Route" },
     { from: LOCATIONS.india, to: LOCATIONS.tashkent, color: "#f97316", label: "India Route" },
   ];
 
   const originLocations = [
-    LOCATIONS.china,
-    LOCATIONS.turkey,
-    LOCATIONS.russia,
-    LOCATIONS.uae,
-    LOCATIONS.eu,
-    LOCATIONS.kazakhstan,
-    LOCATIONS.belarus,
-    LOCATIONS.india,
+    { ...LOCATIONS.china, color: "#ef4444" },
+    { ...LOCATIONS.turkey, color: "#f59e0b" },
+    { ...LOCATIONS.russia, color: "#3b82f6" },
+    { ...LOCATIONS.uae, color: "#10b981" },
+    { ...LOCATIONS.germany, color: "#8b5cf6" },
+    { ...LOCATIONS.kazakhstan, color: "#ec4899" },
+    { ...LOCATIONS.belarus, color: "#14b8a6" },
+    { ...LOCATIONS.india, color: "#f97316" },
   ];
 
   return (
@@ -298,11 +318,25 @@ export default function RouteMap() {
                   <Marker
                     key={location.name}
                     position={[location.lat, location.lng]}
-                    icon={createOriginIcon(location.flag)}
+                    icon={createOriginIcon((location as any).code || "cn", (location as any).color || "#3b82f6")}
                   >
                     <Popup className="custom-popup">
-                      <div>
-                        <h3>{location.flag} {location.name}</h3>
+                      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                        <img
+                          src={`https://flagcdn.com/w80/${(location as any).code}.png`}
+                          alt={`${location.name} Flag`}
+                          crossOrigin="anonymous"
+                          style={{
+                            width: "50px",
+                            height: "38px",
+                            objectFit: "cover",
+                            borderRadius: "4px",
+                            boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
+                          }}
+                        />
+                        <div>
+                          <h3 style={{ margin: 0 }}>{location.name}</h3>
+                        </div>
                       </div>
                     </Popup>
                   </Marker>
@@ -314,9 +348,23 @@ export default function RouteMap() {
                   icon={destinationIcon}
                 >
                   <Popup className="custom-popup">
-                    <div>
-                      <h3>🇺🇿 Uzbekistan</h3>
-                      <p>{t("routes-hub")}</p>
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                      <img
+                        src="https://flagcdn.com/w80/uz.png"
+                        alt="Uzbekistan Flag"
+                        crossOrigin="anonymous"
+                        style={{
+                          width: "50px",
+                          height: "38px",
+                          objectFit: "cover",
+                          borderRadius: "4px",
+                          boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
+                        }}
+                      />
+                      <div>
+                        <h3 style={{ margin: 0 }}>Uzbekistan</h3>
+                        <p style={{ margin: "4px 0 0 0", fontSize: "13px", color: "#718096" }}>{t("routes-hub")}</p>
+                      </div>
                     </div>
                   </Popup>
                 </Marker>

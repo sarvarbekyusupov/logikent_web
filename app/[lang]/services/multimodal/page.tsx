@@ -16,7 +16,7 @@ export default function MultimodalPage() {
         <section
           className="py-5 position-relative"
           style={{
-            backgroundImage: "url('/img/logikent/multimodal-transport.jpg')",
+            backgroundImage: "url('/img/logistics-container.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             minHeight: "300px"
