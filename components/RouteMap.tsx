@@ -23,7 +23,7 @@ const LOCATIONS = {
   turkey: { lat: 39.9334, lng: 32.8597, name: "Turkey", city: "Istanbul", code: "tr", flag: "🇹🇷" },
   russia: { lat: 62.5, lng: 95.0, name: "Russia", city: "Moscow", code: "ru", flag: "🇷🇺" },
   uae: { lat: 24.4539, lng: 54.3773, name: "UAE", city: "Dubai", code: "ae", flag: "🇦🇪" },
-  germany: { lat: 50.1109, lng: 8.6821, name: "Germany", city: "Frankfurt", code: "de", flag: "🇩🇪" },
+  eu: { lat: 50.1109, lng: 8.6821, name: "European Union", city: "Brussels", code: "eu", flag: "🇪🇺" },
   kazakhstan: { lat: 51.1605, lng: 71.4704, name: "Kazakhstan", city: "Almaty", code: "kz", flag: "🇰🇿" },
   belarus: { lat: 53.7098, lng: 27.9534, name: "Belarus", city: "Minsk", code: "by", flag: "🇧🇾" },
   india: { lat: 20.5937, lng: 78.9629, name: "India", city: "New Delhi", code: "in", flag: "🇮🇳" },
@@ -70,6 +70,11 @@ function calculateCurvedPath(
 
 // Custom origin marker icon with flag image using crossOrigin
 const createOriginIcon = (countryCode: string, color: string) => {
+  // Use different flag source for EU
+  const flagUrl = countryCode === "eu"
+    ? "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
+    : `https://flagcdn.com/w40/${countryCode}.png`;
+
   return L.divIcon({
     className: "custom-origin-marker",
     html: `
@@ -87,7 +92,7 @@ const createOriginIcon = (countryCode: string, color: string) => {
         overflow: hidden;
       ">
         <img
-          src="https://flagcdn.com/w40/${countryCode}.png"
+          src="${flagUrl}"
           alt="${countryCode}"
           crossOrigin="anonymous"
           style="
@@ -232,7 +237,7 @@ export default function RouteMap() {
     { from: LOCATIONS.turkey, to: LOCATIONS.tashkent, color: "#f59e0b", label: "Turkey Route" },
     { from: LOCATIONS.russia, to: LOCATIONS.tashkent, color: "#3b82f6", label: "Russia Route" },
     { from: LOCATIONS.uae, to: LOCATIONS.tashkent, color: "#10b981", label: "UAE Route" },
-    { from: LOCATIONS.germany, to: LOCATIONS.tashkent, color: "#8b5cf6", label: "Germany Route" },
+    { from: LOCATIONS.eu, to: LOCATIONS.tashkent, color: "#8b5cf6", label: "EU Route" },
     { from: LOCATIONS.kazakhstan, to: LOCATIONS.tashkent, color: "#ec4899", label: "Kazakhstan Route" },
     { from: LOCATIONS.belarus, to: LOCATIONS.tashkent, color: "#14b8a6", label: "Belarus Route" },
     { from: LOCATIONS.india, to: LOCATIONS.tashkent, color: "#f97316", label: "India Route" },
@@ -243,7 +248,7 @@ export default function RouteMap() {
     { ...LOCATIONS.turkey, color: "#f59e0b" },
     { ...LOCATIONS.russia, color: "#3b82f6" },
     { ...LOCATIONS.uae, color: "#10b981" },
-    { ...LOCATIONS.germany, color: "#8b5cf6" },
+    { ...LOCATIONS.eu, color: "#8b5cf6" },
     { ...LOCATIONS.kazakhstan, color: "#ec4899" },
     { ...LOCATIONS.belarus, color: "#14b8a6" },
     { ...LOCATIONS.india, color: "#f97316" },
@@ -314,33 +319,40 @@ export default function RouteMap() {
                 />
 
                 {/* Origin markers */}
-                {originLocations.map((location) => (
-                  <Marker
-                    key={location.name}
-                    position={[location.lat, location.lng]}
-                    icon={createOriginIcon((location as any).code || "cn", (location as any).color || "#3b82f6")}
-                  >
-                    <Popup className="custom-popup">
-                      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                        <img
-                          src={`https://flagcdn.com/w80/${(location as any).code}.png`}
-                          alt={`${location.name} Flag`}
-                          crossOrigin="anonymous"
-                          style={{
-                            width: "50px",
-                            height: "38px",
-                            objectFit: "cover",
-                            borderRadius: "4px",
-                            boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
-                          }}
-                        />
-                        <div>
-                          <h3 style={{ margin: 0 }}>{location.name}</h3>
+                {originLocations.map((location) => {
+                  const countryCode = (location as any).code || "cn";
+                  const flagUrl = countryCode === "eu"
+                    ? "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
+                    : `https://flagcdn.com/w80/${countryCode}.png`;
+
+                  return (
+                    <Marker
+                      key={location.name}
+                      position={[location.lat, location.lng]}
+                      icon={createOriginIcon(countryCode, (location as any).color || "#3b82f6")}
+                    >
+                      <Popup className="custom-popup">
+                        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                          <img
+                            src={flagUrl}
+                            alt={`${location.name} Flag`}
+                            crossOrigin="anonymous"
+                            style={{
+                              width: "50px",
+                              height: "38px",
+                              objectFit: "cover",
+                              borderRadius: "4px",
+                              boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
+                            }}
+                          />
+                          <div>
+                            <h3 style={{ margin: 0 }}>{location.name}</h3>
+                          </div>
                         </div>
-                      </div>
-                    </Popup>
-                  </Marker>
-                ))}
+                      </Popup>
+                    </Marker>
+                  );
+                })}
 
                 {/* Tashkent marker */}
                 <Marker

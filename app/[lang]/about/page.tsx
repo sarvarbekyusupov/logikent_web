@@ -15,7 +15,7 @@ export default function AboutPage() {
         <section
           className="py-5 position-relative"
           style={{
-            backgroundImage: "url('/pexels-kelly-6572534.jpg')",
+            backgroundImage: "url('/img/logistics-container.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             minHeight: "350px"

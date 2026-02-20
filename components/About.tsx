@@ -12,7 +12,7 @@ export default function About() {
         <div className="row align-items-center g-5">
           <div className="col-lg-6">
             <Image
-              src="/img/logikent/2.jpg"
+              src="/pexels-kelly-6572534.jpg"
               alt="About Us"
               width={600}
               height={400}
