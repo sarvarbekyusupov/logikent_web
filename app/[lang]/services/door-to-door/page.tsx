@@ -1,26 +1,13 @@
-import { Metadata } from "next";
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
-  const { lang } = await params;
-  return {
-    title: "Door-to-Door Delivery & DDP Services - Logikent",
-    description: "Complete logistics solutions from sender to destination including air, sea, road transport and customs procedures.",
-  };
-}
+export default function DoorToDoorPage() {
+  const { t } = useLanguage();
 
-export default async function DoorToDoorPage({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
-  const { lang } = await params;
   return (
     <>
       <Navbar />
@@ -46,8 +33,8 @@ export default async function DoorToDoorPage({
           <div className="container position-relative" style={{ maxWidth: "1200px" }}>
             <div className="row align-items-center" style={{ minHeight: "300px" }}>
               <div className="col-12 text-white">
-                <h1 className="display-4 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>Door-to-Door Delivery & DDP Services</h1>
-                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }}>Complete logistics solutions from sender to your door</p>
+                <h1 className="display-4 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>{t("door2door-hero-title")}</h1>
+                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }}>{t("door2door-hero-subtitle")}</p>
               </div>
             </div>
           </div>
@@ -61,8 +48,8 @@ export default async function DoorToDoorPage({
                 {/* Main Title */}
                 <div className="card border-0 shadow-sm mb-4">
                   <div className="card-body p-4">
-                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>Complete End-to-End Solutions</h2>
-                    <p className="text-muted mb-0">Hassle-free logistics from pickup to final delivery</p>
+                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>{t("door2door-title")}</h2>
+                    <p className="text-muted mb-0">{t("door2door-subtitle")}</p>
                   </div>
                 </div>
 
@@ -71,39 +58,39 @@ export default async function DoorToDoorPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-star me-2" style={{ color: "var(--accent-color)" }}></i>
-                      What's Included
+                      {t("door2door-whats-included")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-shipping-fast text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">International transportation (air, sea, road and container)</h5>
-                            <p className="text-muted mb-0">All modes of transport available based on your needs</p>
+                            <h5 className="fw-bold mb-2">{t("door2door-include1-title")}</h5>
+                            <p className="text-muted mb-0">{t("door2door-include1-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-passport text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Customs procedures (upon agreement)</h5>
-                            <p className="text-muted mb-0">Complete customs clearance handled by our experts</p>
+                            <h5 className="fw-bold mb-2">{t("door2door-include2-title")}</h5>
+                            <p className="text-muted mb-0">{t("door2door-include2-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-home text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Delivery to the recipient's door</h5>
-                            <p className="text-muted mb-0">Final mile delivery included for maximum convenience</p>
+                            <h5 className="fw-bold mb-2">{t("door2door-include3-title")}</h5>
+                            <p className="text-muted mb-0">{t("door2door-include3-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -116,7 +103,7 @@ export default async function DoorToDoorPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-trophy me-2" style={{ color: "var(--accent-color)" }}></i>
-                      Benefits of Door-to-Door Service
+                      {t("door2door-benefits")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
@@ -127,8 +114,8 @@ export default async function DoorToDoorPage({
                                 <i className="fas fa-handshake fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Hassle-Free</h5>
-                            <p className="text-muted small mb-0">We handle everything from start to finish</p>
+                            <h5 className="fw-bold mb-2">{t("door2door-benefit1-title")}</h5>
+                            <p className="text-muted small mb-0">{t("door2door-benefit1-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -140,8 +127,8 @@ export default async function DoorToDoorPage({
                                 <i className="fas fa-eye fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Full Visibility</h5>
-                            <p className="text-muted small mb-0">Track your shipment at every step</p>
+                            <h5 className="fw-bold mb-2">{t("door2door-benefit2-title")}</h5>
+                            <p className="text-muted small mb-0">{t("door2door-benefit2-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -153,8 +140,8 @@ export default async function DoorToDoorPage({
                                 <i className="fas fa-dollar-sign fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">DDP Available</h5>
-                            <p className="text-muted small mb-0">Delivered Duty Paid - no hidden costs</p>
+                            <h5 className="fw-bold mb-2">{t("door2door-benefit3-title")}</h5>
+                            <p className="text-muted small mb-0">{t("door2door-benefit3-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -166,8 +153,8 @@ export default async function DoorToDoorPage({
                                 <i className="fas fa-globe fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Worldwide</h5>
-                            <p className="text-muted small mb-0">Service available from China, Turkey, EU, UAE</p>
+                            <h5 className="fw-bold mb-2">{t("door2door-benefit4-title")}</h5>
+                            <p className="text-muted small mb-0">{t("door2door-benefit4-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -180,7 +167,7 @@ export default async function DoorToDoorPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-info-circle me-2" style={{ color: "var(--accent-color)" }}></i>
-                      Understanding DDP (Delivered Duty Paid)
+                      {t("door2door-ddp-title")}
                     </h4>
                     <div className="row g-3">
                       <div className="col-md-6 col-lg-4">
@@ -188,7 +175,7 @@ export default async function DoorToDoorPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-check-circle me-3 fa-lg text-success"></i>
-                              <span className="fw-bold">All Import Duties Paid</span>
+                              <span className="fw-bold">{t("door2door-ddp1")}</span>
                             </div>
                           </div>
                         </div>
@@ -198,7 +185,7 @@ export default async function DoorToDoorPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-check-circle me-3 fa-lg text-success"></i>
-                              <span className="fw-bold">All Taxes Covered</span>
+                              <span className="fw-bold">{t("door2door-ddp2")}</span>
                             </div>
                           </div>
                         </div>
@@ -208,7 +195,7 @@ export default async function DoorToDoorPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-check-circle me-3 fa-lg text-success"></i>
-                              <span className="fw-bold">No Hidden Fees</span>
+                              <span className="fw-bold">{t("door2door-ddp3")}</span>
                             </div>
                           </div>
                         </div>
@@ -218,7 +205,7 @@ export default async function DoorToDoorPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-check-circle me-3 fa-lg text-success"></i>
-                              <span className="fw-bold">Complete Clearance</span>
+                              <span className="fw-bold">{t("door2door-ddp4")}</span>
                             </div>
                           </div>
                         </div>
@@ -228,7 +215,7 @@ export default async function DoorToDoorPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-check-circle me-3 fa-lg text-success"></i>
-                              <span className="fw-bold">Predictable Costs</span>
+                              <span className="fw-bold">{t("door2door-ddp5")}</span>
                             </div>
                           </div>
                         </div>
@@ -238,7 +225,7 @@ export default async function DoorToDoorPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-check-circle me-3 fa-lg text-success"></i>
-                              <span className="fw-bold">Time Saving</span>
+                              <span className="fw-bold">{t("door2door-ddp6")}</span>
                             </div>
                           </div>
                         </div>
@@ -252,47 +239,47 @@ export default async function DoorToDoorPage({
               <div className="col-lg-4">
                 <div className="card border-0 shadow-sm mb-4 sticky-top" style={{ top: "100px" }}>
                   <div className="card-body">
-                    <h5 className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>Our Services</h5>
+                    <h5 className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>{t("services-page-sidebar-title")}</h5>
                     <ul className="list-unstyled">
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/air-freight`} className="text-decoration-none text-muted">
-                          <i className="fas fa-plane me-2"></i>Air Freight
+                        <Link href="/services/air-freight" className="text-decoration-none text-muted">
+                          <i className="fas fa-plane me-2"></i>{t("services-air-freight")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/road-transport`} className="text-decoration-none text-muted">
-                          <i className="fas fa-truck me-2"></i>Road Transport
+                        <Link href="/services/road-transport" className="text-decoration-none text-muted">
+                          <i className="fas fa-truck me-2"></i>{t("services-road-transport")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/customs-clearance`} className="text-decoration-none text-muted">
-                          <i className="fas fa-file-signature me-2"></i>Customs Clearance
+                        <Link href="/services/customs-clearance" className="text-decoration-none text-muted">
+                          <i className="fas fa-file-signature me-2"></i>{t("services-customs-clearance")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/door-to-door`} className="text-decoration-none fw-bold" style={{ color: "var(--primary-color)" }}>
-                          <i className="fas fa-door-open me-2"></i>Door-to-Door Delivery
+                        <Link href="/services/door-to-door" className="text-decoration-none fw-bold" style={{ color: "var(--primary-color)" }}>
+                          <i className="fas fa-door-open me-2"></i>{t("services-door-to-door")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/4pl-logistics`} className="text-decoration-none text-muted">
-                          <i className="fas fa-cogs me-2"></i>4PL Logistics
+                        <Link href="/services/4pl-logistics" className="text-decoration-none text-muted">
+                          <i className="fas fa-cogs me-2"></i>{t("services-4pl")}
                         </Link>
                       </li>
                       <li className="mb-4">
-                        <Link href={`/${lang}/services/multimodal`} className="text-decoration-none text-muted">
-                          <i className="fas fa-random me-2"></i>Multimodal Transport
+                        <Link href="/services/multimodal" className="text-decoration-none text-muted">
+                          <i className="fas fa-random me-2"></i>{t("services-multimodal")}
                         </Link>
                       </li>
                     </ul>
                     <hr />
                     <div className="text-center">
-                      <h5 className="fw-bold mb-3">Get Started</h5>
-                      <p className="text-muted small mb-3">Request a door-to-door delivery quote</p>
-                      <Link href={`/${lang}`} className="btn btn-outline-primary w-100 mb-2">
-                        <i className="fas fa-home me-2"></i>Back to Home
+                      <h5 className="fw-bold mb-3">{t("services-page-get-started")}</h5>
+                      <p className="text-muted small mb-3">{t("services-page-get-started-desc")}</p>
+                      <Link href="/" className="btn btn-outline-primary w-100 mb-2">
+                        <i className="fas fa-home me-2"></i>{t("services-page-back-home")}
                       </Link>
-                      <a href={`/${lang}/#contact`} className="btn btn-primary w-100">Contact Us</a>
+                      <a href="/#contact" className="btn btn-primary w-100">{t("services-page-contact")}</a>
                     </div>
                   </div>
                 </div>

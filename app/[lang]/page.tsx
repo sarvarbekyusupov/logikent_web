@@ -6,7 +6,6 @@ import AboutUs from "@/components/AboutUs";
 import Services from "@/components/Services";
 import Consolidation from "@/components/Consolidation";
 import RouteMapWrapper from "@/components/RouteMapWrapper";
-import Routes from "@/components/Routes";
 import Partners from "@/components/Partners";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -33,7 +32,6 @@ export default function Home() {
       <Services />
       <Consolidation />
       <RouteMapWrapper />
-      <Routes />
       <Partners />
       <AboutUs />
       <Contact />

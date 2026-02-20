@@ -3,33 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Partners() {
-  const { t, language } = useLanguage();
-
-  const content = {
-    en: {
-      title: "Our Partners and Clients",
-      subtitle: "Trusted by leading companies worldwide",
-      partnersTitle: "Our Strategic Partners",
-      clientsTitle: "Our Valued Clients",
-      industries: "Industries We Serve",
-    },
-    ru: {
-      title: "Наши партнёры и клиенты",
-      subtitle: "Нам доверяют ведущие компании по всему миру",
-      partnersTitle: "Наши стратегические партнёры",
-      clientsTitle: "Наши цен клиенты",
-      industries: "Отрасли, которые мы обслуживаем",
-    },
-    uz: {
-      title: "Bizning hamkorlar va mijozlarimiz",
-      subtitle: "Butun dunyodagi yetakchi kompaniyalar bizga ishonadi",
-      partnersTitle: "Bizning strategik hamkorlarimiz",
-      clientsTitle: "Bizning qadrlanadigan mijozlarimiz",
-      industries: "Xizmat ko'rsatadigan sanoatlar",
-    },
-  };
-
-  const currentContent = content[language as keyof typeof content];
+  const { t } = useLanguage();
 
   const partners = [
     { name: "Samauto", logo: "/img/logikent/partners/samauto.png", isImage: true },
@@ -46,8 +20,8 @@ export default function Partners() {
       <div className="container" style={{ maxWidth: "1200px" }}>
         <div className="row mb-5">
           <div className="col-12 text-center">
-            <h2 className="section-title">{currentContent.title}</h2>
-            <p className="lead text-muted">{currentContent.subtitle}</p>
+            <h2 className="section-title">{t("partners-clients-title")}</h2>
+            <p className="lead text-muted">{t("partners-clients-subtitle")}</p>
           </div>
         </div>
 
@@ -55,7 +29,7 @@ export default function Partners() {
         <div className="row mb-5">
           <div className="col-12">
             <h3 className="text-center mb-5 fw-bold" style={{ color: "var(--primary-color)" }}>
-              {currentContent.partnersTitle}
+              {t("partners-strategic-title")}
             </h3>
           </div>
           <div className="row justify-content-center g-4">
@@ -110,14 +84,10 @@ export default function Partners() {
             <div className="card border-0 bg-white shadow-sm">
               <div className="card-body p-5 text-center">
                 <h4 className="fw-bold mb-3" style={{ color: "var(--primary-color)" }}>
-                  {language === "ru" ? "Станьте нашим партнёром" : language === "uz" ? "Bizning hamkoringiz bo'ling" : "Become Our Partner"}
+                  {t("partners-cta-title")}
                 </h4>
                 <p className="text-muted mb-4">
-                  {language === "ru"
-                    ? "Мы открыты для сотрудничества с новыми партнёрами и клиентами. Давайте расти вместе!"
-                    : language === "uz"
-                    ? "Biz yangi hamkorlar va mijozlar bilan hamkorlik qilishga tayymiz. Keling, birga o'samiz!"
-                    : "We're open to collaboration with new partners and clients. Let's grow together!"}
+                  {t("partners-cta-description")}
                 </p>
                 <a
                   href="#contact"
@@ -129,7 +99,7 @@ export default function Partners() {
                     fontWeight: "600",
                   }}
                 >
-                  {language === "ru" ? "Связаться с нами" : language === "uz" ? "Biz bilan bog'lanish" : "Contact Us"}
+                  {t("contact-us")}
                 </a>
               </div>
             </div>

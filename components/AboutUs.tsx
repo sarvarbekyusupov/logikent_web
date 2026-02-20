@@ -4,66 +4,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 
 export default function AboutUs() {
-  const { t, language } = useLanguage();
-
-  const content = {
-    en: {
-      title: "About Us",
-      intro: "Your trusted logistics partner with years of experience in cargo transportation and supply chain management.",
-      card1Title: "Clear & Simple",
-      card1Text: "Transparent pricing, no hidden costs, straightforward processes.",
-      card2Title: "Personal Approach",
-      card2Text: "Dedicated manager for each client with flexible solutions.",
-      card3Title: "Full Control",
-      card3Text: "Real-time tracking and constant communication throughout.",
-      card4Title: "Fast & Flexible",
-      card4Text: "Quick decision-making and attentive to every detail.",
-      goalTitle: "Our Goal",
-      goalText: "Your long-term logistics partner for reliable, efficient cargo transport.",
-      tagline: "Logikent — logistics with personal responsibility.",
-      learnMore: "Learn More About Us",
-    },
-    ru: {
-      title: "О нас",
-      intro: "Ваш надежный партнер в логистике с многолетним опытом грузоперевозок.",
-      card1Title: "Чётко и просто",
-      card1Text: "Прозрачные цены, без скрытых платежей и сложностей.",
-      card2Title: "Персональный подход",
-      card2Text: "Персональный менеджер и гибкие решения для каждого клиента.",
-      card3Title: "Полный контроль",
-      card3Text: "Отслеживание в реальном времени и постоянная связь.",
-      card4Title: "Быстро и гибко",
-      card4Text: "Быстрые решения и внимание к каждой детали.",
-      goalTitle: "Наша цель",
-      goalText: "Ваш долгосрочный партнер по надежной транспортировке грузов.",
-      tagline: "Logikent — логистика, за которой стоит личная ответственность.",
-      learnMore: "Узнать больше о нас",
-    },
-    uz: {
-      title: "Biz haqimizda",
-      intro: "Sizning ishonchli logistika hamkoringiz - ko'p yillik tajriba bilan.",
-      card1Title: "Tushunarli va oddiy",
-      card1Text: "Shaffof narxlar, yashirilgan to'lovlar va murakkabliklarsiz.",
-      card2Title: "Shaxsiy yondashuv",
-      card2Text: "Har bir mijoz uchun shaxsiy menejer va moslashuvchan yechimlar.",
-      card3Title: "To'liq nazorat",
-      card3Text: "Real vaqtda kuzatuv va doimiy aloqa.",
-      card4Title: "Tez va moslashuvchan",
-      card4Text: "Tez qarorlar va har bir detalga e'tibor.",
-      goalTitle: "Bizning maqsadimiz",
-      goalText: "Ishonchli va samarali yuk tashish uchun sizning uzoq muddatli hamkoringiz.",
-      tagline: "Logikent — shaxsiy mas'uliyat bilan logistika.",
-      learnMore: "Biz haqida ko'proq",
-    },
-  };
-
-  const currentContent = content[language as keyof typeof content];
+  const { t } = useLanguage();
 
   const values = [
-    { icon: "fa-check-circle", color: "#28a745", title: currentContent.card1Title, text: currentContent.card1Text },
-    { icon: "fa-users", color: "#007bff", title: currentContent.card2Title, text: currentContent.card2Text },
-    { icon: "fa-route", color: "#fd7e14", title: currentContent.card3Title, text: currentContent.card3Text },
-    { icon: "fa-bolt", color: "#ffc107", title: currentContent.card4Title, text: currentContent.card4Text },
+    { icon: "fa-check-circle", color: "#28a745", title: t("aboutus-card1-title"), text: t("aboutus-card1-text") },
+    { icon: "fa-users", color: "#007bff", title: t("aboutus-card2-title"), text: t("aboutus-card2-text") },
+    { icon: "fa-route", color: "#fd7e14", title: t("aboutus-card3-title"), text: t("aboutus-card3-text") },
+    { icon: "fa-bolt", color: "#ffc107", title: t("aboutus-card4-title"), text: t("aboutus-card4-text") },
   ];
 
   return (
@@ -72,9 +19,9 @@ export default function AboutUs() {
         {/* Title */}
         <div className="row mb-5">
           <div className="col-12 text-center">
-            <h2 className="section-title">{currentContent.title}</h2>
+            <h2 className="section-title">{t("aboutus-title")}</h2>
             <p className="lead text-muted mt-3" style={{ maxWidth: "700px", marginInline: "auto" }}>
-              {currentContent.intro}
+              {t("aboutus-intro")}
             </p>
           </div>
         </div>
@@ -110,8 +57,8 @@ export default function AboutUs() {
         {/* CTA Button */}
         <div className="row mb-5">
           <div className="col-12 text-center">
-            <Link href={`/${language}/about`} className="btn btn-primary btn-lg px-5" style={{ borderRadius: "50px" }}>
-              {currentContent.learnMore} →
+            <Link href={`/about`} className="btn btn-primary btn-lg px-5" style={{ borderRadius: "50px" }}>
+              {t("aboutus-learn-more")} →
             </Link>
           </div>
         </div>
@@ -126,9 +73,9 @@ export default function AboutUs() {
                 <div className="mb-3">
                   <i className="fas fa-bullseye fa-3x opacity-75"></i>
                 </div>
-                <h4 className="fw-bold mb-3">{currentContent.goalTitle}</h4>
+                <h4 className="fw-bold mb-3">{t("aboutus-goal-title")}</h4>
                 <p className="mb-0" style={{ fontSize: "1.1rem", maxWidth: "800px", marginInline: "auto" }}>
-                  {currentContent.goalText}
+                  {t("aboutus-goal-text")}
                 </p>
               </div>
             </div>
@@ -139,7 +86,7 @@ export default function AboutUs() {
         <div className="row">
           <div className="col-12 text-center">
             <p className="text-muted fst-italic fw-bold mb-0" style={{ fontSize: "1.1rem" }}>
-              {currentContent.tagline}
+              {t("aboutus-tagline")}
             </p>
           </div>
         </div>

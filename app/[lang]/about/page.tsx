@@ -1,20 +1,12 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
-  return {
-    title: "About Us - Logikent Logistics Company",
-    description: "Learn more about Logikent - your trusted logistics partner with years of experience in cargo transportation and supply chain management.",
-  };
-}
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
   return (
     <>
       <Navbar />
@@ -26,12 +18,12 @@ export default function AboutPage() {
               <div className="col-lg-8 text-white">
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb mb-3">
-                    <li className="breadcrumb-item"><Link href="/" className="text-white">Home</Link></li>
-                    <li className="breadcrumb-item active text-white" aria-current="page">About Us</li>
+                    <li className="breadcrumb-item"><Link href="/" className="text-white">{t("about-page-breadcrumb-home")}</Link></li>
+                    <li className="breadcrumb-item active text-white" aria-current="page">{t("about-page-breadcrumb-current")}</li>
                   </ol>
                 </nav>
-                <h1 className="display-4 fw-bold mb-3">About Logikent</h1>
-                <p className="lead mb-0">Your trusted partner in logistics solutions since our founding</p>
+                <h1 className="display-4 fw-bold mb-3">{t("about-page-hero-title")}</h1>
+                <p className="lead mb-0">{t("about-page-hero-subtitle")}</p>
               </div>
             </div>
           </div>
@@ -43,7 +35,7 @@ export default function AboutPage() {
             <div className="col-12">
               <Link href="/" className="btn btn-outline-secondary">
                 <i className="fas fa-arrow-left me-2"></i>
-                Back to Home
+                {t("about-page-back-button")}
               </Link>
             </div>
           </div>
@@ -52,23 +44,104 @@ export default function AboutPage() {
         {/* Our Story */}
         <section className="py-5">
           <div className="container" style={{ maxWidth: "1200px" }}>
+            <div className="row mb-4">
+              <div className="col-12 text-center">
+                <div className="d-inline-flex align-items-center gap-2 mb-3 px-4 py-2 rounded-pill" style={{
+                  background: "linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05))",
+                  border: "1px solid rgba(37, 99, 235, 0.2)"
+                }}>
+                  <i className="fas fa-book-open" style={{ color: "var(--primary-color)", fontSize: "14px" }}></i>
+                  <span style={{ fontSize: "13px", fontWeight: 700, color: "var(--primary-color)", letterSpacing: "1px" }}>
+                    {t("about-page-story-badge")}
+                  </span>
+                </div>
+                <h2 className="fw-bold" style={{ fontSize: "42px", color: "#1a202c", letterSpacing: "-0.5px" }}>
+                  {t("about-page-story-title")}
+                </h2>
+              </div>
+            </div>
+
             <div className="row">
               <div className="col-lg-12">
-                <h2 className="mb-4" style={{ color: "var(--primary-color)" }}>Our Story</h2>
-                <div className="card border-0 shadow-sm">
-                  <div className="card-body p-5">
-                    <p className="lead mb-3" style={{ lineHeight: "1.8" }}>
-                      <strong>Logikent</strong> is an independent logistics company founded by an expert with years of experience in cargo transportation and supply chain management.
-                    </p>
-                    <p className="mb-3" style={{ lineHeight: "1.8" }}>
-                      We created Logikent with a simple idea: logistics should be clear, reliable, and manageable. No unnecessary bureaucracy, complex processes, or unjustified costs.
-                    </p>
-                    <p className="mb-3" style={{ lineHeight: "1.8" }}>
-                      Unlike major operators where clients are just numbers in the system, we focus on a personal approach, flexibility, and quick decision-making.
-                    </p>
-                    <p style={{ lineHeight: "1.8" }}>
-                      We carefully plan each route, control every stage of transportation, and stay always in touch. We are faster. More flexible. More attentive to details.
-                    </p>
+                <div className="card border-0 shadow-lg" style={{ borderRadius: "24px", overflow: "hidden" }}>
+                  <div className="card-body p-5" style={{ background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
+                    <div className="row align-items-center">
+                      <div className="col-md-2 text-center mb-4 mb-md-0">
+                        <div
+                          className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                          style={{
+                            width: "100px",
+                            height: "100px",
+                            background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))",
+                            boxShadow: "0 12px 40px rgba(37, 99, 235, 0.25)"
+                          }}
+                        >
+                          <i className="fas fa-building fa-2x text-white"></i>
+                        </div>
+                      </div>
+                      <div className="col-md-10">
+                        <p className="lead mb-4" style={{ fontSize: "18px", lineHeight: "1.8", color: "#334155" }}>
+                          <strong style={{ color: "var(--primary-color)" }}>Logikent</strong> is an independent logistics company founded by an expert with years of experience in cargo transportation and supply chain management.
+                        </p>
+                      </div>
+                    </div>
+
+                    <hr className="my-4" style={{ opacity: "0.1" }} />
+
+                    <div className="row g-4">
+                      <div className="col-md-6">
+                        <div className="d-flex align-items-start gap-3 p-4 rounded-3" style={{ background: "white", border: "1px solid rgba(37, 99, 235, 0.1)" }}>
+                          <div
+                            className="rounded-circle d-flex align-items-center justify-content-center shrink-0"
+                            style={{ width: "50px", height: "50px", background: "rgba(37, 99, 235, 0.1)" }}
+                          >
+                            <i className="fas fa-lightbulb" style={{ color: "var(--primary-color)", fontSize: "18px" }}></i>
+                          </div>
+                          <div>
+                            <h5 className="fw-bold mb-2" style={{ color: "#1e293b" }}>{t("about-page-philosophy-title")}</h5>
+                            <p className="mb-0" style={{ fontSize: "15px", color: "#64748b", lineHeight: "1.6" }}>
+                              {t("about-page-philosophy-text")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-md-6">
+                        <div className="d-flex align-items-start gap-3 p-4 rounded-3" style={{ background: "white", border: "1px solid rgba(37, 99, 235, 0.1)" }}>
+                          <div
+                            className="rounded-circle d-flex align-items-center justify-content-center shrink-0"
+                            style={{ width: "50px", height: "50px", background: "rgba(37, 99, 235, 0.1)" }}
+                          >
+                            <i className="fas fa-heart" style={{ color: "var(--primary-color)", fontSize: "18px" }}></i>
+                          </div>
+                          <div>
+                            <h5 className="fw-bold mb-2" style={{ color: "#1e293b" }}>{t("about-page-approach-title")}</h5>
+                            <p className="mb-0" style={{ fontSize: "15px", color: "#64748b", lineHeight: "1.6" }}>
+                              {t("about-page-approach-text")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="row mt-4">
+                      <div className="col-12">
+                        <div className="d-flex align-items-start gap-3 p-4 rounded-3" style={{ background: "linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02))", border: "1px solid rgba(37, 99, 235, 0.15)" }}>
+                          <div
+                            className="rounded-circle d-flex align-items-center justify-content-center shrink-0"
+                            style={{ width: "50px", height: "50px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}
+                          >
+                            <i className="fas fa-rocket text-white" style={{ fontSize: "18px" }}></i>
+                          </div>
+                          <div className="grow">
+                            <h5 className="fw-bold mb-2" style={{ color: "#1e293b" }}>{t("about-page-commitment-title")}</h5>
+                            <p className="mb-0" style={{ fontSize: "15px", color: "#64748b", lineHeight: "1.6" }}>
+                              {t("about-page-commitment-text")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -79,7 +152,7 @@ export default function AboutPage() {
         {/* Our Values */}
         <section className="py-5 bg-light">
           <div className="container" style={{ maxWidth: "1200px" }}>
-            <h2 className="text-center mb-5" style={{ color: "var(--primary-color)" }}>Our Core Values</h2>
+            <h2 className="text-center mb-5" style={{ color: "var(--primary-color)" }}>{t("about-page-values-title")}</h2>
             <div className="row g-4">
               <div className="col-md-6 col-lg-3">
                 <div className="card border-0 shadow-sm h-100 text-center hover-card">
@@ -87,8 +160,8 @@ export default function AboutPage() {
                     <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "80px", height: "80px", backgroundColor: "#28a74520" }}>
                       <i className="fas fa-check-circle fa-2x" style={{ color: "#28a745" }}></i>
                     </div>
-                    <h5 className="fw-bold mb-3">Clear & Simple</h5>
-                    <p className="text-muted small">Transparent pricing, no hidden costs, straightforward processes without bureaucracy.</p>
+                    <h5 className="fw-bold mb-3">{t("about-page-value1-name")}</h5>
+                    <p className="text-muted small">{t("about-page-value1-text")}</p>
                   </div>
                 </div>
               </div>
@@ -98,8 +171,8 @@ export default function AboutPage() {
                     <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "80px", height: "80px", backgroundColor: "#007bff20" }}>
                       <i className="fas fa-users fa-2x" style={{ color: "#007bff" }}></i>
                     </div>
-                    <h5 className="fw-bold mb-3">Personal Approach</h5>
-                    <p className="text-muted small">Dedicated manager for each client with flexible solutions and attention.</p>
+                    <h5 className="fw-bold mb-3">{t("about-page-value2-name")}</h5>
+                    <p className="text-muted small">{t("about-page-value2-text")}</p>
                   </div>
                 </div>
               </div>
@@ -109,8 +182,8 @@ export default function AboutPage() {
                     <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "80px", height: "80px", backgroundColor: "#fd7e1420" }}>
                       <i className="fas fa-route fa-2x" style={{ color: "#fd7e14" }}></i>
                     </div>
-                    <h5 className="fw-bold mb-3">Full Control</h5>
-                    <p className="text-muted small">Real-time tracking and constant communication throughout the journey.</p>
+                    <h5 className="fw-bold mb-3">{t("about-page-value3-name")}</h5>
+                    <p className="text-muted small">{t("about-page-value3-text")}</p>
                   </div>
                 </div>
               </div>
@@ -120,8 +193,8 @@ export default function AboutPage() {
                     <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "80px", height: "80px", backgroundColor: "#ffc10720" }}>
                       <i className="fas fa-bolt fa-2x" style={{ color: "#ffc107" }}></i>
                     </div>
-                    <h5 className="fw-bold mb-3">Fast & Flexible</h5>
-                    <p className="text-muted small">Quick decision-making and attentive to every detail of your cargo.</p>
+                    <h5 className="fw-bold mb-3">{t("about-page-value4-name")}</h5>
+                    <p className="text-muted small">{t("about-page-value4-text")}</p>
                   </div>
                 </div>
               </div>
@@ -132,7 +205,7 @@ export default function AboutPage() {
         {/* Mission, Vision, Values */}
         <section className="py-5">
           <div className="container" style={{ maxWidth: "1200px" }}>
-            <h2 className="text-center mb-5" style={{ color: "var(--primary-color)" }}>Our Vision, Values, and Mission</h2>
+            <h2 className="text-center mb-5" style={{ color: "var(--primary-color)" }}>{t("about-page-mission-title")}</h2>
             <div className="row g-4">
               <div className="col-md-4">
                 <div className="card border-0 shadow-sm h-100 text-center hover-card">
@@ -140,8 +213,8 @@ export default function AboutPage() {
                     <div className="mb-4">
                       <i className="fas fa-lightbulb fa-3x" style={{ color: "var(--primary-color)" }}></i>
                     </div>
-                    <h4 className="fw-bold mb-3">Our Mission</h4>
-                    <p className="text-muted mb-0">To contribute to the development of our clients' businesses by providing them with fast, reliable, and efficient logistics solutions.</p>
+                    <h4 className="fw-bold mb-3">{t("about-page-mission-card-title")}</h4>
+                    <p className="text-muted mb-0">{t("about-page-mission-card-text")}</p>
                   </div>
                 </div>
               </div>
@@ -151,8 +224,8 @@ export default function AboutPage() {
                     <div className="mb-4">
                       <i className="fas fa-hand-holding-heart fa-3x" style={{ color: "var(--primary-color)" }}></i>
                     </div>
-                    <h4 className="fw-bold mb-3">Our Vision</h4>
-                    <p className="text-muted mb-0">To become the most reliable and innovative logistics company in Central Asia, taking a leading position with advanced technologies and quality service.</p>
+                    <h4 className="fw-bold mb-3">{t("about-page-vision-card-title")}</h4>
+                    <p className="text-muted mb-0">{t("about-page-vision-card-text")}</p>
                   </div>
                 </div>
               </div>
@@ -162,8 +235,8 @@ export default function AboutPage() {
                     <div className="mb-4">
                       <i className="fas fa-gem fa-3x" style={{ color: "var(--primary-color)" }}></i>
                     </div>
-                    <h4 className="fw-bold mb-3">Our Values</h4>
-                    <p className="text-muted mb-0">We value professionalism, responsibility, and customer focus. We build long-term partnerships based on trust and mutual respect.</p>
+                    <h4 className="fw-bold mb-3">{t("about-page-corevalues-card-title")}</h4>
+                    <p className="text-muted mb-0">{t("about-page-corevalues-card-text")}</p>
                   </div>
                 </div>
               </div>
@@ -181,9 +254,9 @@ export default function AboutPage() {
                     <div className="mb-3">
                       <i className="fas fa-bullseye fa-3x opacity-75"></i>
                     </div>
-                    <h3 className="fw-bold mb-3">Our Goal</h3>
+                    <h3 className="fw-bold mb-3">{t("about-page-goal-title")}</h3>
                     <p className="mb-0" style={{ fontSize: "1.2rem", maxWidth: "800px", marginInline: "auto" }}>
-                      To become a long-term logistics partner for companies that value reliability, speed, and professional approach.
+                      {t("about-page-goal-text")}
                     </p>
                   </div>
                 </div>
@@ -199,14 +272,14 @@ export default function AboutPage() {
               <div className="card-body p-5 text-center">
                 <i className="fas fa-quote-left fa-3x mb-3" style={{ color: "var(--primary-color)" }}></i>
                 <p className="fst-italic mb-4" style={{ fontSize: "1.3rem", lineHeight: "1.6" }}>
-                  "Great experience — in a company where you truly get attention."
+                  "{t("about-page-quote-text")}"
                 </p>
                 <p className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>
-                  Experience on which effective solutions are built.
+                  {t("about-page-quote-subtitle")}
                 </p>
-                <p className="text-muted mb-4">Logikent — logistics with personal responsibility.</p>
+                <p className="text-muted mb-4">{t("about-page-quote-tagline")}</p>
                 <Link href="#contact" className="btn btn-primary btn-lg px-5" style={{ borderRadius: "50px" }}>
-                  Get in Touch
+                  {t("about-page-cta-button")}
                 </Link>
               </div>
             </div>

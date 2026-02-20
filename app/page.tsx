@@ -5,8 +5,7 @@ import About from "@/components/About";
 import AboutUs from "@/components/AboutUs";
 import Services from "@/components/Services";
 import Consolidation from "@/components/Consolidation";
-import Projects from "@/components/Projects";
-import Routes from "@/components/Routes";
+import RouteMapWrapper from "@/components/RouteMapWrapper";
 import Partners from "@/components/Partners";
 import Mission from "@/components/Mission";
 import Contact from "@/components/Contact";
@@ -25,8 +24,7 @@ export default function Home() {
       <About />
       <Services />
       <Consolidation />
-      <Projects />
-      <Routes />
+      <RouteMapWrapper />
       <Partners />
       <AboutUs />
       <Mission />

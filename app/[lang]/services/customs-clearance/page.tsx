@@ -1,26 +1,13 @@
-import { Metadata } from "next";
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
-  const { lang } = await params;
-  return {
-    title: "Customs Clearance Services - Logikent",
-    description: "Professional customs brokerage services including consultation, duty calculation, and document preparation.",
-  };
-}
+export default function CustomsClearancePage() {
+  const { t } = useLanguage();
 
-export default async function CustomsClearancePage({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
-  const { lang } = await params;
   return (
     <>
       <Navbar />
@@ -46,8 +33,8 @@ export default async function CustomsClearancePage({
           <div className="container position-relative" style={{ maxWidth: "1200px" }}>
             <div className="row align-items-center" style={{ minHeight: "300px" }}>
               <div className="col-12 text-white">
-                <h1 className="display-4 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>Customs Clearance Services</h1>
-                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }}>Your local customs broker - Complete customs solutions</p>
+                <h1 className="display-4 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>{t("customs-hero-title")}</h1>
+                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }}>{t("customs-hero-subtitle")}</p>
               </div>
             </div>
           </div>
@@ -61,8 +48,8 @@ export default async function CustomsClearancePage({
                 {/* Main Title */}
                 <div className="card border-0 shadow-sm mb-4">
                   <div className="card-body p-4">
-                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>Professional Customs Brokerage</h2>
-                    <p className="text-muted mb-0">Expert customs services to streamline your import/export operations</p>
+                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>{t("customs-title")}</h2>
+                    <p className="text-muted mb-0">{t("customs-subtitle")}</p>
                   </div>
                 </div>
 
@@ -71,50 +58,50 @@ export default async function CustomsClearancePage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-star me-2" style={{ color: "var(--accent-color)" }}></i>
-                      What We Offer
+                      {t("customs-what-offer")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-comments text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Consultation with customs procedure specialists</h5>
-                            <p className="text-muted mb-0">Expert guidance on all customs requirements and procedures</p>
+                            <h5 className="fw-bold mb-2">{t("customs-offer1-title")}</h5>
+                            <p className="text-muted mb-0">{t("customs-offer1-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-calculator text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Calculation of customs duties and taxes</h5>
-                            <p className="text-muted mb-0">Accurate calculation of all applicable duties and taxes</p>
+                            <h5 className="fw-bold mb-2">{t("customs-offer2-title")}</h5>
+                            <p className="text-muted mb-0">{t("customs-offer2-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-money-bill-wave text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Payment of duties and taxes</h5>
-                            <p className="text-muted mb-0">Handling all payments on your behalf</p>
+                            <h5 className="fw-bold mb-2">{t("customs-offer3-title")}</h5>
+                            <p className="text-muted mb-0">{t("customs-offer3-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-file-alt text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Preparation of declarations and certificates</h5>
-                            <p className="text-muted mb-0">Complete documentation preparation and filing</p>
+                            <h5 className="fw-bold mb-2">{t("customs-offer4-title")}</h5>
+                            <p className="text-muted mb-0">{t("customs-offer4-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -127,7 +114,7 @@ export default async function CustomsClearancePage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-trophy me-2" style={{ color: "var(--accent-color)" }}></i>
-                      Why Choose Our Customs Services?
+                      {t("customs-why-choose")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
@@ -138,8 +125,8 @@ export default async function CustomsClearancePage({
                                 <i className="fas fa-user-tie fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Expert Team</h5>
-                            <p className="text-muted small mb-0">Licensed customs brokers with extensive experience</p>
+                            <h5 className="fw-bold mb-2">{t("customs-benefit1-title")}</h5>
+                            <p className="text-muted small mb-0">{t("customs-benefit1-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -151,8 +138,8 @@ export default async function CustomsClearancePage({
                                 <i className="fas fa-clock fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Fast Processing</h5>
-                            <p className="text-muted small mb-0">Quick clearance to minimize delays</p>
+                            <h5 className="fw-bold mb-2">{t("customs-benefit2-title")}</h5>
+                            <p className="text-muted small mb-0">{t("customs-benefit2-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -164,8 +151,8 @@ export default async function CustomsClearancePage({
                                 <i className="fas fa-hand-holding-usd fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Cost Efficient</h5>
-                            <p className="text-muted small mb-0">Optimized duty calculations to save costs</p>
+                            <h5 className="fw-bold mb-2">{t("customs-benefit3-title")}</h5>
+                            <p className="text-muted small mb-0">{t("customs-benefit3-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -177,8 +164,8 @@ export default async function CustomsClearancePage({
                                 <i className="fas fa-file-contract fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Full Documentation</h5>
-                            <p className="text-muted small mb-0">Complete paperwork handling included</p>
+                            <h5 className="fw-bold mb-2">{t("customs-benefit4-title")}</h5>
+                            <p className="text-muted small mb-0">{t("customs-benefit4-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -191,7 +178,7 @@ export default async function CustomsClearancePage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-folder-open me-2" style={{ color: "var(--accent-color)" }}></i>
-                      Documents We Handle
+                      {t("customs-documents")}
                     </h4>
                     <div className="row g-3">
                       <div className="col-md-6 col-lg-4">
@@ -199,7 +186,7 @@ export default async function CustomsClearancePage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-file-invoice me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Customs Declarations</span>
+                              <span className="fw-bold">{t("customs-doc1")}</span>
                             </div>
                           </div>
                         </div>
@@ -209,7 +196,7 @@ export default async function CustomsClearancePage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-certificate me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Certificates of Origin</span>
+                              <span className="fw-bold">{t("customs-doc2")}</span>
                             </div>
                           </div>
                         </div>
@@ -219,7 +206,7 @@ export default async function CustomsClearancePage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-file-import me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Import/Export Licenses</span>
+                              <span className="fw-bold">{t("customs-doc3")}</span>
                             </div>
                           </div>
                         </div>
@@ -229,7 +216,7 @@ export default async function CustomsClearancePage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-file-invoice-dollar me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Commercial Invoices</span>
+                              <span className="fw-bold">{t("customs-doc4")}</span>
                             </div>
                           </div>
                         </div>
@@ -239,7 +226,7 @@ export default async function CustomsClearancePage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-boxes me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Packing Lists</span>
+                              <span className="fw-bold">{t("customs-doc5")}</span>
                             </div>
                           </div>
                         </div>
@@ -249,7 +236,7 @@ export default async function CustomsClearancePage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-clipboard-check me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Compliance Documents</span>
+                              <span className="fw-bold">{t("customs-doc6")}</span>
                             </div>
                           </div>
                         </div>
@@ -263,47 +250,47 @@ export default async function CustomsClearancePage({
               <div className="col-lg-4">
                 <div className="card border-0 shadow-sm mb-4 sticky-top" style={{ top: "100px" }}>
                   <div className="card-body">
-                    <h5 className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>Our Services</h5>
+                    <h5 className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>{t("services-page-sidebar-title")}</h5>
                     <ul className="list-unstyled">
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/air-freight`} className="text-decoration-none text-muted">
-                          <i className="fas fa-plane me-2"></i>Air Freight
+                        <Link href="/services/air-freight" className="text-decoration-none text-muted">
+                          <i className="fas fa-plane me-2"></i>{t("services-air-freight")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/road-transport`} className="text-decoration-none text-muted">
-                          <i className="fas fa-truck me-2"></i>Road Transport
+                        <Link href="/services/road-transport" className="text-decoration-none text-muted">
+                          <i className="fas fa-truck me-2"></i>{t("services-road-transport")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/customs-clearance`} className="text-decoration-none fw-bold" style={{ color: "var(--primary-color)" }}>
-                          <i className="fas fa-file-signature me-2"></i>Customs Clearance
+                        <Link href="/services/customs-clearance" className="text-decoration-none fw-bold" style={{ color: "var(--primary-color)" }}>
+                          <i className="fas fa-file-signature me-2"></i>{t("services-customs-clearance")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/door-to-door`} className="text-decoration-none text-muted">
-                          <i className="fas fa-door-open me-2"></i>Door-to-Door Delivery
+                        <Link href="/services/door-to-door" className="text-decoration-none text-muted">
+                          <i className="fas fa-door-open me-2"></i>{t("services-door-to-door")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/4pl-logistics`} className="text-decoration-none text-muted">
-                          <i className="fas fa-cogs me-2"></i>4PL Logistics
+                        <Link href="/services/4pl-logistics" className="text-decoration-none text-muted">
+                          <i className="fas fa-cogs me-2"></i>{t("services-4pl")}
                         </Link>
                       </li>
                       <li className="mb-4">
-                        <Link href={`/${lang}/services/multimodal`} className="text-decoration-none text-muted">
-                          <i className="fas fa-random me-2"></i>Multimodal Transport
+                        <Link href="/services/multimodal" className="text-decoration-none text-muted">
+                          <i className="fas fa-random me-2"></i>{t("services-multimodal")}
                         </Link>
                       </li>
                     </ul>
                     <hr />
                     <div className="text-center">
-                      <h5 className="fw-bold mb-3">Need Assistance?</h5>
-                      <p className="text-muted small mb-3">Our customs experts are ready to help</p>
-                      <Link href={`/${lang}`} className="btn btn-outline-primary w-100 mb-2">
-                        <i className="fas fa-home me-2"></i>Back to Home
+                      <h5 className="fw-bold mb-3">{t("services-page-need-assistance")}</h5>
+                      <p className="text-muted small mb-3">{t("services-page-need-assistance-desc")}</p>
+                      <Link href="/" className="btn btn-outline-primary w-100 mb-2">
+                        <i className="fas fa-home me-2"></i>{t("services-page-back-home")}
                       </Link>
-                      <a href={`/${lang}/#contact`} className="btn btn-primary w-100">Contact Us</a>
+                      <a href="/#contact" className="btn btn-primary w-100">{t("services-page-contact")}</a>
                     </div>
                   </div>
                 </div>

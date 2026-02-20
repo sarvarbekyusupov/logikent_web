@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet"
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import dynamic from "next/dynamic";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Fix for default marker icons in Next.js
 if (typeof window !== "undefined") {
@@ -116,6 +117,7 @@ const destinationIcon = L.divIcon({
 });
 
 export default function RouteMap() {
+  const { t } = useLanguage();
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -219,32 +221,50 @@ export default function RouteMap() {
   ];
 
   return (
-    <section id="route-map" className="py-5" style={{ background: "linear-gradient(180deg, #f7fafc 0%, #ffffff 100%)" }}>
-      <div className="container" style={{ maxWidth: "1200px" }}>
+    <section id="route-map" className="py-5 position-relative overflow-hidden" style={{ background: "linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)" }}>
+      {/* Background decoration */}
+      <div style={{
+        position: "absolute",
+        top: 0,
+        right: 0,
+        width: "500px",
+        height: "500px",
+        background: "radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%)",
+        pointerEvents: "none"
+      }}></div>
+
+      <div className="container position-relative" style={{ maxWidth: "1200px" }}>
         {/* Header */}
         <div className="row mb-5">
           <div className="col-12 text-center">
-            <span className="badge bg-primary bg-opacity-10 text-primary mb-3 px-4 py-2" style={{ fontSize: "14px", fontWeight: 600, borderRadius: "50px" }}>
-              Global Network
-            </span>
-            <h2 className="section-title mb-3" style={{ fontSize: "42px", fontWeight: 800, color: "#1a202c" }}>
-              Our International Trade Routes
+            <div className="d-inline-flex align-items-center gap-2 mb-3 px-4 py-2 rounded-pill" style={{
+              background: "linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05))",
+              border: "1px solid rgba(37, 99, 235, 0.2)"
+            }}>
+              <i className="fas fa-globe-americas" style={{ color: "var(--primary-color)", fontSize: "16px" }}></i>
+              <span style={{ fontSize: "13px", fontWeight: 700, color: "var(--primary-color)", letterSpacing: "1px" }}>
+                {t("routes-section-badge")}
+              </span>
+            </div>
+            <h2 className="section-title mb-3" style={{ fontSize: "48px", fontWeight: 900, color: "#1a202c", letterSpacing: "-1px" }}>
+              {t("routes-title")}
             </h2>
-            <p className="lead" style={{ fontSize: "18px", color: "#718096", maxWidth: "700px", margin: "0 auto" }}>
-              Connecting major business hubs across continents to Uzbekistan with efficient logistics solutions
+            <p className="lead" style={{ fontSize: "19px", color: "#64748b", maxWidth: "650px", margin: "0 auto", lineHeight: "1.6" }}>
+              {t("routes-subtitle")}
             </p>
           </div>
         </div>
 
         {/* Map */}
-        <div className="row mb-4">
+        <div className="row mb-5">
           <div className="col-12">
             <div style={{
-              height: "650px",
-              borderRadius: "20px",
+              height: "600px",
+              borderRadius: "24px",
               overflow: "hidden",
-              boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
-              border: "8px solid white"
+              boxShadow: "0 25px 80px rgba(0,0,0,0.12)",
+              border: "6px solid white",
+              position: "relative"
             }}>
               <MapContainer
                 center={[42, 58]}
@@ -257,6 +277,7 @@ export default function RouteMap() {
                 touchZoom={false}
                 boxZoom={false}
                 keyboard={false}
+                attributionControl={false}
               >
                 <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -287,7 +308,7 @@ export default function RouteMap() {
                   <Popup className="custom-popup">
                     <div>
                       <h3>🇺🇿 Uzbekistan</h3>
-                      <p>Tashkent - Our Logistics Hub</p>
+                      <p>{t("routes-hub")}</p>
                     </div>
                   </Popup>
                 </Marker>
@@ -317,49 +338,48 @@ export default function RouteMap() {
         </div>
 
         {/* Route Cards */}
-        <div className="row g-4 mt-4">
+        <div className="row g-4">
           {routes.map((route, index) => (
             <div key={index} className="col-12 col-md-6 col-lg-4">
               <div
-                className="card border-0 shadow-lg h-100 transition-all"
+                className="card border-0 h-100"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "24px",
                   overflow: "hidden",
                   background: "white",
-                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                  border: "1px solid rgba(0,0,0,0.04)"
                 }}
                 onMouseEnter={(e) => {
                   const card = e.currentTarget;
-                  card.style.transform = "translateY(-8px) scale(1.02)";
-                  card.style.boxShadow = `0 25px 50px -12px ${route.color}40`;
+                  card.style.transform = "translateY(-12px)";
+                  card.style.boxShadow = `0 30px 60px -12px ${route.color}30`;
                 }}
                 onMouseLeave={(e) => {
                   const card = e.currentTarget;
-                  card.style.transform = "translateY(0) scale(1)";
-                  card.style.boxShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.1)";
+                  card.style.transform = "translateY(0)";
+                  card.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)";
                 }}
               >
                 {/* Header with gradient */}
                 <div
                   className="p-4 position-relative"
                   style={{
-                    background: `linear-gradient(135deg, ${route.color}15, ${route.color}05)`,
-                    borderBottom: `3px solid ${route.color}`
+                    background: `linear-gradient(135deg, ${route.color}08, transparent)`,
+                    borderBottom: `1px solid ${route.color}15`
                   }}
                 >
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="d-flex align-items-center">
                       <div
-                        className="rounded-circle me-3"
+                        className="rounded-circle me-3 d-flex align-items-center justify-content-center"
                         style={{
-                          width: "60px",
-                          height: "60px",
+                          width: "56px",
+                          height: "56px",
                           background: `linear-gradient(135deg, ${route.color}, ${route.color}cc)`,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "28px",
-                          boxShadow: `0 8px 20px ${route.color}50`,
+                          fontSize: "26px",
+                          boxShadow: `0 8px 24px ${route.color}40`,
                           border: "3px solid white"
                         }}
                       >
@@ -369,82 +389,57 @@ export default function RouteMap() {
                         <div
                           style={{
                             fontWeight: 800,
-                            fontSize: "18px",
+                            fontSize: "17px",
                             color: "#1a202c",
                             marginBottom: "2px",
-                            letterSpacing: "-0.5px"
+                            letterSpacing: "-0.3px"
                           }}
                         >
                           {route.from.name}
                         </div>
-                        <div style={{ fontSize: "14px", color: "#718096", fontWeight: 500 }}>
+                        <div style={{ fontSize: "13px", color: "#64748b", fontWeight: 500 }}>
                           {route.from.city}
                         </div>
                       </div>
-                    </div>
-                    <div
-                      className="badge rounded-3 px-3 py-2"
-                      style={{
-                        background: `${route.color}20`,
-                        color: route.color,
-                        fontWeight: 700,
-                        fontSize: "12px",
-                        border: `1px solid ${route.color}30`
-                      }}
-                    >
-                      ROUTE {index + 1}
                     </div>
                   </div>
                 </div>
 
                 {/* Route visualization */}
                 <div className="p-4">
-                  <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div style={{ textAlign: "center", flex: 1 }}>
+                  <div className="d-flex align-items-center justify-content-between mb-4">
+                    <div style={{ textAlign: "center", flex: "1" }}>
                       <div
                         style={{
-                          width: "12px",
-                          height: "12px",
+                          width: "14px",
+                          height: "14px",
                           borderRadius: "50%",
                           background: route.color,
                           margin: "0 auto",
-                          boxShadow: `0 0 0 4px ${route.color}30`
+                          boxShadow: `0 0 0 4px ${route.color}20`
                         }}
                       ></div>
                     </div>
-                    <div className="grow mx-2" style={{ height: "3px", position: "relative" }}>
+                    <div className="grow mx-3" style={{ height: "4px", position: "relative" }}>
                       <div
                         style={{
                           width: "100%",
                           height: "100%",
-                          background: `linear-gradient(90deg, ${route.color} 0%, ${route.color}40 100%)`,
-                          borderRadius: "2px"
+                          background: `linear-gradient(90deg, ${route.color} 0%, ${route.color}60 50%, #f5576c 100%)`,
+                          borderRadius: "3px"
                         }}
                       ></div>
                     </div>
-                    <div style={{ fontSize: "28px", color: route.color, fontWeight: 500 }}>
-                      →
-                    </div>
-                    <div className="grow mx-2" style={{ height: "3px" }}>
-                      <div
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          background: `linear-gradient(90deg, ${route.color}40 0%, #f5576c 100%)`,
-                          borderRadius: "2px"
-                        }}
-                      ></div>
-                    </div>
-                    <div style={{ textAlign: "center", flex: 1 }}>
+                    <div style={{ textAlign: "center", flex: "1" }}>
                       <div
                         className="rounded-circle d-flex align-items-center justify-content-center"
                         style={{
-                          width: "32px",
-                          height: "32px",
+                          width: "36px",
+                          height: "36px",
                           background: "linear-gradient(135deg, #f093fb, #f5576c)",
                           margin: "0 auto",
-                          fontSize: "16px",
-                          boxShadow: "0 4px 12px rgba(245, 87, 108, 0.4)",
+                          fontSize: "17px",
+                          boxShadow: "0 4px 12px rgba(245, 87, 108, 0.35)",
                           border: "2px solid white"
                         }}
                       >
@@ -454,34 +449,33 @@ export default function RouteMap() {
                   </div>
 
                   {/* Destination info */}
-                  <div className="d-flex align-items-center justify-content-between mt-4">
+                  <div className="d-flex align-items-center justify-content-between">
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: "12px", color: "#a0aec0", fontWeight: 600, marginBottom: "4px" }}>
-                        ORIGIN
+                      <div style={{ fontSize: "11px", color: "#94a3b8", fontWeight: 700, marginBottom: "3px", letterSpacing: "0.5px" }}>
+                        {t("routes-origin")}
                       </div>
-                      <div style={{ fontSize: "14px", color: "#2d3748", fontWeight: 700 }}>
+                      <div style={{ fontSize: "15px", color: "#1e293b", fontWeight: 700 }}>
                         {route.from.name}
                       </div>
                     </div>
-                    <div style={{ flex: 1, textAlign: "center" }}>
+                    <div style={{ flex: "1", textAlign: "center" }}>
                       <div
-                        className="d-inline-flex align-items-center justify-content-center"
+                        className="d-inline-flex align-items-center justify-content-center rounded-circle"
                         style={{
-                          width: "40px",
-                          height: "40px",
-                          borderRadius: "50%",
+                          width: "36px",
+                          height: "36px",
                           background: `${route.color}10`,
-                          border: `2px dashed ${route.color}40`
+                          border: `2px dashed ${route.color}30`
                         }}
                       >
-                        <span style={{ fontSize: "18px", color: route.color }}>→</span>
+                        <i className="fas fa-arrow-right" style={{ fontSize: "13px", color: route.color }}></i>
                       </div>
                     </div>
                     <div style={{ flex: 1, textAlign: "right" }}>
-                      <div style={{ fontSize: "12px", color: "#a0aec0", fontWeight: 600, marginBottom: "4px" }}>
-                        DESTINATION
+                      <div style={{ fontSize: "11px", color: "#94a3b8", fontWeight: 700, marginBottom: "3px", letterSpacing: "0.5px" }}>
+                        {t("routes-destination")}
                       </div>
-                      <div style={{ fontSize: "14px", color: "#2d3748", fontWeight: 700 }}>
+                      <div style={{ fontSize: "15px", color: "#1e293b", fontWeight: 700 }}>
                         Uzbekistan
                       </div>
                     </div>
@@ -490,6 +484,41 @@ export default function RouteMap() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="row mt-5">
+          <div className="col-12">
+            <div
+              className="card border-0 text-center"
+              style={{
+                background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))",
+                borderRadius: "20px",
+                boxShadow: "0 20px 40px rgba(37, 99, 235, 0.15)"
+              }}
+            >
+              <div className="card-body p-5">
+                <h3 className="text-white fw-bold mb-3" style={{ fontSize: "28px" }}>
+                  {t("routes-cta-title")}
+                </h3>
+                <p className="text-white mb-4" style={{ fontSize: "16px", opacity: 0.95, maxWidth: "600px", margin: "0 auto 24px" }}>
+                  {t("routes-cta-description")}
+                </p>
+                <a
+                  href="#contact"
+                  className="btn btn-light btn-lg fw-bold px-5"
+                  style={{
+                    borderRadius: "50px",
+                    fontSize: "16px",
+                    color: "var(--primary-color)"
+                  }}
+                >
+                  <i className="fas fa-paper-plane me-2"></i>
+                  {t("routes-cta-button")}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

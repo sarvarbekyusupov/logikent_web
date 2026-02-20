@@ -1,26 +1,13 @@
-import { Metadata } from "next";
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
-  const { lang } = await params;
-  return {
-    title: "4PL Logistics Services - Logikent",
-    description: "Complete supply chain management including international trade, insurance, cost optimization, and supplier management.",
-  };
-}
+export default function FourPLPage() {
+  const { t } = useLanguage();
 
-export default async function FourPLPage({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
-  const { lang } = await params;
   return (
     <>
       <Navbar />
@@ -46,8 +33,8 @@ export default async function FourPLPage({
           <div className="container position-relative" style={{ maxWidth: "1200px" }}>
             <div className="row align-items-center" style={{ minHeight: "300px" }}>
               <div className="col-12 text-white">
-                <h1 className="display-4 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>4PL Logistics Services</h1>
-                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }}>Complete supply chain management and optimization</p>
+                <h1 className="display-4 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>{t("4pl-hero-title")}</h1>
+                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }}>{t("4pl-hero-subtitle")}</p>
               </div>
             </div>
           </div>
@@ -61,8 +48,8 @@ export default async function FourPLPage({
                 {/* Main Title */}
                 <div className="card border-0 shadow-sm mb-4">
                   <div className="card-body p-4">
-                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>Fourth-Party Logistics Solutions</h2>
-                    <p className="text-muted mb-0">Comprehensive supply chain management with a single point of contact</p>
+                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>{t("4pl-title")}</h2>
+                    <p className="text-muted mb-0">{t("4pl-subtitle")}</p>
                   </div>
                 </div>
 
@@ -71,39 +58,39 @@ export default async function FourPLPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-star me-2" style={{ color: "var(--accent-color)" }}></i>
-                      What We Offer
+                      {t("4pl-what-offer")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-user-tie text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Single point of contact — management of all logistics providers</h5>
-                            <p className="text-muted mb-0">One dedicated manager for all your logistics needs (3PL, carriers, warehouses)</p>
+                            <h5 className="fw-bold mb-2">{t("4pl-offer1-title")}</h5>
+                            <p className="text-muted mb-0">{t("4pl-offer1-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-route text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Selection of optimal transport modes and routes</h5>
-                            <p className="text-muted mb-0">Expert analysis and route optimization for cost and time efficiency</p>
+                            <h5 className="fw-bold mb-2">{t("4pl-offer2-title")}</h5>
+                            <p className="text-muted mb-0">{t("4pl-offer2-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-handshake text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Supplier management — contract handling and partner performance control</h5>
-                            <p className="text-muted mb-0">Complete vendor relationship management and quality control</p>
+                            <h5 className="fw-bold mb-2">{t("4pl-offer3-title")}</h5>
+                            <p className="text-muted mb-0">{t("4pl-offer3-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -116,7 +103,7 @@ export default async function FourPLPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-trophy me-2" style={{ color: "var(--accent-color)" }}></i>
-                      Key Capabilities
+                      {t("4pl-capabilities")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
@@ -127,8 +114,8 @@ export default async function FourPLPage({
                                 <i className="fas fa-chart-line fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Cost Optimization</h5>
-                            <p className="text-muted small mb-0">Strategic cost reduction through network optimization</p>
+                            <h5 className="fw-bold mb-2">{t("4pl-cap1-title")}</h5>
+                            <p className="text-muted small mb-0">{t("4pl-cap1-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -140,8 +127,8 @@ export default async function FourPLPage({
                                 <i className="fas fa-globe-americas fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">International Trade</h5>
-                            <p className="text-muted small mb-0">Expert knowledge of global trade regulations</p>
+                            <h5 className="fw-bold mb-2">{t("4pl-cap2-title")}</h5>
+                            <p className="text-muted small mb-0">{t("4pl-cap2-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -153,8 +140,8 @@ export default async function FourPLPage({
                                 <i className="fas fa-shield-alt fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Insurance Management</h5>
-                            <p className="text-muted small mb-0">Cargo insurance solutions for full protection</p>
+                            <h5 className="fw-bold mb-2">{t("4pl-cap3-title")}</h5>
+                            <p className="text-muted small mb-0">{t("4pl-cap3-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -166,8 +153,8 @@ export default async function FourPLPage({
                                 <i className="fas fa-file-contract fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Contract Management</h5>
-                            <p className="text-muted small mb-0">Professional contract negotiation and management</p>
+                            <h5 className="fw-bold mb-2">{t("4pl-cap4-title")}</h5>
+                            <p className="text-muted small mb-0">{t("4pl-cap4-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -180,18 +167,18 @@ export default async function FourPLPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-balance-scale me-2" style={{ color: "var(--accent-color)" }}></i>
-                      4PL vs 3PL: The Difference
+                      {t("4pl-comparison")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
                         <div className="card h-100 border">
                           <div className="card-body">
-                            <h5 className="fw-bold mb-3" style={{ color: "var(--primary-color)" }}>3PL (Third-Party Logistics)</h5>
+                            <h5 className="fw-bold mb-3" style={{ color: "var(--primary-color)" }}>{t("4pl-3pl-title")}</h5>
                             <ul className="list-unstyled small">
-                              <li className="mb-2"><i className="fas fa-arrow-right me-2 text-muted"></i>Focuses on physical operations</li>
-                              <li className="mb-2"><i className="fas fa-arrow-right me-2 text-muted"></i>Warehousing and transportation</li>
-                              <li className="mb-2"><i className="fas fa-arrow-right me-2 text-muted"></i>Multiple service providers</li>
-                              <li className="mb-0"><i className="fas fa-arrow-right me-2 text-muted"></i>Tactical execution</li>
+                              <li className="mb-2"><i className="fas fa-arrow-right me-2 text-muted"></i>{t("4pl-3pl1")}</li>
+                              <li className="mb-2"><i className="fas fa-arrow-right me-2 text-muted"></i>{t("4pl-3pl2")}</li>
+                              <li className="mb-2"><i className="fas fa-arrow-right me-2 text-muted"></i>{t("4pl-3pl3")}</li>
+                              <li className="mb-0"><i className="fas fa-arrow-right me-2 text-muted"></i>{t("4pl-3pl4")}</li>
                             </ul>
                           </div>
                         </div>
@@ -199,12 +186,12 @@ export default async function FourPLPage({
                       <div className="col-md-6">
                         <div className="card h-100 border" style={{ backgroundColor: "rgba(40, 167, 69, 0.05)" }}>
                           <div className="card-body">
-                            <h5 className="fw-bold mb-3" style={{ color: "var(--secondary-color)" }}>4PL (Fourth-Party Logistics)</h5>
+                            <h5 className="fw-bold mb-3" style={{ color: "var(--secondary-color)" }}>{t("4pl-4pl-title")}</h5>
                             <ul className="list-unstyled small">
-                              <li className="mb-2"><i className="fas fa-check-circle me-2 text-success"></i>Single point of contact</li>
-                              <li className="mb-2"><i className="fas fa-check-circle me-2 text-success"></i>Manages all 3PL providers</li>
-                              <li className="mb-2"><i className="fas fa-check-circle me-2 text-success"></i>Strategic supply chain management</li>
-                              <li className="mb-0"><i className="fas fa-check-circle me-2 text-success"></i>End-to-end visibility</li>
+                              <li className="mb-2"><i className="fas fa-check-circle me-2 text-success"></i>{t("4pl-4pl1")}</li>
+                              <li className="mb-2"><i className="fas fa-check-circle me-2 text-success"></i>{t("4pl-4pl2")}</li>
+                              <li className="mb-2"><i className="fas fa-check-circle me-2 text-success"></i>{t("4pl-4pl3")}</li>
+                              <li className="mb-0"><i className="fas fa-check-circle me-2 text-success"></i>{t("4pl-4pl4")}</li>
                             </ul>
                           </div>
                         </div>
@@ -218,47 +205,47 @@ export default async function FourPLPage({
               <div className="col-lg-4">
                 <div className="card border-0 shadow-sm mb-4 sticky-top" style={{ top: "100px" }}>
                   <div className="card-body">
-                    <h5 className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>Our Services</h5>
+                    <h5 className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>{t("services-page-sidebar-title")}</h5>
                     <ul className="list-unstyled">
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/air-freight`} className="text-decoration-none text-muted">
-                          <i className="fas fa-plane me-2"></i>Air Freight
+                        <Link href="/services/air-freight" className="text-decoration-none text-muted">
+                          <i className="fas fa-plane me-2"></i>{t("services-air-freight")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/road-transport`} className="text-decoration-none text-muted">
-                          <i className="fas fa-truck me-2"></i>Road Transport
+                        <Link href="/services/road-transport" className="text-decoration-none text-muted">
+                          <i className="fas fa-truck me-2"></i>{t("services-road-transport")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/customs-clearance`} className="text-decoration-none text-muted">
-                          <i className="fas fa-file-signature me-2"></i>Customs Clearance
+                        <Link href="/services/customs-clearance" className="text-decoration-none text-muted">
+                          <i className="fas fa-file-signature me-2"></i>{t("services-customs-clearance")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/door-to-door`} className="text-decoration-none text-muted">
-                          <i className="fas fa-door-open me-2"></i>Door-to-Door Delivery
+                        <Link href="/services/door-to-door" className="text-decoration-none text-muted">
+                          <i className="fas fa-door-open me-2"></i>{t("services-door-to-door")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/4pl-logistics`} className="text-decoration-none fw-bold" style={{ color: "var(--primary-color)" }}>
-                          <i className="fas fa-cogs me-2"></i>4PL Logistics
+                        <Link href="/services/4pl-logistics" className="text-decoration-none fw-bold" style={{ color: "var(--primary-color)" }}>
+                          <i className="fas fa-cogs me-2"></i>{t("services-4pl")}
                         </Link>
                       </li>
                       <li className="mb-4">
-                        <Link href={`/${lang}/services/multimodal`} className="text-decoration-none text-muted">
-                          <i className="fas fa-random me-2"></i>Multimodal Transport
+                        <Link href="/services/multimodal" className="text-decoration-none text-muted">
+                          <i className="fas fa-random me-2"></i>{t("services-multimodal")}
                         </Link>
                       </li>
                     </ul>
                     <hr />
                     <div className="text-center">
-                      <h5 className="fw-bold mb-3">Optimize Your Supply Chain</h5>
-                      <p className="text-muted small mb-3">Let us manage your complete logistics operation</p>
-                      <Link href={`/${lang}`} className="btn btn-outline-primary w-100 mb-2">
-                        <i className="fas fa-home me-2"></i>Back to Home
+                      <h5 className="fw-bold mb-3">{t("services-page-optimize")}</h5>
+                      <p className="text-muted small mb-3">{t("services-page-optimize-desc")}</p>
+                      <Link href="/" className="btn btn-outline-primary w-100 mb-2">
+                        <i className="fas fa-home me-2"></i>{t("services-page-back-home")}
                       </Link>
-                      <a href={`/${lang}/#contact`} className="btn btn-primary w-100">Contact Us</a>
+                      <a href="/#contact" className="btn btn-primary w-100">{t("services-page-contact")}</a>
                     </div>
                   </div>
                 </div>

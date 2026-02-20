@@ -1,26 +1,13 @@
-import { Metadata } from "next";
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
-  const { lang } = await params;
-  return {
-    title: "International Air Freight Services - Logikent",
-    description: "Fast and reliable air freight services for international cargo delivery. Door-to-door air cargo solutions.",
-  };
-}
+export default function AirFreightPage() {
+  const { t } = useLanguage();
 
-export default async function AirFreightPage({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
-  const { lang } = await params;
   return (
     <>
       <Navbar />
@@ -48,13 +35,13 @@ export default async function AirFreightPage({
               <div className="col-12 text-white">
                 <nav aria-label="breadcrumb" className="mb-3">
                   <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><Link href={`/${lang}`} className="text-white text-decoration-none">Home</Link></li>
-                    <li className="breadcrumb-item"><Link href={`/${lang}/#services`} className="text-white text-decoration-none">Services</Link></li>
-                    <li className="breadcrumb-item active text-white" aria-current="page">Air Freight</li>
+                    <li className="breadcrumb-item"><Link href="/" className="text-white text-decoration-none">{t("home")}</Link></li>
+                    <li className="breadcrumb-item"><Link href="/#services" className="text-white text-decoration-none">{t("service-title")}</Link></li>
+                    <li className="breadcrumb-item active text-white" aria-current="page">{t("services-air-freight")}</li>
                   </ol>
                 </nav>
-                <h1 className="display-4 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>International Air Freight</h1>
-                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }}>Fast, reliable, and efficient air cargo transportation worldwide</p>
+                <h1 className="display-4 fw-bold mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>{t("airfreight-hero-title")}</h1>
+                <p className="lead mb-0" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }}>{t("airfreight-hero-subtitle")}</p>
               </div>
             </div>
           </div>
@@ -68,8 +55,8 @@ export default async function AirFreightPage({
                 {/* Main Title */}
                 <div className="card border-0 shadow-sm mb-4">
                   <div className="card-body p-4">
-                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>Comprehensive Air Freight Solutions</h2>
-                    <p className="text-muted mb-0">Fast, reliable, and efficient air cargo transportation services tailored to your needs</p>
+                    <h2 className="mb-3" style={{ color: "var(--primary-color)" }}>{t("airfreight-title")}</h2>
+                    <p className="text-muted mb-0">{t("airfreight-subtitle")}</p>
                   </div>
                 </div>
 
@@ -78,39 +65,39 @@ export default async function AirFreightPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-star me-2" style={{ color: "var(--accent-color)" }}></i>
-                      What We Offer
+                      {t("airfreight-what-offer")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-plane text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">International door-to-door cargo delivery</h5>
-                            <p className="text-muted mb-0">Complete logistics solutions from pickup to final destination</p>
+                            <h5 className="fw-bold mb-2">{t("airfreight-offer1-title")}</h5>
+                            <p className="text-muted mb-0">{t("airfreight-offer1-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-boxes text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Air cargo consolidation</h5>
-                            <p className="text-muted mb-0">Cost-effective solutions for smaller shipments through consolidation services</p>
+                            <h5 className="fw-bold mb-2">{t("airfreight-offer2-title")}</h5>
+                            <p className="text-muted mb-0">{t("airfreight-offer2-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="d-flex align-items-start">
-                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
+                          <div className="rounded-circle d-flex align-items-center justify-content-center me-3 shrink-0" style={{ width: "50px", height: "50px", background: "rgba(40, 167, 69, 0.1)" }}>
                             <i className="fas fa-bolt text-success"></i>
                           </div>
                           <div>
-                            <h5 className="fw-bold mb-2">Express and priority air transport</h5>
-                            <p className="text-muted mb-0">Urgent shipments with minimal transit time for time-sensitive cargo</p>
+                            <h5 className="fw-bold mb-2">{t("airfreight-offer3-title")}</h5>
+                            <p className="text-muted mb-0">{t("airfreight-offer3-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -123,7 +110,7 @@ export default async function AirFreightPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-trophy me-2" style={{ color: "var(--accent-color)" }}></i>
-                      Why Choose Our Air Freight?
+                      {t("airfreight-why-choose")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
@@ -134,8 +121,8 @@ export default async function AirFreightPage({
                                 <i className="fas fa-clock fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Fast Transit Times</h5>
-                            <p className="text-muted small mb-0">Quickest delivery option for time-sensitive shipments</p>
+                            <h5 className="fw-bold mb-2">{t("airfreight-benefit1-title")}</h5>
+                            <p className="text-muted small mb-0">{t("airfreight-benefit1-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -147,8 +134,8 @@ export default async function AirFreightPage({
                                 <i className="fas fa-globe fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Global Network</h5>
-                            <p className="text-muted small mb-0">Extensive network covering major airports worldwide</p>
+                            <h5 className="fw-bold mb-2">{t("airfreight-benefit2-title")}</h5>
+                            <p className="text-muted small mb-0">{t("airfreight-benefit2-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -160,8 +147,8 @@ export default async function AirFreightPage({
                                 <i className="fas fa-shield-alt fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Secure Handling</h5>
-                            <p className="text-muted small mb-0">Professional handling and security for valuable cargo</p>
+                            <h5 className="fw-bold mb-2">{t("airfreight-benefit3-title")}</h5>
+                            <p className="text-muted small mb-0">{t("airfreight-benefit3-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -173,8 +160,8 @@ export default async function AirFreightPage({
                                 <i className="fas fa-truck fa-2x" style={{ color: "var(--primary-color)" }}></i>
                               </div>
                             </div>
-                            <h5 className="fw-bold mb-2">Door-to-Door Service</h5>
-                            <p className="text-muted small mb-0">Complete pickup and delivery service included</p>
+                            <h5 className="fw-bold mb-2">{t("airfreight-benefit4-title")}</h5>
+                            <p className="text-muted small mb-0">{t("airfreight-benefit4-desc")}</p>
                           </div>
                         </div>
                       </div>
@@ -187,7 +174,7 @@ export default async function AirFreightPage({
                   <div className="card-body p-4">
                     <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>
                       <i className="fas fa-box-open me-2" style={{ color: "var(--accent-color)" }}></i>
-                      Types of Cargo We Handle
+                      {t("airfreight-cargo-types")}
                     </h4>
                     <div className="row g-3">
                       <div className="col-md-6 col-lg-4">
@@ -195,7 +182,7 @@ export default async function AirFreightPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-box me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">General Cargo</span>
+                              <span className="fw-bold">{t("airfreight-cargo1")}</span>
                             </div>
                           </div>
                         </div>
@@ -205,7 +192,7 @@ export default async function AirFreightPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-boxes me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Bulk Shipments</span>
+                              <span className="fw-bold">{t("airfreight-cargo2")}</span>
                             </div>
                           </div>
                         </div>
@@ -215,7 +202,7 @@ export default async function AirFreightPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-weight-hanging me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Heavy Cargo</span>
+                              <span className="fw-bold">{t("airfreight-cargo3")}</span>
                             </div>
                           </div>
                         </div>
@@ -225,7 +212,7 @@ export default async function AirFreightPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-snowflake me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Temperature Controlled</span>
+                              <span className="fw-bold">{t("airfreight-cargo4")}</span>
                             </div>
                           </div>
                         </div>
@@ -235,7 +222,7 @@ export default async function AirFreightPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-gem me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Valuable Goods</span>
+                              <span className="fw-bold">{t("airfreight-cargo5")}</span>
                             </div>
                           </div>
                         </div>
@@ -245,7 +232,7 @@ export default async function AirFreightPage({
                           <div className="card-body">
                             <div className="d-flex align-items-center">
                               <i className="fas fa-file-alt me-3 fa-lg" style={{ color: "var(--primary-color)" }}></i>
-                              <span className="fw-bold">Documents</span>
+                              <span className="fw-bold">{t("airfreight-cargo6")}</span>
                             </div>
                           </div>
                         </div>
@@ -259,47 +246,47 @@ export default async function AirFreightPage({
               <div className="col-lg-4">
                 <div className="card border-0 shadow-sm mb-4 sticky-top" style={{ top: "100px" }}>
                   <div className="card-body">
-                    <h5 className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>Our Services</h5>
+                    <h5 className="fw-bold mb-4" style={{ color: "var(--primary-color)" }}>{t("services-page-sidebar-title")}</h5>
                     <ul className="list-unstyled">
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/air-freight`} className="text-decoration-none fw-bold" style={{ color: "var(--primary-color)" }}>
-                          <i className="fas fa-plane me-2"></i>Air Freight
+                        <Link href="/services/air-freight" className="text-decoration-none fw-bold" style={{ color: "var(--primary-color)" }}>
+                          <i className="fas fa-plane me-2"></i>{t("services-air-freight")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/road-transport`} className="text-decoration-none text-muted">
-                          <i className="fas fa-truck me-2"></i>Road Transport
+                        <Link href="/services/road-transport" className="text-decoration-none text-muted">
+                          <i className="fas fa-truck me-2"></i>{t("services-road-transport")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/customs-clearance`} className="text-decoration-none text-muted">
-                          <i className="fas fa-file-signature me-2"></i>Customs Clearance
+                        <Link href="/services/customs-clearance" className="text-decoration-none text-muted">
+                          <i className="fas fa-file-signature me-2"></i>{t("services-customs-clearance")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/door-to-door`} className="text-decoration-none text-muted">
-                          <i className="fas fa-door-open me-2"></i>Door-to-Door Delivery
+                        <Link href="/services/door-to-door" className="text-decoration-none text-muted">
+                          <i className="fas fa-door-open me-2"></i>{t("services-door-to-door")}
                         </Link>
                       </li>
                       <li className="mb-3">
-                        <Link href={`/${lang}/services/4pl-logistics`} className="text-decoration-none text-muted">
-                          <i className="fas fa-cogs me-2"></i>4PL Logistics
+                        <Link href="/services/4pl-logistics" className="text-decoration-none text-muted">
+                          <i className="fas fa-cogs me-2"></i>{t("services-4pl")}
                         </Link>
                       </li>
                       <li className="mb-4">
-                        <Link href={`/${lang}/services/multimodal`} className="text-decoration-none text-muted">
-                          <i className="fas fa-random me-2"></i>Multimodal Transport
+                        <Link href="/services/multimodal" className="text-decoration-none text-muted">
+                          <i className="fas fa-random me-2"></i>{t("services-multimodal")}
                         </Link>
                       </li>
                     </ul>
                     <hr />
                     <div className="text-center">
-                      <h5 className="fw-bold mb-3">Need a Quote?</h5>
-                      <p className="text-muted small mb-3">Get a personalized quote for your shipment</p>
-                      <Link href={`/${lang}`} className="btn btn-outline-primary w-100 mb-2">
-                        <i className="fas fa-home me-2"></i>Back to Home
+                      <h5 className="fw-bold mb-3">{t("services-page-need-quote")}</h5>
+                      <p className="text-muted small mb-3">{t("services-page-need-quote-desc")}</p>
+                      <Link href="/" className="btn btn-outline-primary w-100 mb-2">
+                        <i className="fas fa-home me-2"></i>{t("services-page-back-home")}
                       </Link>
-                      <a href={`/${lang}/#contact`} className="btn btn-primary w-100">Contact Us</a>
+                      <a href="/#contact" className="btn btn-primary w-100">{t("services-page-contact")}</a>
                     </div>
                   </div>
                 </div>
