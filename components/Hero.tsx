@@ -6,10 +6,18 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section id="home" className="hero-section text-white text-center" style={{ paddingTop: "80px", minHeight: "60vh", display: "flex", alignItems: "center" }}>
+    <section id="home" className="hero-section text-white text-center" style={{ paddingTop: "80px", minHeight: "65vh", display: "flex", alignItems: "center" }}>
       <div className="container position-relative" style={{ zIndex: 2, maxWidth: "1200px", padding: "20px" }}>
-        <h1 className="display-4 mb-4 fw-bold" style={{ fontSize: "clamp(24px, 5vw, 48px)" }}>{t("hero-title")}</h1>
-        <p className="lead mb-4" style={{ fontSize: "clamp(16px, 3vw, 24px)" }}>{t("hero_subtitle")}</p>
+        <h1 className="display-4 mb-4 fw-bold" style={{ fontSize: "clamp(26px, 4vw, 52px)" }}>{t("hero-title")}</h1>
+        <p className="lead mb-4" style={{ fontSize: "clamp(14px, 2.5vw, 20px)", lineHeight: "1.6" }}>{t("hero_subtitle")}</p>
+
+        {/* Three italic taglines with emojis */}
+        <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mb-5" style={{ fontSize: "clamp(14px, 2vw, 18px)" }}>
+          <span style={{ fontStyle: "italic", fontWeight: "500" }}>{t("hero-tagline1")}</span>
+          <span style={{ fontStyle: "italic", fontWeight: "500" }}>{t("hero-tagline2")}</span>
+          <span style={{ fontStyle: "italic", fontWeight: "500" }}>{t("hero-tagline3")}</span>
+        </div>
+
         <div className="d-flex justify-content-center">
           <a href="#contact" className="w-100" style={{ maxWidth: "300px" }}>
             <button
