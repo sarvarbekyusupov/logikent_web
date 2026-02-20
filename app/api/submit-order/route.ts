@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 interface OrderData {
   name: string;
+  company: string;
   phone: string;
   email: string;
   message: string;
@@ -45,6 +46,7 @@ export async function POST(request: NextRequest) {
 🛒 <b>New Order Received</b>
 
 👤 <b>Name:</b> ${data.name}
+🏢 <b>Company:</b> ${data.company || "Not provided"}
 📞 <b>Phone:</b> ${formatPhone(data.phone)}
 📧 <b>Email:</b> ${data.email || "Not provided"}
 

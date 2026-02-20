@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 interface FormData {
   name: string;
+  company: string;
   phone: string;
   email: string;
   message: string;
@@ -14,6 +15,7 @@ export default function OrderForm() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    company: "",
     phone: "",
     email: "",
     message: "",
@@ -89,7 +91,7 @@ export default function OrderForm() {
 
       if (response.ok) {
         setSubmitStatus("success");
-        setFormData({ name: "", phone: "", email: "", message: "" });
+        setFormData({ name: "", company: "", phone: "", email: "", message: "" });
       } else {
         setSubmitStatus("error");
       }
@@ -101,7 +103,7 @@ export default function OrderForm() {
   };
 
   return (
-    <div className="col-12 h-100">
+    <div className="col-12 h-100" id="contact">
       <div className="card shadow-lg border-0 h-100">
         <div className="card-body p-5 d-flex flex-column">
           <h3 className="card-title text-center mb-4 fw-bold" style={{ color: "var(--primary-color)" }}>
@@ -134,6 +136,21 @@ export default function OrderForm() {
                 onChange={handleChange}
                 required
                 placeholder={t("order-name-placeholder") || "Enter your full name"}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="company" className="form-label fw-medium">
+                {t("order-company") || "Company Name"}
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                placeholder={t("order-company-placeholder") || "Enter your company name (optional)"}
               />
             </div>
 

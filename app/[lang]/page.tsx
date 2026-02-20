@@ -10,6 +10,7 @@ import Routes from "@/components/Routes";
 import Partners from "@/components/Partners";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import HashScrollHandler from "@/components/HashScrollHandler";
 
 export async function generateMetadata({
   params,
@@ -25,6 +26,7 @@ export async function generateMetadata({
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <HashScrollHandler />
       <Navbar />
       <Hero />
       <About />

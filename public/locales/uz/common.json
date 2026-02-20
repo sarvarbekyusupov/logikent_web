@@ -86,6 +86,8 @@
   "order-form-title": "Buyurtma berish",
   "order-name": "Ism",
   "order-name-placeholder": "To'liq ismingizni kiriting",
+  "order-company": "Korxona nomi",
+  "order-company-placeholder": "Korxona nomingizni kiriting (ixtiyoriy)",
   "order-phone": "Telefon",
   "order-email": "Elektron pocht",
   "order-email-placeholder": "siz@email.com",

@@ -49,82 +49,169 @@ export default function Navbar() {
           />
         </a>
 
-        <div
-          className="d-flex align-items-center"
-          style={{ gap: "30px", height: "100%", marginLeft: "auto" }}
-        >
-          <a
-            className="nav-link fw-medium"
-            href="#services"
-            style={{ fontSize: "15px", color: "var(--dark-color)" }}
+        <div style={{ marginLeft: "auto", height: "100%" }}>
+          {/* Desktop Navigation */}
+          <div
+            className="d-none d-md-flex align-items-center"
+            style={{ gap: "30px", height: "100%" }}
           >
-            <span style={{ fontSize: "1.2em" }}>S</span>ervices
-          </a>
-          <a
-            className="nav-link fw-medium"
-            href="#about-us"
-            style={{ fontSize: "15px", color: "var(--dark-color)" }}
-          >
-            {t("about-us") || "About Us"}
-          </a>
-          <a
-            className="nav-link fw-medium"
-            href="#route-map"
-            style={{ fontSize: "15px", color: "var(--dark-color)" }}
-          >
-            {t("routes") || "Routes"}
-          </a>
-          <a
-            className="nav-link fw-medium"
-            href="#partners"
-            style={{ fontSize: "15px", color: "var(--dark-color)" }}
-          >
-            {t("partners") || "Partners"}
-          </a>
-          <a
-            className="nav-link fw-medium"
-            href="#contact"
-            style={{ fontSize: "15px", color: "var(--dark-color)" }}
-          >
-            {t("contact")}
-          </a>
-          <div className="dropdown" style={{ position: "relative" }}>
             <a
-              className="nav-link dropdown-toggle fw-bold"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              style={{ fontSize: "15px", color: "var(--primary-color)" }}
+              className="nav-link fw-medium"
+              href="#services"
+              style={{ fontSize: "15px", color: "var(--dark-color)" }}
             >
-              {language.toUpperCase()}
+              <span style={{ fontSize: "1.2em" }}>S</span>ervices
             </a>
-            <ul className="dropdown-menu dropdown-menu-end">
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleLanguageChange("en")}
+            <a
+              className="nav-link fw-medium"
+              href="#partners"
+              style={{ fontSize: "15px", color: "var(--dark-color)" }}
+            >
+              {t("partners") || "Partners"}
+            </a>
+            <a
+              className="nav-link fw-medium"
+              href="#route-map"
+              style={{ fontSize: "15px", color: "var(--dark-color)" }}
+            >
+              {t("routes") || "Routes"}
+            </a>
+            <a
+              className="nav-link fw-medium"
+              href="#about-us"
+              style={{ fontSize: "15px", color: "var(--dark-color)" }}
+            >
+              {t("about-us") || "About Us"}
+            </a>
+            <a
+              className="nav-link fw-medium"
+              href="#contact"
+              style={{ fontSize: "15px", color: "var(--dark-color)" }}
+            >
+              {t("contact")}
+            </a>
+            <div className="dropdown" style={{ position: "relative" }}>
+              <a
+                className="nav-link dropdown-toggle fw-bold"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{ fontSize: "15px", color: "var(--primary-color)" }}
+              >
+                {language.toUpperCase()}
+              </a>
+              <ul className="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button
+                    className="dropdown-item"
+                    onClick={() => handleLanguageChange("en")}
+                  >
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item"
+                    onClick={() => handleLanguageChange("ru")}
+                  >
+                    Русский
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item"
+                    onClick={() => handleLanguageChange("uz")}
+                  >
+                    O&apos;zbekcha
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="d-md-none" style={{ display: "flex", flexDirection: "column" }}>
+            {/* Horizontal scrollable navigation items */}
+            <div className="nav-scroll-container">
+              <a
+                className="nav-link fw-medium"
+                href="#services"
+                style={{ fontSize: "14px", color: "var(--dark-color)" }}
+              >
+                <span style={{ fontSize: "1.2em" }}>S</span>ervices
+              </a>
+              <a
+                className="nav-link fw-medium"
+                href="#partners"
+                style={{ fontSize: "14px", color: "var(--dark-color)" }}
+              >
+                {t("partners") || "Partners"}
+              </a>
+              <a
+                className="nav-link fw-medium"
+                href="#route-map"
+                style={{ fontSize: "14px", color: "var(--dark-color)" }}
+              >
+                {t("routes") || "Routes"}
+              </a>
+              <a
+                className="nav-link fw-medium"
+                href="#about-us"
+                style={{ fontSize: "14px", color: "var(--dark-color)" }}
+              >
+                {t("about-us") || "About Us"}
+              </a>
+            </div>
+
+            {/* Fixed bottom section with Contact and Language */}
+            <div className="nav-fixed-bottom">
+              <a
+                className="nav-link fw-medium"
+                href="#contact"
+                style={{ fontSize: "14px", color: "var(--dark-color)", padding: "5px 0" }}
+              >
+                {t("contact")}
+              </a>
+              <div className="dropdown" style={{ position: "relative" }}>
+                <a
+                  className="nav-link dropdown-toggle fw-bold"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style={{ fontSize: "14px", color: "var(--primary-color)", padding: "5px 0" }}
                 >
-                  English
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleLanguageChange("ru")}
-                >
-                  Русский
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleLanguageChange("uz")}
-                >
-                  O&apos;zbekcha
-                </button>
-              </li>
-            </ul>
+                  {language.toUpperCase()}
+                </a>
+                <ul className="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("en")}
+                    >
+                      English
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("ru")}
+                    >
+                      Русский
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("uz")}
+                    >
+                      O&apos;zbekcha
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

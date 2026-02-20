@@ -86,6 +86,8 @@
   "order-form-title": "Оформить заказ",
   "order-name": "Имя",
   "order-name-placeholder": "Введите ваше полное имя",
+  "order-company": "Название компании",
+  "order-company-placeholder": "Введите название вашей компании (необязательно)",
   "order-phone": "Телефон",
   "order-email": "Электронная почта",
   "order-email-placeholder": "your@email.com",

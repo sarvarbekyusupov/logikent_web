@@ -7,7 +7,7 @@ export default function Contact() {
   const { t } = useLanguage();
 
   return (
-    <section id="contact" className="py-5 bg-light">
+    <section className="py-5 bg-light">
       <div className="container" style={{ maxWidth: "1200px" }}>
         <div className="row mb-5">
           <div className="col-12 text-center">

@@ -32,20 +32,13 @@ export default function Partners() {
   const currentContent = content[language as keyof typeof content];
 
   const partners = [
-    { name: "China Logistics", country: "🇨🇳", logo: "fa-truck" },
-    { name: "Turkey Freight", country: "🇹🇷", logo: "fa-ship" },
-    { name: "EU Transport", country: "🇪🇺", logo: "fa-plane" },
-    { name: "UAE Cargo", country: "🇦🇪", logo: "fa-boxes" },
-    { name: "Russia Rail", country: "🇷🇺", logo: "fa-train" },
-  ];
-
-  const clients = [
-    { name: "Trading companies", icon: "fa-handshake", desc: "International trade" },
-    { name: "Manufacturing", icon: "fa-industry", desc: "Industrial equipment" },
-    { name: "E-commerce", icon: "fa-shopping-cart", desc: "Online retail" },
-    { name: "Construction", icon: "fa-hard-hat", desc: "Building materials" },
-    { name: "Agriculture", icon: "fa-tractor", desc: "Farm equipment" },
-    { name: "Textile", icon: "fa-tshirt", desc: "Fashion industry" },
+    { name: "Samauto", logo: "/img/logikent/partners/samauto.png", isImage: true },
+    { name: "Safia Bakery", logo: "/img/logikent/partners/safiabakery.png", isImage: true },
+    { name: "Fintec", logo: "/img/logikent/partners/fintec.png", isImage: true },
+    { name: "Eco Control", logo: "/img/logikent/partners/ecocontrol.png", isImage: true },
+    { name: "Craft Food", logo: "/img/logikent/partners/craftfood.png", isImage: true },
+    { name: "Res Hub", logo: "/img/logikent/partners/reshub.png", isImage: true },
+    { name: "Basmala Decor", logo: "/img/logikent/partners/basmaladecor.png", isImage: true },
   ];
 
   return (
@@ -61,83 +54,53 @@ export default function Partners() {
         {/* Partners Section */}
         <div className="row mb-5">
           <div className="col-12">
-            <h3 className="text-center mb-4 fw-bold" style={{ color: "var(--primary-color)" }}>
+            <h3 className="text-center mb-5 fw-bold" style={{ color: "var(--primary-color)" }}>
               {currentContent.partnersTitle}
             </h3>
           </div>
-          {partners.map((partner, index) => (
-            <div key={index} className="col-lg-2 col-md-4 col-6 mb-4">
-              <div className="card border-0 shadow-sm text-center hover-lift h-100">
-                <div className="card-body p-4 d-flex flex-column justify-content-center">
-                  <div className="mb-3">
-                    <i
-                      className={`fas ${partner.logo} fa-2x`}
-                      style={{ color: "var(--primary-color)" }}
-                    ></i>
-                  </div>
-                  <h6 className="fw-bold mb-1 small">{partner.name}</h6>
-                  <div className="small text-muted">{partner.country}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Clients Section */}
-        <div className="row mb-5">
-          <div className="col-12">
-            <h3 className="text-center mb-4 fw-bold" style={{ color: "var(--primary-color)" }}>
-              {currentContent.clientsTitle}
-            </h3>
-          </div>
-          {clients.map((client, index) => (
-            <div key={index} className="col-lg-4 col-md-6 mb-4">
-              <div className="card border-0 shadow-sm h-100">
-                <div className="card-body p-4">
-                  <div className="d-flex align-items-center mb-3">
-                    <div
-                      className="rounded-circle d-flex align-items-center justify-content-center me-3"
-                      style={{
-                        width: "50px",
-                        height: "50px",
-                        background: "rgba(37, 99, 235, 0.1)",
-                        color: "var(--primary-color)",
-                      }}
-                    >
-                      <i className={`fas ${client.icon}`}></i>
+          <div className="row justify-content-center g-4">
+            {partners.map((partner, index) => (
+              <div key={index} className="col-lg-3 col-md-4 col-6 mb-4">
+                <div
+                  className="card border-0 shadow-sm text-center hover-lift h-100"
+                  style={{
+                    transition: "all 0.3s ease",
+                    background: "#ffffff"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-5px)";
+                    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "0 0.125rem 0.25rem rgba(0,0,0,0.075)";
+                  }}
+                >
+                  <div className="card-body p-5 d-flex flex-column justify-content-center align-items-center">
+                    <div className="mb-4">
+                      {(partner as any).isImage ? (
+                        <img
+                          src={partner.logo}
+                          alt={partner.name}
+                          style={{
+                            maxHeight: "150px",
+                            maxWidth: "100%",
+                            width: "auto",
+                            objectFit: "contain"
+                          }}
+                        />
+                      ) : (
+                        <i
+                          className={`fas ${partner.logo} fa-3x`}
+                          style={{ color: "var(--primary-color)" }}
+                        ></i>
+                      )}
                     </div>
-                    <div>
-                      <h6 className="fw-bold mb-0">{client.name}</h6>
-                      <small className="text-muted">{client.desc}</small>
-                    </div>
+                    <h5 className="fw-bold mb-0" style={{ fontSize: "1rem" }}>{partner.name}</h5>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="row">
-          <div className="col-12">
-            <div className="card border-0 shadow-lg" style={{ background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
-              <div className="card-body p-5">
-                <div className="row text-white text-center">
-                  <div className="col-md-4 mb-4 mb-md-0">
-                    <div className="display-6 fw-bold mb-2">100+</div>
-                    <div className="small opacity-75">{t("partners-count") || "Active Partners"}</div>
-                  </div>
-                  <div className="col-md-4 mb-4 mb-md-0">
-                    <div className="display-6 fw-bold mb-2">500+</div>
-                    <div className="small opacity-75">{t("clients-count") || "Satisfied Clients"}</div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="display-6 fw-bold mb-2">15+</div>
-                    <div className="small opacity-75">{t("countries-count") || "Countries Covered"}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 

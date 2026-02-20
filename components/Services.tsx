@@ -82,15 +82,7 @@ export default function Services() {
                     </div>
                     <h3 className="h4 mb-3 fw-semibold">{t(service.title)}</h3>
                     <p className="text-muted mb-4">{t(service.text)}</p>
-                    <ul className="list-unstyled text-start ps-3">
-                      {service.list.map((item, i) => (
-                        <li key={i} className="mb-2">
-                          <i className="fas fa-check-circle text-success me-2"></i>
-                          {t(item)}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-3">
+                    <div className="mt-auto">
                       <span className="btn btn-outline-primary btn-sm">Learn More →</span>
                     </div>
                   </div>

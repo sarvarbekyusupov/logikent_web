@@ -11,6 +11,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: var(--dark-color);
+  scroll-padding-top: 80px;
 }
 
 .container {
@@ -486,3 +487,55 @@ footer {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Mobile Navigation Styles */
+.nav-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 0 10px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) #f0f0f0;
+}
+
+.nav-scroll-container::-webkit-scrollbar {
+  height: 3px;
+}
+
+.nav-scroll-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.nav-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.nav-scroll-container .nav-link {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.nav-fixed-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+}
+
+/* Hide scrollbar for mobile but keep functionality */
+@media (max-width: 767px) {
+  .nav-scroll-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
