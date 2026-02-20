@@ -77,17 +77,15 @@ export default function AboutPage() {
                   <div className="card-body p-5" style={{ background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
                     <div className="row align-items-center">
                       <div className="col-md-2 text-center mb-4 mb-md-0">
-                        <div
-                          className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                        <img
+                          src="/img/logikent/logo1.png"
+                          alt="Logikent Logo"
                           style={{
                             width: "100px",
                             height: "100px",
-                            background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))",
-                            boxShadow: "0 12px 40px rgba(37, 99, 235, 0.25)"
+                            objectFit: "contain"
                           }}
-                        >
-                          <i className="fas fa-building fa-2x text-white"></i>
-                        </div>
+                        />
                       </div>
                       <div className="col-md-10">
                         <p
