@@ -8,7 +8,7 @@ export default function Partners() {
   const partners = [
     { name: "Samauto", logo: "/img/logikent/partners/samauto.png", isImage: true },
     { name: "Safia Bakery", logo: "/img/logikent/partners/safiabakery.png", isImage: true },
-    { name: "Fintec", logo: "/img/logikent/partners/fintec.png", isImage: true },
+    { name: "Fenitec", logo: "/img/logikent/partners/fintec.png", isImage: true },
     { name: "Electro-Class Control", logo: "/img/partners/electro-class-control.png", isImage: true },
     { name: "Craft Food", logo: "/img/logikent/partners/craftfood.png", isImage: true },
     { name: "Res Hub", logo: "/img/logikent/partners/reshub.png", isImage: true },

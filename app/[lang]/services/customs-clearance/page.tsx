@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function CustomsClearancePage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <>
@@ -51,101 +51,91 @@ export default function CustomsClearancePage() {
                   <p className="text-muted lead" style={{ maxWidth: "700px", margin: "0 auto" }}>{t("customs-subtitle")}</p>
                 </div>
 
-                {/* What We Offer - Improved centered layout */}
+                {/* What We Offer */}
                 <div className="card border-0 shadow-sm mb-5">
                   <div className="card-body p-5">
                     <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
-                      <i className="fas fa-star me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("customs-what-offer")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
-                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02))" }}>
-                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
-                            <i className="fas fa-comments fa-2x text-white"></i>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
+                          <div className="card-body text-center">
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>💬</div>
+                            <h5 className="fw-bold mb-2">{t("customs-offer1-title")}</h5>
+                            <p className="text-muted small mb-0">{t("customs-offer1-desc")}</p>
                           </div>
-                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("customs-offer1-title")}</h5>
-                          <p className="text-muted small mb-0">{t("customs-offer1-desc")}</p>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.02))" }}>
-                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
-                            <i className="fas fa-calculator fa-2x text-white"></i>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
+                          <div className="card-body text-center">
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>🧮</div>
+                            <h5 className="fw-bold mb-2">{t("customs-offer2-title")}</h5>
+                            <p className="text-muted small mb-0">{t("customs-offer2-desc")}</p>
                           </div>
-                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("customs-offer2-title")}</h5>
-                          <p className="text-muted small mb-0">{t("customs-offer2-desc")}</p>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.02))" }}>
-                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
-                            <i className="fas fa-money-bill-wave fa-2x text-white"></i>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
+                          <div className="card-body text-center">
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>💵</div>
+                            <h5 className="fw-bold mb-2">{t("customs-offer3-title")}</h5>
+                            <p className="text-muted small mb-0">{t("customs-offer3-desc")}</p>
                           </div>
-                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("customs-offer3-title")}</h5>
-                          <p className="text-muted small mb-0">{t("customs-offer3-desc")}</p>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.02))" }}>
-                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #8b5cf6, #a78bfa)" }}>
-                            <i className="fas fa-file-alt fa-2x text-white"></i>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
+                          <div className="card-body text-center">
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>📝</div>
+                            <h5 className="fw-bold mb-2">{t("customs-offer4-title")}</h5>
+                            <p className="text-muted small mb-0">{t("customs-offer4-desc")}</p>
                           </div>
-                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("customs-offer4-title")}</h5>
-                          <p className="text-muted small mb-0">{t("customs-offer4-desc")}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Why Choose Us - Improved 2x2 layout */}
+                {/* Why Choose Us */}
                 <div className="card border-0 shadow-sm mb-5">
                   <div className="card-body p-5">
                     <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
-                      <i className="fas fa-trophy me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("customs-why-choose")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
-                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
-                              <i className="fas fa-user-tie fa-2x text-white"></i>
-                            </div>
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>👔</div>
                             <h5 className="fw-bold mb-2">{t("customs-benefit1-title")}</h5>
                             <p className="text-muted small mb-0">{t("customs-benefit1-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #3b82f6, #8b5cf6)" }}>
-                              <i className="fas fa-clock fa-2x text-white"></i>
-                            </div>
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>⏰</div>
                             <h5 className="fw-bold mb-2">{t("customs-benefit2-title")}</h5>
                             <p className="text-muted small mb-0">{t("customs-benefit2-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
-                              <i className="fas fa-hand-holding-usd fa-2x text-white"></i>
-                            </div>
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>💸</div>
                             <h5 className="fw-bold mb-2">{t("customs-benefit3-title")}</h5>
                             <p className="text-muted small mb-0">{t("customs-benefit3-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #8b5cf6, #a78bfa)" }}>
-                              <i className="fas fa-file-contract fa-2x text-white"></i>
-                            </div>
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>📋</div>
                             <h5 className="fw-bold mb-2">{t("customs-benefit4-title")}</h5>
                             <p className="text-muted small mb-0">{t("customs-benefit4-desc")}</p>
                           </div>
@@ -155,61 +145,50 @@ export default function CustomsClearancePage() {
                   </div>
                 </div>
 
-                {/* Types of Documents - Improved layout */}
+                {/* Types of Documents */}
                 <div className="card border-0 shadow-sm">
                   <div className="card-body p-5">
                     <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
-                      <i className="fas fa-folder-open me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("customs-documents")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-file-invoice fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "2rem" }}>📄</div>
                             <h6 className="fw-bold mb-0">{t("customs-doc1")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-certificate fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "2rem" }}>🏅</div>
                             <h6 className="fw-bold mb-0">{t("customs-doc2")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-file-import fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "2rem" }}>📥</div>
                             <h6 className="fw-bold mb-0">{t("customs-doc3")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-lg-2"></div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-file-invoice-dollar fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "2rem" }}>💰</div>
                             <h6 className="fw-bold mb-0">{t("customs-doc4")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-boxes fa-2x mb-2" style={{ color: "var(--primary-color)" }}></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "2rem" }}>📦</div>
                             <h6 className="fw-bold mb-0">{t("customs-doc5")}</h6>
                           </div>
                         </div>
@@ -263,7 +242,7 @@ export default function CustomsClearancePage() {
                       <Link href="/" className="btn btn-outline-primary w-100 mb-2">
                         <i className="fas fa-home me-2"></i>{t("services-page-back-home")}
                       </Link>
-                      <a href="/#contact" className="btn btn-primary w-100">{t("services-page-contact")}</a>
+                      <a href={`/${language}#contact`} className="btn btn-primary w-100">{t("services-page-contact")}</a>
                     </div>
                   </div>
                 </div>

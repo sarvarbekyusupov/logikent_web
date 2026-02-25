@@ -55,26 +55,28 @@ export default function Navbar() {
           className="container d-flex justify-content-between align-items-center"
           style={{ maxWidth: "1200px", height: "100%" }}
         >
-          {/* Logo */}
+          {/* Logo - Desktop Only, Left Side */}
           <Link
-            className="navbar-brand"
+            className="navbar-brand d-none d-lg-block"
             href={`/${language}`}
             style={{
               paddingTop: "0",
               paddingBottom: "0",
               height: "100%",
               display: "flex",
-              alignItems: "center"
+              alignItems: "center",
+              position: "relative",
+              zIndex: 10000,
             }}
           >
             <img
               src="/img/logikent/logo text.png"
               alt="Logikent"
-              style={{ height: "clamp(40px, 10vw, 130px)", width: "auto" }}
+              style={{ height: "220px", width: "auto", marginTop: "-70px" }}
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Right Side */}
           <div className="d-none d-lg-flex align-items-center" style={{ gap: "30px", height: "100%" }}>
             {navLinks.map((link) => (
               <Link

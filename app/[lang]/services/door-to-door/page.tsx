@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function DoorToDoorPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <>
@@ -51,93 +51,83 @@ export default function DoorToDoorPage() {
                   <p className="text-muted lead" style={{ maxWidth: "700px", margin: "0 auto" }}>{t("door2door-subtitle")}</p>
                 </div>
 
-                {/* What's Included - Improved 3-column layout */}
+                {/* What's Included */}
                 <div className="card border-0 shadow-sm mb-5">
                   <div className="card-body p-5">
                     <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
-                      <i className="fas fa-star me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("door2door-whats-included")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-4">
-                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02))" }}>
-                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
-                            <i className="fas fa-shipping-fast fa-2x text-white"></i>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
+                          <div className="card-body text-center">
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>🚢</div>
+                            <h5 className="fw-bold mb-2">{t("door2door-include1-title")}</h5>
+                            <p className="text-muted small mb-0">{t("door2door-include1-desc")}</p>
                           </div>
-                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-include1-title")}</h5>
-                          <p className="text-muted small mb-0">{t("door2door-include1-desc")}</p>
                         </div>
                       </div>
                       <div className="col-md-4">
-                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.02))" }}>
-                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #f97316, #fb923c)" }}>
-                            <i className="fas fa-passport fa-2x text-white"></i>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
+                          <div className="card-body text-center">
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>📋</div>
+                            <h5 className="fw-bold mb-2">{t("door2door-include2-title")}</h5>
+                            <p className="text-muted small mb-0">{t("door2door-include2-desc")}</p>
                           </div>
-                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-include2-title")}</h5>
-                          <p className="text-muted small mb-0">{t("door2door-include2-desc")}</p>
                         </div>
                       </div>
                       <div className="col-md-4">
-                        <div className="text-center p-4 rounded-3 h-100" style={{ background: "linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.02))" }}>
-                          <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
-                            <i className="fas fa-home fa-2x text-white"></i>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
+                          <div className="card-body text-center">
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>🏠</div>
+                            <h5 className="fw-bold mb-2">{t("door2door-include3-title")}</h5>
+                            <p className="text-muted small mb-0">{t("door2door-include3-desc")}</p>
                           </div>
-                          <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-include3-title")}</h5>
-                          <p className="text-muted small mb-0">{t("door2door-include3-desc")}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Benefits - Improved 2x2 layout */}
+                {/* Benefits */}
                 <div className="card border-0 shadow-sm mb-5">
                   <div className="card-body p-5">
                     <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
-                      <i className="fas fa-trophy me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("door2door-benefits")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6">
-                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))" }}>
-                              <i className="fas fa-handshake fa-2x text-white"></i>
-                            </div>
-                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-benefit1-title")}</h5>
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>🤝</div>
+                            <h5 className="fw-bold mb-2">{t("door2door-benefit1-title")}</h5>
                             <p className="text-muted small mb-0">{t("door2door-benefit1-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #3b82f6, #8b5cf6)" }}>
-                              <i className="fas fa-eye fa-2x text-white"></i>
-                            </div>
-                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-benefit2-title")}</h5>
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>👁️</div>
+                            <h5 className="fw-bold mb-2">{t("door2door-benefit2-title")}</h5>
                             <p className="text-muted small mb-0">{t("door2door-benefit2-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #10b981, #34d399)" }}>
-                              <i className="fas fa-dollar-sign fa-2x text-white"></i>
-                            </div>
-                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-benefit3-title")}</h5>
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>💰</div>
+                            <h5 className="fw-bold mb-2">{t("door2door-benefit3-title")}</h5>
                             <p className="text-muted small mb-0">{t("door2door-benefit3-desc")}</p>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa", transition: "transform 0.3s" }}>
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center">
-                            <div className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style={{ width: "70px", height: "70px", background: "linear-gradient(135deg, #8b5cf6, #a78bfa)" }}>
-                              <i className="fas fa-globe fa-2x text-white"></i>
-                            </div>
-                            <h5 className="fw-bold mb-2" style={{ fontSize: "1rem" }}>{t("door2door-benefit4-title")}</h5>
+                            <div className="mb-3" style={{ fontSize: "2.5rem" }}>🌐</div>
+                            <h5 className="fw-bold mb-2">{t("door2door-benefit4-title")}</h5>
                             <p className="text-muted small mb-0">{t("door2door-benefit4-desc")}</p>
                           </div>
                         </div>
@@ -146,70 +136,57 @@ export default function DoorToDoorPage() {
                   </div>
                 </div>
 
-                {/* DDP Explained - Improved 3x2 layout */}
+                {/* DDP Explained */}
                 <div className="card border-0 shadow-sm">
                   <div className="card-body p-5">
                     <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
-                      <i className="fas fa-info-circle me-2" style={{ color: "var(--accent-color)" }}></i>
                       {t("door2door-ddp-title")}
                     </h4>
                     <div className="row g-4">
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-check-circle fa-2x text-success mb-2"></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "1.5rem" }}>✅</div>
                             <h6 className="fw-bold mb-1">{t("door2door-ddp1")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-check-circle fa-2x text-success mb-2"></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "1.5rem" }}>✅</div>
                             <h6 className="fw-bold mb-1">{t("door2door-ddp2")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-check-circle fa-2x text-success mb-2"></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "1.5rem" }}>✅</div>
                             <h6 className="fw-bold mb-1">{t("door2door-ddp3")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-check-circle fa-2x text-success mb-2"></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "1.5rem" }}>✅</div>
                             <h6 className="fw-bold mb-1">{t("door2door-ddp4")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-check-circle fa-2x text-success mb-2"></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "1.5rem" }}>✅</div>
                             <h6 className="fw-bold mb-1">{t("door2door-ddp5")}</h6>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6 col-lg-4">
-                        <div className="card h-100 border-0 shadow-sm">
+                        <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
                           <div className="card-body text-center p-3">
-                            <div className="mb-2">
-                              <i className="fas fa-check-circle fa-2x text-success mb-2"></i>
-                            </div>
+                            <div className="mb-2" style={{ fontSize: "1.5rem" }}>✅</div>
                             <h6 className="fw-bold mb-1">{t("door2door-ddp6")}</h6>
                           </div>
                         </div>
@@ -263,7 +240,7 @@ export default function DoorToDoorPage() {
                       <Link href="/" className="btn btn-outline-primary w-100 mb-2">
                         <i className="fas fa-home me-2"></i>{t("services-page-back-home")}
                       </Link>
-                      <a href="/#contact" className="btn btn-primary w-100">{t("services-page-contact")}</a>
+                      <a href={`/${language}#contact`} className="btn btn-primary w-100">{t("services-page-contact")}</a>
                     </div>
                   </div>
                 </div>
