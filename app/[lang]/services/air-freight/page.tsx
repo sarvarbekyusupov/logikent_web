@@ -149,52 +149,52 @@ export default function AirFreightPage() {
                     <h4 className="mb-4 text-center" style={{ color: "var(--primary-color)" }}>
                       {t("airfreight-cargo-types")}
                     </h4>
-                    <div className="row g-3">
-                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
+                    <div className="row g-3 justify-content-center">
+                      <div className="col-6 col-md-4">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body text-center p-4">
+                          <div className="card-body text-center p-4 d-flex flex-column align-items-center justify-content-center">
                             <div className="mb-2" style={{ fontSize: "2rem" }}>📦</div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo1")}</h6>
+                            <h6 className="fw-bold mb-0 text-center">{t("airfreight-cargo1")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
+                      <div className="col-6 col-md-4">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body text-center p-4">
-                            <div className="mb-2" style={{ fontSize: "2rem" }}>📦</div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo2")}</h6>
+                          <div className="card-body text-center p-4 d-flex flex-column align-items-center justify-content-center">
+                            <div className="mb-2" style={{ fontSize: "2rem" }}>📦📦📦</div>
+                            <h6 className="fw-bold mb-0 text-center">{t("airfreight-cargo2")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
+                      <div className="col-6 col-md-4">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body text-center p-4">
+                          <div className="card-body text-center p-4 d-flex flex-column align-items-center justify-content-center">
                             <div className="mb-2" style={{ fontSize: "2rem" }}>⚖️</div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo3")}</h6>
+                            <h6 className="fw-bold mb-0 text-center">{t("airfreight-cargo3")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
+                      <div className="col-6 col-md-4">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body text-center p-4">
+                          <div className="card-body text-center p-4 d-flex flex-column align-items-center justify-content-center">
                             <div className="mb-2" style={{ fontSize: "2rem" }}>❄️</div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo4")}</h6>
+                            <h6 className="fw-bold mb-0 text-center">{t("airfreight-cargo4")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
+                      <div className="col-6 col-md-4">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body text-center p-4">
+                          <div className="card-body text-center p-4 d-flex flex-column align-items-center justify-content-center">
                             <div className="mb-2" style={{ fontSize: "2rem" }}>💎</div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo5")}</h6>
+                            <h6 className="fw-bold mb-0 text-center">{t("airfreight-cargo5")}</h6>
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-md-5" style={{ minWidth: "250px" }}>
+                      <div className="col-6 col-md-4">
                         <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: "#f8f9fa" }}>
-                          <div className="card-body text-center p-4">
-                            <div className="mb-2" style={{ fontSize: "2rem" }}>📄</div>
-                            <h6 className="fw-bold mb-0">{t("airfreight-cargo6")}</h6>
+                          <div className="card-body text-center p-4 d-flex flex-column align-items-center justify-content-center">
+                            <div className="mb-2" style={{ fontSize: "2rem" }}>☣️</div>
+                            <h6 className="fw-bold mb-0 text-center">{t("airfreight-cargo6")}</h6>
                           </div>
                         </div>
                       </div>
