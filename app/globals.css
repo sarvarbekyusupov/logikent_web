@@ -379,7 +379,7 @@ footer {
 
 .hero-section {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/img/logikent/4.jpg") center/cover fixed;
+    url("/img/logikent/4.jpg") center/cover no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -689,4 +689,39 @@ body {
 .navbar-toggler span {
   display: block !important;
   transform-origin: center !important;
+}
+
+/* iOS-compatible background hero section */
+.service-page-hero {
+  position: relative;
+  min-height: 300px;
+  padding: 3rem 0;
+  /* Fallback color */
+  background-color: #2d3e50;
+  /* Background properties (image set via inline style) */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Important: don't use fixed attachment on iOS */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/* Dark overlay for service page hero */
+.service-page-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Ensure content is above overlay */
+.service-page-hero > .container {
+  position: relative;
+  z-index: 2;
 }
