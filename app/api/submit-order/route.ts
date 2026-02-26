@@ -21,8 +21,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Get Telegram bot credentials from environment variables
-    const botToken = process.env.TELEGRAM_BOT_TOKEN;
-    const channelId = process.env.TELEGRAM_CHANNEL_ID;
+    const botToken = process.env.TELEGRAM_BOT_TOKEN || "8592132416:AAG279Xx70C67aTF5ynAOoFMHKYhqp8KwYc";
+    const channelId = process.env.TELEGRAM_CHANNEL_ID || "-1003759759164";
 
     if (!botToken || !channelId) {
       console.error("Telegram credentials not configured");
